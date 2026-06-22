@@ -98,6 +98,8 @@ canvas{width:100%!important;display:block}
 .action-watch{background:rgba(110,124,138,.12);color:var(--muted);border:1px solid rgba(110,124,138,.35)}
 .action-detail{color:var(--muted);font-size:12px;margin-top:3px}
 .action-risk{color:var(--faint);font-size:12px}
+.challenge-bar{height:8px;background:var(--bg);border:1px solid var(--line);border-radius:999px;overflow:hidden;margin:8px 0 4px}
+.challenge-fill{height:100%;background:var(--teal);width:0}
 </style>
 </head>
 <body>
@@ -127,6 +129,13 @@ canvas{width:100%!important;display:block}
     <div class="scan-meta" id="action-meta">Loading actions...</div>
   </div>
   <div id="action-wrap"><div class="empty"><span class="spin">o</span> Loading action center...</div></div>
+
+  <!-- paper challenge -->
+  <div class="scan-head">
+    <div class="sec" style="margin:0;border-bottom:none;padding-bottom:0">$1,000 paper challenge</div>
+    <div class="scan-meta" id="challenge-meta">Loading challenge...</div>
+  </div>
+  <div id="challenge-wrap"><div class="empty"><span class="spin">o</span> Loading challenge...</div></div>
 
   <!-- latest scanner -->
   <div class="scan-head">
@@ -435,6 +444,50 @@ async function loadActionCenter() {
   }
 }
 
+function renderChallenge(data) {
+  const positions = Object.entries(data.positions || {});
+  const trades = data.trades || [];
+  const progress = Number(data.progress_to_double_pct || 0);
+  const updated = data.updated_at ? new Date(data.updated_at).toLocaleString() : 'waiting for first run';
+  $('challenge-meta').textContent = `${data.status || 'OPEN'} | ${updated}`;
+  $('challenge-wrap').innerHTML = `
+    <div class="metrics">
+      <div class="metric"><div class="k">Equity</div><div class="v neutral">${fmt(data.equity || 0)}</div></div>
+      <div class="metric"><div class="k">Cash</div><div class="v neutral">${fmt(data.cash || 0)}</div></div>
+      <div class="metric"><div class="k">Return</div><div class="v ${(data.return_pct || 0) >= 0 ? 'up' : 'down'}">${Number(data.return_pct || 0).toFixed(2)}%</div></div>
+      <div class="metric"><div class="k">Positions</div><div class="v neutral">${positions.length}</div></div>
+    </div>
+    <div class="chart-box">
+      <div class="scan-meta">Progress to double: ${progress.toFixed(2)}%</div>
+      <div class="challenge-bar"><div class="challenge-fill" style="width:${Math.max(0, Math.min(100, progress))}%"></div></div>
+      <div class="note">Paper-only. Entries come from 20-day range BUY signals; exits use stop, target, EXIT, or BREAKDOWN.</div>
+    </div>
+    ${positions.length ? `<table>
+      <thead><tr><th>Symbol</th><th>Qty</th><th>Entry</th><th>Last</th><th>Target</th><th>Stop</th></tr></thead>
+      <tbody>${positions.map(([sym, p]) => `<tr>
+        <td><span class="sym">${sym}</span></td>
+        <td>${Number(p.qty || 0).toFixed(4)}</td>
+        <td>${fmt(p.entry_price || 0)}</td>
+        <td>${fmt(p.last_price || 0)}</td>
+        <td>${p.target ? fmt(p.target) : '-'}</td>
+        <td>${p.stop ? fmt(p.stop) : '-'}</td>
+      </tr>`).join('')}</tbody>
+    </table>` : '<div class="empty">No paper positions open yet</div>'}
+    ${trades.length ? `<div class="scan-meta">Last trade: ${trades[trades.length - 1].side} ${trades[trades.length - 1].symbol} ${fmt(trades[trades.length - 1].value || 0)}</div>` : ''}
+  `;
+}
+
+async function loadChallenge() {
+  try {
+    const res = await fetch(`data/paper_challenge.json?ts=${Date.now()}`, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    renderChallenge(await res.json());
+  } catch(e) {
+    $('challenge-wrap').innerHTML = `<div class="empty">Challenge unavailable: ${e.message}</div>`;
+    $('challenge-meta').textContent = 'No challenge file loaded';
+  }
+}
+
 async function loadVersion() {
   try {
     const res = await fetch(`data/version.json?ts=${Date.now()}`, { cache: 'no-store' });
@@ -449,7 +502,7 @@ async function loadVersion() {
 
 async function loadAll() {
   $('lastseen').textContent = 'Refreshing…';
-  await Promise.all([loadAccount(), loadPositions(), loadOrders(), loadPortfolioChart(), loadActionCenter(), loadSignals(), loadIncome(), loadVersion()]);
+  await Promise.all([loadAccount(), loadPositions(), loadOrders(), loadPortfolioChart(), loadActionCenter(), loadChallenge(), loadSignals(), loadIncome(), loadVersion()]);
   $('lastseen').textContent = 'Updated ' + new Date().toLocaleTimeString();
 }
 

@@ -17,6 +17,7 @@ strategy.py             range and breakout signal math
 screener.py             S&P 500 scanner using yfinance
 run_screener.py         daily scan, JSON output, SMS alerts
 run_study_list.py       focused issue-driven study list scan
+run_paper_challenge.py  $1,000 paper-only doubling challenge ledger
 run_from_screener.py    trades top screener BUYs through Alpaca paper
 monthly_dividend.py     verifies monthly dividend cadence and income quality
 run_monthly_income.py   monthly dividend scanner, JSON output, SMS alerts
@@ -51,12 +52,13 @@ paper workflow:
 4. Send the SMS summaries through Twilio, if Twilio secrets are configured.
 5. Paper-trade the top range BUY signals through Alpaca paper using
    `run_from_screener.py`.
-6. Build `action_center.json`, a ranked operational list of trade entries,
+6. Update the `$1,000` paper-only challenge ledger from the latest BUY list.
+7. Build `action_center.json`, a ranked operational list of trade entries,
    study-list alerts, watch/exit alerts, and monthly income candidates.
-7. Save `portal/data/screener_results.json`, `portal/data/monthly_income.json`,
-   `portal/data/study_results.json`, and `portal/data/action_center.json` back
-   to the repo.
-8. The portal deploy workflow publishes the latest scan to Netlify.
+8. Save `portal/data/screener_results.json`, `portal/data/monthly_income.json`,
+   `portal/data/study_results.json`, `portal/data/action_center.json`, and
+   `portal/data/paper_challenge.json` back to the repo.
+9. The portal deploy workflow publishes the latest scan to Netlify.
 
 Required GitHub secrets for alerts:
 
@@ -106,6 +108,16 @@ Run the focused study list from issue #5:
 ```bash
 python run_study_list.py --dry-run
 ```
+
+Update the issue #6 paper challenge from a screener file:
+
+```bash
+python run_paper_challenge.py --screener screener_results.json
+```
+
+The paper challenge starts with `$1,000`, targets `$2,000`, uses fractional
+paper shares, and never calls a broker. Entries come from 20-day range BUY
+signals; exits come from stop, target, EXIT, or BREAKDOWN.
 
 Its default filters look for monthly payers with a trailing yield between 4%
 and 15%, at least 10 paid months in the last year, and an income-quality score
