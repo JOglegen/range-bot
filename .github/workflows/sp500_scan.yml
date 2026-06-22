@@ -23,7 +23,7 @@ jobs:
           cache: pip
 
       - name: Install dependencies
-        run: pip install requests yfinance pandas python-dotenv
+        run: pip install requests yfinance pandas python-dotenv lxml beautifulsoup4 html5lib
 
       - name: Run S&P 500 screener + send SMS
         env:
