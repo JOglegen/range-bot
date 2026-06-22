@@ -1,0 +1,54 @@
+name: Range Bot — S&P 500 Screener + SMS
+
+on:
+  schedule:
+    # 3:45 PM Central Time = 20:45 UTC (CST) / 21:45 UTC (CDT)
+    # Runs Mon–Fri, 15 minutes before the bot's own trade execution
+    - cron: '45 20 * * 1-5'
+  workflow_dispatch:   # manual trigger anytime
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25   # 500 tickers needs more time than the 8-ticker bot
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install requests yfinance pandas python-dotenv
+
+      - name: Run S&P 500 screener + send SMS
+        env:
+          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_AUTH_TOKEN:  ${{ secrets.TWILIO_AUTH_TOKEN }}
+          TWILIO_FROM:        ${{ secrets.TWILIO_FROM }}
+          TWILIO_TO:          ${{ secrets.TWILIO_TO }}
+        run: python run_screener.py --mode range
+
+      - name: Upload screener results (for portal)
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: screener-results-${{ github.run_id }}
+          path: screener_results.json
+          retention-days: 7
+
+      # ── Also run breakout mode for comparison ─────────────────────────────
+      - name: Run breakout screen (no SMS — logged only)
+        run: python run_screener.py --mode breakout --dry-run --output screener_breakout.json
+
+      - name: Upload breakout results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: screener-breakout-${{ github.run_id }}
+          path: screener_breakout.json
+          retention-days: 7
