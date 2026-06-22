@@ -1,0 +1,90 @@
+name: Deploy Portal to Netlify
+
+on:
+  push:
+    paths:
+      - 'portal/**'    # auto-deploys when portal files change
+  workflow_dispatch:   # also allows manual trigger
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create Netlify site (first run) or find existing
+        id: site
+        env:
+          NETLIFY_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: |
+          # Try to create a new site named range-bot-portal
+          RESP=$(curl -sf -X POST https://api.netlify.com/api/v1/sites \
+            -H "Authorization: Bearer $NETLIFY_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"name":"range-bot-portal"}' 2>/dev/null || echo '{"error":true}')
+
+          SITE_ID=$(echo "$RESP" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d.get('id',''))" 2>/dev/null || echo "")
+
+          # If create failed (name taken), find our existing site
+          if [ -z "$SITE_ID" ]; then
+            echo "Site exists — finding it..."
+            SITES=$(curl -sf "https://api.netlify.com/api/v1/sites?per_page=100" \
+              -H "Authorization: Bearer $NETLIFY_TOKEN")
+            SITE_ID=$(echo "$SITES" | python3 -c "
+          import json,sys
+          sites=json.load(sys.stdin)
+          match=[s for s in sites if 'range-bot' in s.get('name','')]
+          print(match[0]['id'] if match else '')
+          " 2>/dev/null || echo "")
+          fi
+
+          if [ -z "$SITE_ID" ]; then
+            echo "ERROR: Could not create or find Netlify site"
+            exit 1
+          fi
+
+          echo "site_id=$SITE_ID" >> $GITHUB_OUTPUT
+          echo "Site ID: $SITE_ID"
+
+      - name: Set Alpaca env vars on Netlify site
+        env:
+          NETLIFY_TOKEN:    ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          ALPACA_API_KEY:   ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_API_SECRET: ${{ secrets.ALPACA_API_SECRET }}
+          SITE_ID:          ${{ steps.site.outputs.site_id }}
+        run: |
+          curl -sf -X PATCH "https://api.netlify.com/api/v1/sites/$SITE_ID" \
+            -H "Authorization: Bearer $NETLIFY_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "{\"build_settings\":{\"env\":{
+              \"ALPACA_API_KEY\":\"$ALPACA_API_KEY\",
+              \"ALPACA_API_SECRET\":\"$ALPACA_API_SECRET\"
+            }}}" > /dev/null && echo "Env vars set"
+
+      - name: Zip portal and deploy
+        env:
+          NETLIFY_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          SITE_ID:       ${{ steps.site.outputs.site_id }}
+        run: |
+          cd portal
+          zip -r ../portal.zip . -x "*.DS_Store"
+          cd ..
+
+          DEPLOY=$(curl -sf -X POST "https://api.netlify.com/api/v1/sites/$SITE_ID/deploys" \
+            -H "Authorization: Bearer $NETLIFY_TOKEN" \
+            -H "Content-Type: application/zip" \
+            --data-binary @portal.zip)
+
+          URL=$(echo "$DEPLOY" | python3 -c "
+          import json,sys
+          d=json.load(sys.stdin)
+          print(d.get('deploy_ssl_url') or d.get('ssl_url') or d.get('url','unknown'))
+          " 2>/dev/null || echo "unknown")
+
+          echo ""
+          echo "✅ Portal deployed: $URL"
+          echo "   Dashboard : $URL/index.html"
+          echo "   Scanner   : $URL/scanner.html"

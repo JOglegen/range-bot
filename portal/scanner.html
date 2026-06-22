@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rangefinder — 20-day range scanner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0E1217; --panel:#151B23; --panel2:#1A222B; --line:#29333E; --line2:#222B34;
+    --text:#E7E3D6; --muted:#8C97A4; --faint:#5C6671;
+    --teal:#45B69C; --teal-dim:rgba(69,182,156,.14); --teal-line:rgba(69,182,156,.45);
+    --amber:#E0A24A; --amber-dim:rgba(224,162,74,.14); --amber-line:rgba(224,162,74,.45);
+    --red:#D96A6A; --steel:#6E7C8A;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+    --disp:'Space Grotesk',system-ui,sans-serif;
+    --ui:'Inter',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--ui);
+    -webkit-font-smoothing:antialiased;font-size:15px;line-height:1.45}
+  body{padding:0 16px 80px}
+  .wrap{max-width:920px;margin:0 auto}
+  a{color:var(--teal);text-decoration:none;border-bottom:1px solid var(--teal-line)}
+
+  /* ---- header ---- */
+  header{padding:30px 0 18px;border-bottom:1px solid var(--line)}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--faint);display:flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--faint);display:inline-block}
+  h1{font-family:var(--disp);font-weight:700;font-size:clamp(30px,6vw,46px);letter-spacing:-.02em;
+    margin:10px 0 6px;line-height:1}
+  h1 .b{color:var(--teal)} h1 .a{color:var(--amber)}
+  .sub{color:var(--muted);font-size:14px;max-width:60ch}
+
+  /* ---- controls ---- */
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .controls{margin-top:22px;display:grid;gap:14px}
+  .row{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+  .field{display:flex;flex-direction:column;gap:6px;flex:1;min-width:170px}
+  label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  input{background:var(--bg);border:1px solid var(--line);color:var(--text);border-radius:8px;
+    padding:11px 12px;font-family:var(--mono);font-size:14px;width:100%}
+  input:focus{outline:none;border-color:var(--teal-line);box-shadow:0 0 0 3px var(--teal-dim)}
+  .hint{font-size:11px;color:var(--faint)}
+  .seg{display:inline-flex;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:3px}
+  .seg button{background:none;border:none;color:var(--muted);font-family:var(--ui);font-weight:600;
+    font-size:13px;padding:8px 14px;border-radius:6px;cursor:pointer}
+  .seg button.on{background:var(--panel2);color:var(--text);box-shadow:inset 0 0 0 1px var(--line)}
+  .seg button.on.range{color:var(--teal)} .seg button.on.break{color:var(--amber)}
+  .scan{background:var(--teal);color:#0a0f0d;border:none;border-radius:8px;font-family:var(--disp);
+    font-weight:700;font-size:15px;padding:12px 26px;cursor:pointer;letter-spacing:.01em;
+    transition:transform .08s ease,filter .15s ease;white-space:nowrap}
+  .scan:hover{filter:brightness(1.08)} .scan:active{transform:translateY(1px)}
+  .scan:disabled{opacity:.5;cursor:default}
+  .modeline{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .modedesc{font-size:12.5px;color:var(--muted);flex:1;min-width:200px}
+
+  /* ---- status ---- */
+  .status{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin:18px 2px 6px;
+    display:flex;gap:10px;align-items:center;min-height:18px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal)}
+  .badge-demo{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--amber);
+    border:1px solid var(--amber-line);border-radius:4px;padding:2px 7px;text-transform:uppercase}
+  .err{color:var(--red)}
+
+  /* ---- results ---- */
+  .results{margin-top:6px;display:grid;gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;
+    transition:border-color .15s ease}
+  .card.buy{border-color:var(--teal-line)} .card.exit{border-color:var(--amber-line)}
+  .card.breakdown{border-color:rgba(217,106,106,.5)}
+  .chead{display:flex;align-items:center;gap:14px;padding:15px 18px;cursor:pointer}
+  .rank{font-family:var(--mono);font-size:12px;color:var(--faint);width:22px;flex:none}
+  .tk{font-family:var(--disp);font-weight:700;font-size:20px;letter-spacing:-.01em;flex:none;min-width:64px}
+  .px{font-family:var(--mono);font-size:15px;color:var(--text)}
+  .px .chg{font-size:12px;margin-left:7px}
+  .up{color:var(--teal)} .down{color:var(--red)}
+  .spacer{flex:1}
+  .tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;padding:5px 10px;
+    border-radius:5px;text-transform:uppercase;flex:none}
+  .tag.BUY{background:var(--teal-dim);color:var(--teal);border:1px solid var(--teal-line)}
+  .tag.EXIT{background:var(--amber-dim);color:var(--amber);border:1px solid var(--amber-line)}
+  .tag.WAIT,.tag.WATCH{background:rgba(110,124,138,.12);color:var(--steel);border:1px solid rgba(110,124,138,.4)}
+  .tag.BREAKDOWN{background:rgba(217,106,106,.12);color:var(--red);border:1px solid rgba(217,106,106,.4)}
+  .score{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:right;flex:none;width:54px}
+  .score b{display:block;color:var(--text);font-size:17px;font-weight:600}
+
+  /* ---- the signature: range track ---- */
+  .track-wrap{padding:4px 18px 16px}
+  .track{position:relative;height:34px;margin:8px 0 6px}
+  .rail{position:absolute;top:50%;left:0;right:0;height:6px;transform:translateY(-50%);
+    background:var(--line2);border-radius:3px;overflow:hidden}
+  .zone{position:absolute;top:0;bottom:0}
+  .zone.buy{left:0;width:25%;background:var(--teal-dim)}
+  .zone.sell{right:0;width:25%;background:var(--amber-dim)}
+  .midtick{position:absolute;top:50%;left:50%;width:1px;height:14px;transform:translate(-50%,-50%);
+    background:var(--line)}
+  .mark{position:absolute;top:50%;width:3px;height:22px;transform:translate(-50%,-50%);
+    background:var(--text);border-radius:2px;transition:left .5s cubic-bezier(.4,0,.2,1)}
+  .mark.atbuy{background:var(--teal);box-shadow:0 0 10px var(--teal)}
+  .mark.atsell{background:var(--amber);box-shadow:0 0 10px var(--amber)}
+  .mark.broke{height:26px;width:4px}
+  .ends{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;margin-top:2px}
+  .ends .lo{color:var(--teal)} .ends .hi{color:var(--amber)}
+  .ends .lab{color:var(--faint);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;display:block}
+
+  /* ---- meta strip ---- */
+  .meta{display:flex;flex-wrap:wrap;gap:18px;padding:0 18px 14px;font-family:var(--mono);font-size:12px}
+  .meta .m{color:var(--muted)} .meta .m b{color:var(--text);font-weight:500}
+  .flag{color:var(--amber)}
+
+  /* ---- expandable plan ---- */
+  .plan{border-top:1px solid var(--line2);padding:14px 18px 18px;display:none;background:var(--panel2)}
+  .card.open .plan{display:block}
+  .plan h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 10px}
+  .legs{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px}
+  .leg{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+  .leg .k{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+  .leg .v{font-family:var(--mono);font-size:16px;margin-top:3px}
+  .leg.entry .v{color:var(--teal)} .leg.stop .v{color:var(--red)} .leg.target .v{color:var(--amber)}
+  .note{margin-top:12px;font-size:13px;color:var(--muted)}
+  .alert{margin-top:10px;font-size:13px;color:var(--text);font-family:var(--mono);
+    background:var(--bg);border:1px dashed var(--line);border-radius:8px;padding:9px 12px}
+  .alert b.buy{color:var(--teal)} .alert b.sell{color:var(--amber)}
+
+  /* ---- footer disclaimer ---- */
+  .foot{margin-top:30px;padding:16px 18px;border:1px solid var(--line);border-radius:12px;
+    background:var(--panel);color:var(--faint);font-size:12px;line-height:1.6}
+  .foot b{color:var(--muted)}
+  .empty{padding:40px 20px;text-align:center;color:var(--faint);font-family:var(--mono);font-size:13px}
+  @media(max-width:560px){
+    .chead{flex-wrap:wrap;gap:10px}.px{order:5;width:100%}.spacer{display:none}
+    .tk{min-width:auto}.score{width:auto}
+  }
+</style>
+</head>
+<body>
+<style>
+.portal-nav{display:flex;align-items:center;border-bottom:1px solid #29333E;padding:14px 16px;
+  background:#151B23;gap:0}
+.portal-nav .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;
+  color:#45B69C;letter-spacing:-.02em;margin-right:28px}
+.portal-nav a{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;
+  color:#8C97A4;padding:7px 14px;border-radius:6px;text-decoration:none;text-transform:uppercase}
+.portal-nav a:hover{color:#E7E3D6;background:#1A222B}
+.portal-nav a.active{color:#45B69C;background:rgba(69,182,156,.13)}
+</style>
+<nav class="portal-nav">
+  <span class="logo">RangeBot</span>
+  <a href="index.html">Dashboard</a>
+  <a href="scanner.html" class="active">Scanner</a>
+</nav>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Rangefinder · technical scanner</div>
+    <h1>Trade the <span class="b">floor</span>, fade the <span class="a">ceiling</span>.</h1>
+    <p class="sub">Scans your watchlist against its trailing 20-day range, ranks the cleanest setups, and hands you the exact price levels to get in and out. Two strategies: buy support inside a range, or buy strength as it breaks out.</p>
+  </header>
+
+  <div class="controls panel">
+    <div class="row">
+      <div class="field" style="flex:2">
+        <label for="wl">Watchlist (comma-separated tickers)</label>
+        <input id="wl" value="AAPL, MSFT, NVDA, AMD, JPM, XOM, KO, WMT" spellcheck="false" />
+      </div>
+      <div class="field">
+        <label for="key">Twelve Data API key — optional</label>
+        <input id="key" placeholder="leave blank for demo data" spellcheck="false" autocomplete="off" />
+        <span class="hint">Free key (no card): <a href="https://twelvedata.com/pricing" target="_blank" rel="noopener">twelvedata.com</a> · 800 calls/day</span>
+      </div>
+    </div>
+    <div class="row modeline">
+      <div class="field" style="flex:none">
+        <label>Strategy</label>
+        <div class="seg" id="seg">
+          <button data-mode="range" class="on range">Range-bound</button>
+          <button data-mode="breakout" class="break">Breakout</button>
+        </div>
+      </div>
+      <p class="modedesc" id="modedesc"></p>
+      <button class="scan" id="scan">Scan ▸</button>
+    </div>
+  </div>
+
+  <div class="status" id="status"></div>
+  <div class="results" id="results"></div>
+
+  <div class="foot">
+    <b>How to read this.</b> The range is the highest high and lowest low of the prior 20 trading days. <b>Position</b> shows where price sits inside that band. <b>Setup score</b> rewards a flat, well-tested, adequately-wide, liquid range (range mode) or a tight coil pressing the highs on rising volume (breakout mode). Signals fire only when price reaches a defined level — the tool can't watch the market for you, so use the trigger prices to set alerts in your brokerage, then re-scan.
+    <br><br>
+    This is a rule-based technical screen, not investment advice and not a recommendation to buy or sell any security. Ranges describe the past; they don't predict the future, and breakouts fail often. Position size and risk are yours to manage. I'm not a financial advisor.
+  </div>
+</div>
+
+<script>
+/* ============ analytics (mirrors the tested core) ============ */
+function computeMetrics(bars, lookback=20){
+  if(bars.length < lookback+2) return null;
+  const latest=bars[bars.length-1];
+  const win=bars.slice(-(lookback+1),-1);
+  const trendWin=bars.slice(-lookback);
+  const highs=win.map(b=>b.h),lows=win.map(b=>b.l),vols=win.map(b=>b.v);
+  const rangeHigh=Math.max(...highs),rangeLow=Math.min(...lows),mid=(rangeHigh+rangeLow)/2;
+  const price=latest.c,prevClose=bars[bars.length-2].c;
+  const span=(rangeHigh-rangeLow)||1e-9;
+  const posRaw=(price-rangeLow)/span,pos=Math.min(1,Math.max(0,posRaw));
+  const widthPct=(span/rangeLow)*100;
+  const atrN=14,trWin=bars.slice(-(atrN+1));let trs=[];
+  for(let i=1;i<trWin.length;i++){const h=trWin[i].h,l=trWin[i].l,pc=trWin[i-1].c;
+    trs.push(Math.max(h-l,Math.abs(h-pc),Math.abs(l-pc)));}
+  const atr=trs.reduce((a,b)=>a+b,0)/trs.length,atrPct=(atr/price)*100;
+  const avgVol=vols.reduce((a,b)=>a+b,0)/vols.length,curVol=latest.v;
+  const volRatio=avgVol>0?curVol/avgVol:1,dollarVol=avgVol*price;
+  const closes=trendWin.map(b=>b.c),n=closes.length,xs=closes.map((_,i)=>i);
+  const mx=xs.reduce((a,b)=>a+b,0)/n,my=closes.reduce((a,b)=>a+b,0)/n;
+  let num=0,den=0;for(let i=0;i<n;i++){num+=(xs[i]-mx)*(closes[i]-my);den+=(xs[i]-mx)**2;}
+  const slope=den?num/den:0,trendPctPerDay=(slope/my)*100;
+  let supT=0,resT=0;for(const b of win){if(b.l<=rangeLow*1.015)supT++;if(b.h>=rangeHigh*0.985)resT++;}
+  const c01=x=>Math.min(1,Math.max(0,x));
+  const flatness=c01(1-Math.abs(trendPctPerDay)/0.5),tested=c01((supT+resT)/6);
+  let widthFit;
+  if(widthPct<3)widthFit=c01(widthPct/3*0.4);
+  else if(widthPct<=12)widthFit=c01(0.4+(widthPct-3)/9*0.6);
+  else widthFit=c01(1-(widthPct-12)/18);
+  const liquidityOK=dollarVol>2_000_000;
+  const rangeScore=Math.round(100*(0.4*flatness+0.3*tested+0.3*widthFit)*(liquidityOK?1:0.7));
+  const brokeUp=price>rangeHigh,brokeDown=price<rangeLow;
+  const coil=c01(1-widthPct/25),nearTop=c01((posRaw-0.5)/0.5),volExp=c01((volRatio-1)/1.5);
+  let breakoutScore=Math.round(100*(0.35*coil+0.35*nearTop+0.30*volExp));
+  if(brokeUp&&volRatio>1.3)breakoutScore=Math.min(100,breakoutScore+12);
+  const chgPct=((price-prevClose)/prevClose)*100;
+  return {rangeHigh,rangeLow,mid,price,prevClose,chgPct,pos,posRaw,widthPct,atr,atrPct,avgVol,curVol,
+    volRatio,dollarVol,trendPctPerDay,supT,resT,flatness,liquidityOK,rangeScore,
+    brokeUp,brokeDown,breakoutScore};
+}
+function signal(r,mode){
+  const f2=x=>+x.toFixed(2);
+  if(mode==='range'){
+    const stop=f2(r.rangeLow*0.98);
+    if(r.pos<=0.25&&r.flatness>0.35&&r.liquidityOK&&!r.brokeDown)
+      return{tag:'BUY',note:'price at the floor of a clean range',
+        entry:[f2(r.rangeLow),f2(r.rangeLow+0.25*(r.rangeHigh-r.rangeLow))],
+        target:f2(r.rangeHigh),target2:f2(r.mid),stop,
+        alert:{buy:f2(r.rangeLow+0.25*(r.rangeHigh-r.rangeLow)),sell:f2(r.rangeHigh)}};
+    if(r.pos>=0.75||r.brokeUp)
+      return{tag:'EXIT',note:'at/above the ceiling — bank gains, don\u2019t start new longs here',
+        target:f2(r.rangeHigh),stop:f2(r.rangeLow*0.98),
+        alert:{sell:f2(r.rangeHigh),buy:f2(r.rangeLow+0.25*(r.rangeHigh-r.rangeLow))}};
+    return{tag:'WAIT',note:'mid-range — no edge until it returns to a boundary',
+      target:f2(r.rangeHigh),stop:f2(r.rangeLow*0.98),
+      alert:{buy:f2(r.rangeLow+0.25*(r.rangeHigh-r.rangeLow)),sell:f2(r.rangeHigh)}};
+  }else{
+    if(r.brokeUp&&r.volRatio>=1.3)
+      return{tag:'BUY',note:'closed above the range high on heavy volume',
+        entry:[f2(r.rangeHigh),f2(r.price)],target:f2(r.price+(r.rangeHigh-r.rangeLow)),
+        stop:f2(r.rangeHigh*0.98),alert:{sell:f2(r.rangeHigh*0.98)}};
+    if(r.brokeDown&&r.volRatio>=1.3)
+      return{tag:'BREAKDOWN',note:'broke support on volume — stand aside / exit longs',
+        target:f2(r.rangeLow-(r.rangeHigh-r.rangeLow)),stop:f2(r.rangeLow),alert:{sell:f2(r.rangeLow)}};
+    return{tag:'WATCH',note:'coiling under resistance — arm a buy alert above the range high',
+      entry:[f2(r.rangeHigh),f2(r.rangeHigh*1.01)],target:f2(r.rangeHigh+(r.rangeHigh-r.rangeLow)),
+      stop:f2(r.rangeLow),alert:{buy:f2(r.rangeHigh)}};
+  }
+}
+
+/* ============ demo data ============ */
+function mkBars(closeFn,volFn,pad=0.006){
+  const b=[];for(let i=0;i<45;i++){const c=closeFn(i);const p=(typeof pad==='function')?pad(i):pad;
+    b.push({h:c*(1+p),l:c*(1-p),c,v:Math.round(volFn(i))});}return b;}
+const DEMO={
+  // clean range, sitting near support -> BUY in range mode
+  KO:   mkBars(i=>61+2.6*Math.sin(i/2.1)-(i>42?1.6:0),()=>1.3e7),
+  // tight coil pressing highs, volume surge today -> breakout BUY
+  NVDA: mkBars(i=>i<43?118+i*0.18+1.6*Math.sin(i/1.7):128.5+(i-42)*1.1,i=>i>42?7e7:2.6e7),
+  // mid-range drift, nothing to do
+  MSFT: mkBars(i=>418+7*Math.sin(i/3.4),()=>2.1e7),
+  // strong uptrend pinned at ceiling -> EXIT in range mode
+  AMD:  mkBars(i=>132+i*0.55,()=>4e7),
+  // wide choppy range near top -> EXIT / not clean
+  XOM:  mkBars(i=>108+5*Math.sin(i/1.4)+2*Math.cos(i/0.7),()=>1.5e7),
+  // breakdown through support on volume
+  WMT:  mkBars(i=>i<43?77+1.4*Math.sin(i/2):73.4-(i-42)*0.8,i=>i>42?5.5e7:1.8e7),
+  AAPL: mkBars(i=>210+6*Math.sin(i/2.6),()=>5e7),
+  JPM:  mkBars(i=>239-(i*0.04)+4.5*Math.sin(i/2.2)-(i>43?2.4:0),()=>9e6),
+};
+
+/* ============ live fetch (Twelve Data) ============ */
+async function fetchBars(sym,key){
+  const url=`https://api.twelvedata.com/time_series?symbol=${encodeURIComponent(sym)}&interval=1day&outputsize=45&apikey=${key}`;
+  const res=await fetch(url);const j=await res.json();
+  if(j.status==='error'||j.code) throw new Error(j.message||('error for '+sym));
+  if(!j.values||!j.values.length) throw new Error('no data for '+sym);
+  return j.values.slice().reverse().map(v=>({h:+v.high,l:+v.low,c:+v.close,v:+(v.volume||0)}));
+}
+
+/* ============ state + render ============ */
+let MODE='range';
+const $=id=>document.getElementById(id);
+const descs={range:'Mean-reversion: buy near the bottom of an established range, sell near the top. Best on flat, choppy names.',
+  breakout:'Momentum: buy when price closes above the range on rising volume, ride the move. Best on coiled, consolidating names.'};
+function setMode(m){MODE=m;$('modedesc').textContent=descs[m];
+  document.querySelectorAll('#seg button').forEach(b=>b.classList.toggle('on',b.dataset.mode===m));}
+$('seg').addEventListener('click',e=>{const b=e.target.closest('button');if(b){setMode(b.dataset.mode);if(LAST)render(LAST);}});
+setMode('range');
+
+const fmt=n=>n>=1e9?(n/1e9).toFixed(1)+'B':n>=1e6?(n/1e6).toFixed(1)+'M':n>=1e3?(n/1e3).toFixed(0)+'K':n.toFixed(0);
+const px=n=>'$'+n.toFixed(2);
+let LAST=null;
+
+function render(rows){
+  const scored=rows.filter(r=>r.m).map(r=>({...r,
+    score:MODE==='range'?r.m.rangeScore:r.m.breakoutScore,
+    sig:signal(r.m,MODE)}));
+  // sort: actionable first, then score
+  const prio={BUY:0,WATCH:1,WAIT:2,EXIT:3,BREAKDOWN:3};
+  scored.sort((a,b)=> (prio[a.sig.tag]-prio[b.sig.tag]) || (b.score-a.score));
+  const res=$('results');res.innerHTML='';
+  if(!scored.length){res.innerHTML='<div class="empty">No usable data. Check tickers or your API key.</div>';return;}
+  scored.forEach((r,i)=>{
+    const m=r.m,s=r.sig;
+    const cls=s.tag==='BUY'?'buy':s.tag==='EXIT'?'exit':s.tag==='BREAKDOWN'?'breakdown':'';
+    const markPos=Math.min(98,Math.max(2,m.pos*100));
+    const markCls=m.brokeUp?'mark broke atsell':m.brokeDown?'mark broke atbuy':
+      (m.pos>=0.75?'mark atsell':m.pos<=0.25?'mark atbuy':'mark');
+    const chg=(m.chgPct>=0?'+':'')+m.chgPct.toFixed(2)+'%';
+    const flat=Math.abs(m.trendPctPerDay)<0.12?'flat':m.trendPctPerDay>0?'rising':'falling';
+    const legs=[];
+    if(s.entry)legs.push(`<div class="leg entry"><div class="k">Entry zone</div><div class="v">${px(s.entry[0])}–${px(s.entry[1])}</div></div>`);
+    if(s.target)legs.push(`<div class="leg target"><div class="k">Target</div><div class="v">${px(s.target)}</div></div>`);
+    if(s.target2)legs.push(`<div class="leg target"><div class="k">First target</div><div class="v">${px(s.target2)}</div></div>`);
+    if(s.stop)legs.push(`<div class="leg stop"><div class="k">Stop</div><div class="v">${px(s.stop)}</div></div>`);
+    let alertHtml='';
+    if(s.alert){const parts=[];
+      if(s.alert.buy)parts.push(`buy alert at <b class="buy">${px(s.alert.buy)}</b>`);
+      if(s.alert.sell)parts.push(`exit/sell alert at <b class="sell">${px(s.alert.sell)}</b>`);
+      alertHtml=`<div class="alert">Set ${parts.join(' · ')} in your brokerage, then re-scan.</div>`;}
+    const div=document.createElement('div');
+    div.className='card '+cls;
+    div.innerHTML=`
+      <div class="chead">
+        <span class="rank">${String(i+1).padStart(2,'0')}</span>
+        <span class="tk">${r.sym}</span>
+        <span class="px">${px(m.price)}<span class="chg ${m.chgPct>=0?'up':'down'}">${chg}</span></span>
+        <span class="spacer"></span>
+        <span class="tag ${s.tag}">${s.tag}</span>
+        <span class="score">${MODE==='range'?'range':'b/out'}<b>${r.score}</b></span>
+      </div>
+      <div class="track-wrap">
+        <div class="track">
+          <div class="rail"><div class="zone buy"></div><div class="zone sell"></div></div>
+          <div class="midtick"></div>
+          <div class="${markCls}" style="left:${markPos}%"></div>
+        </div>
+        <div class="ends">
+          <span class="lo"><span class="lab">support</span>${px(m.rangeLow)}</span>
+          <span class="hi" style="text-align:right"><span class="lab">resistance</span>${px(m.rangeHigh)}</span>
+        </div>
+      </div>
+      <div class="meta">
+        <span class="m">pos <b>${(m.pos*100).toFixed(0)}%</b></span>
+        <span class="m">width <b>${m.widthPct.toFixed(1)}%</b></span>
+        <span class="m">trend <b>${flat}</b></span>
+        <span class="m">vol <b>${m.volRatio.toFixed(2)}×</b></span>
+        <span class="m">$vol <b>${fmt(m.dollarVol)}</b></span>
+        ${!m.liquidityOK?'<span class="m flag">thin liquidity</span>':''}
+      </div>
+      <div class="plan">
+        <h4>${MODE==='range'?'Range-bound plan':'Breakout plan'}</h4>
+        <div class="legs">${legs.join('')}</div>
+        <div class="note">${s.note}.</div>
+        ${alertHtml}
+      </div>`;
+    div.querySelector('.chead').addEventListener('click',()=>div.classList.toggle('open'));
+    res.appendChild(div);
+  });
+}
+
+async function scan(){
+  const syms=$('wl').value.split(',').map(s=>s.trim().toUpperCase()).filter(Boolean);
+  const key=$('key').value.trim();
+  const st=$('status');
+  if(!syms.length){st.innerHTML='<span class="err">Add at least one ticker.</span>';return;}
+  $('scan').disabled=true;
+  const rows=[];
+  if(!key){
+    st.innerHTML='<span class="badge-demo">demo data</span> Add a free API key above to scan live prices.';
+    for(const sym of syms){const bars=DEMO[sym];rows.push({sym,m:bars?computeMetrics(bars):null,nodata:!bars});}
+  }else{
+    let done=0,fail=0;
+    for(const sym of syms){
+      st.innerHTML=`<span class="dot"></span> Fetching ${sym}… (${done}/${syms.length})`;
+      try{const bars=await fetchBars(sym,key);rows.push({sym,m:computeMetrics(bars)});}
+      catch(e){fail++;rows.push({sym,m:null,err:e.message});}
+      done++;await new Promise(r=>setTimeout(r,250));
+    }
+    const errs=rows.filter(r=>r.err);
+    st.innerHTML=`<span class="dot"></span> Scanned ${syms.length} · live`+
+      (errs.length?` · <span class="err">${errs.length} failed (${errs[0].err.slice(0,60)})</span>`:'');
+  }
+  const missing=rows.filter(r=>r.nodata).map(r=>r.sym);
+  if(missing.length&&!key) st.innerHTML+=` · <span class="err">no demo for ${missing.join(', ')} — try AAPL, MSFT, NVDA, AMD, JPM, XOM, KO, WMT</span>`;
+  LAST=rows;render(rows);$('scan').disabled=false;
+}
+$('scan').addEventListener('click',scan);
+$('wl').addEventListener('keydown',e=>{if(e.key==='Enter')scan();});
+$('key').addEventListener('keydown',e=>{if(e.key==='Enter')scan();});
+scan(); // run once on load with demo data
+</script>
+</body>
+</html>
