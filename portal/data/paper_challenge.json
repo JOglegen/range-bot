@@ -1,16 +1,98 @@
 {
-  "updated_at": null,
+  "updated_at": "2026-06-22T19:17:34.020719",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
-  "cash": 1000.0,
+  "cash": 0.0,
   "equity": 1000.0,
-  "return_pct": 0.0,
-  "progress_to_double_pct": 0.0,
-  "positions": {},
-  "trades": [],
-  "latest_scan_at": null,
+  "return_pct": -0.0,
+  "progress_to_double_pct": 0,
+  "positions": {
+    "PM": {
+      "qty": 1.435379,
+      "entry_price": 174.17,
+      "last_price": 174.17,
+      "stop": 166.6,
+      "target": 190.49,
+      "entry_time": "2026-06-22T19:17:34.020719",
+      "ma20_at_entry": 179.225,
+      "source": "20-day range BUY"
+    },
+    "ZTS": {
+      "qty": 3.291639,
+      "entry_price": 75.95,
+      "last_price": 75.95,
+      "stop": 73.37,
+      "target": 82.98,
+      "entry_time": "2026-06-22T19:17:34.020719",
+      "ma20_at_entry": 79.0985,
+      "source": "20-day range BUY"
+    },
+    "ADP": {
+      "qty": 1.167897,
+      "entry_price": 214.06,
+      "last_price": 214.06,
+      "stop": 209.7,
+      "target": 235.32,
+      "entry_time": "2026-06-22T19:17:34.020719",
+      "ma20_at_entry": 223.7402,
+      "source": "20-day range BUY"
+    },
+    "NKE": {
+      "qty": 5.787707,
+      "entry_price": 43.195,
+      "last_price": 43.195,
+      "stop": 41.8,
+      "target": 47.23,
+      "entry_time": "2026-06-22T19:17:34.020719",
+      "ma20_at_entry": 44.6389,
+      "source": "20-day range BUY"
+    }
+  },
+  "trades": [
+    {
+      "time": "2026-06-22T19:17:34.020719",
+      "symbol": "PM",
+      "side": "BUY",
+      "qty": 1.435379,
+      "price": 174.17,
+      "value": 250.0,
+      "pnl": 0,
+      "reason": "20-day range BUY"
+    },
+    {
+      "time": "2026-06-22T19:17:34.020719",
+      "symbol": "ZTS",
+      "side": "BUY",
+      "qty": 3.291639,
+      "price": 75.95,
+      "value": 250.0,
+      "pnl": 0,
+      "reason": "20-day range BUY"
+    },
+    {
+      "time": "2026-06-22T19:17:34.020719",
+      "symbol": "ADP",
+      "side": "BUY",
+      "qty": 1.167897,
+      "price": 214.06,
+      "value": 250.0,
+      "pnl": 0,
+      "reason": "20-day range BUY"
+    },
+    {
+      "time": "2026-06-22T19:17:34.020719",
+      "symbol": "NKE",
+      "side": "BUY",
+      "qty": 5.787707,
+      "price": 43.195,
+      "value": 250.0,
+      "pnl": 0,
+      "reason": "20-day range BUY"
+    }
+  ],
+  "latest_scan_at": "2026-06-22T19:17:10.257193",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
