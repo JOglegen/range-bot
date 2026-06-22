@@ -448,6 +448,8 @@ function renderChallenge(data) {
   const positions = Object.entries(data.positions || {});
   const trades = data.trades || [];
   const progress = Number(data.progress_to_double_pct || 0);
+  const benchmark = data.benchmark || {};
+  const vs = data.vs_benchmark || {};
   const updated = data.updated_at ? new Date(data.updated_at).toLocaleString() : 'waiting for first run';
   $('challenge-meta').textContent = `${data.status || 'OPEN'} | ${updated}`;
   $('challenge-wrap').innerHTML = `
@@ -456,6 +458,8 @@ function renderChallenge(data) {
       <div class="metric"><div class="k">Cash</div><div class="v neutral">${fmt(data.cash || 0)}</div></div>
       <div class="metric"><div class="k">Return</div><div class="v ${(data.return_pct || 0) >= 0 ? 'up' : 'down'}">${Number(data.return_pct || 0).toFixed(2)}%</div></div>
       <div class="metric"><div class="k">Positions</div><div class="v neutral">${positions.length}</div></div>
+      <div class="metric"><div class="k">${benchmark.symbol || 'SPY'} Benchmark</div><div class="v neutral">${fmt(benchmark.equity || 0)}</div></div>
+      <div class="metric"><div class="k">Vs ${benchmark.symbol || 'SPY'}</div><div class="v ${(vs.equity_delta || 0) >= 0 ? 'up' : 'down'}">${fmt(vs.equity_delta || 0)}<div class="action-risk">${Number(vs.return_delta_pct || 0).toFixed(2)} pts</div></div></div>
     </div>
     <div class="chart-box">
       <div class="scan-meta">Progress to double: ${progress.toFixed(2)}%</div>

@@ -17,6 +17,7 @@ from typing import Any
 
 STARTING_CASH = 1000.0
 TARGET_EQUITY = 2000.0
+BENCHMARK_SYMBOL = "SPY"
 
 
 def _load_json(path: Path, default: dict[str, Any]) -> dict[str, Any]:
@@ -76,6 +77,35 @@ def _ma20(symbols: list[str]) -> dict[str, float | None]:
     return values
 
 
+def _benchmark_state(
+    state: dict[str, Any],
+    prices: dict[str, float],
+    starting_cash: float,
+    benchmark_symbol: str = BENCHMARK_SYMBOL,
+) -> dict[str, Any]:
+    existing = state.get("benchmark") or {}
+    price = prices.get(benchmark_symbol)
+    start_price = existing.get("start_price") or price
+    shares = existing.get("shares")
+    if shares is None and start_price:
+        shares = starting_cash / float(start_price)
+
+    if price and shares:
+        equity = float(shares) * float(price)
+    else:
+        equity = float(existing.get("equity") or starting_cash)
+
+    return {
+        "symbol": benchmark_symbol,
+        "start_price": round(float(start_price), 4) if start_price else None,
+        "last_price": round(float(price), 4) if price else existing.get("last_price"),
+        "shares": round(float(shares), 6) if shares else None,
+        "equity": round(equity, 2),
+        "return_pct": round((equity / starting_cash - 1) * 100, 2),
+        "method": f"Buy-and-hold {benchmark_symbol} from paper challenge start",
+    }
+
+
 def update_challenge(
     screener_path: Path,
     state_path: Path,
@@ -100,7 +130,7 @@ def update_challenge(
     watched = {s.get("symbol"): s for s in (scan.get("all_setups") or []) + buys if s.get("symbol")}
     held_symbols = list((state.get("positions") or {}).keys())
     buy_symbols = [str(s.get("symbol", "")).upper() for s in buys if s.get("symbol")]
-    prices = _price_map(sorted(set(held_symbols + buy_symbols)))
+    prices = _price_map(sorted(set(held_symbols + buy_symbols + [BENCHMARK_SYMBOL])))
     ma20 = _ma20(sorted(set(held_symbols + buy_symbols)))
 
     cash = float(state.get("cash") or 0)
@@ -179,6 +209,8 @@ def update_challenge(
         float(p["qty"]) * float(p.get("last_price") or p["entry_price"])
         for p in positions.values()
     )
+    benchmark = _benchmark_state(state, prices, starting_cash)
+    benchmark_delta = equity - float(benchmark["equity"])
     payload = {
         "updated_at": now,
         "mode": "paper_challenge",
@@ -189,6 +221,12 @@ def update_challenge(
         "equity": round(equity, 2),
         "return_pct": round((equity / starting_cash - 1) * 100, 2),
         "progress_to_double_pct": round(min(100, max(0, (equity - starting_cash) / (target_equity - starting_cash) * 100)), 2),
+        "benchmark": benchmark,
+        "vs_benchmark": {
+            "equity_delta": round(benchmark_delta, 2),
+            "return_delta_pct": round((equity / starting_cash - 1) * 100 - float(benchmark["return_pct"]), 2),
+            "leader": "RangeBot" if benchmark_delta > 0 else BENCHMARK_SYMBOL if benchmark_delta < 0 else "Tie",
+        },
         "positions": positions,
         "trades": trades[-100:],
         "latest_scan_at": scan.get("scanned_at"),
@@ -198,6 +236,7 @@ def update_challenge(
             "max_position_pct": max_position_pct,
             "entry_source": "20-day range BUY signals",
             "exit_source": "stop, target, EXIT, or BREAKDOWN",
+            "benchmark": f"$1,000 buy-and-hold {BENCHMARK_SYMBOL} from the same start",
         },
     }
     state_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")

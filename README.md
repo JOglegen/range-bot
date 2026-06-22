@@ -118,6 +118,8 @@ python run_paper_challenge.py --screener screener_results.json
 The paper challenge starts with `$1,000`, targets `$2,000`, uses fractional
 paper shares, and never calls a broker. Entries come from 20-day range BUY
 signals; exits come from stop, target, EXIT, or BREAKDOWN.
+It also tracks a `$1,000` buy-and-hold `SPY` benchmark from the same start so
+the dashboard can show whether RangeBot is ahead or behind the S&P 500 proxy.
 
 Its default filters look for monthly payers with a trailing yield between 4%
 and 15%, at least 10 paid months in the last year, and an income-quality score
