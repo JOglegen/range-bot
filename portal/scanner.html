@@ -148,11 +148,13 @@
   color:#8C97A4;padding:7px 14px;border-radius:6px;text-decoration:none;text-transform:uppercase}
 .portal-nav a:hover{color:#E7E3D6;background:#1A222B}
 .portal-nav a.active{color:#45B69C;background:rgba(69,182,156,.13)}
+.portal-nav .deploy-version{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8C97A4}
 </style>
 <nav class="portal-nav">
   <span class="logo">RangeBot</span>
   <a href="index.html">Dashboard</a>
   <a href="scanner.html" class="active">Scanner</a>
+  <span class="deploy-version" id="deploy-version"></span>
 </nav>
 <div class="wrap">
   <header>
@@ -311,6 +313,18 @@ const fmt=n=>n>=1e9?(n/1e9).toFixed(1)+'B':n>=1e6?(n/1e6).toFixed(1)+'M':n>=1e3?
 const px=n=>'$'+n.toFixed(2);
 let LAST=null;
 
+async function loadVersion() {
+  try {
+    const res = await fetch(`data/version.json?ts=${Date.now()}`, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const v = await res.json();
+    const when = v.deployed_at ? new Date(v.deployed_at).toLocaleString() : 'pending';
+    $('deploy-version').textContent = `${v.version || 'build'} | ${v.short_commit || 'local'} | ${when}`;
+  } catch(e) {
+    $('deploy-version').textContent = 'build pending';
+  }
+}
+
 function render(rows){
   const scored=rows.filter(r=>r.m).map(r=>({...r,
     score:MODE==='range'?r.m.rangeScore:r.m.breakoutScore,
@@ -408,6 +422,7 @@ async function scan(){
 $('scan').addEventListener('click',scan);
 $('wl').addEventListener('keydown',e=>{if(e.key==='Enter')scan();});
 $('key').addEventListener('keydown',e=>{if(e.key==='Enter')scan();});
+loadVersion();
 scan(); // run once on load with demo data
 </script>
 </body>

@@ -70,6 +70,28 @@ jobs:
           print("Env vars:", "✓" if r.ok else f"✗ {r.text[:100]}")
           PYEOF
 
+      - name: Stamp portal deploy version
+        run: |
+          python3 - << 'PYEOF'
+          import json, os
+          from datetime import datetime, timezone
+
+          payload = {
+              "version": f"build-{os.environ['GITHUB_RUN_NUMBER']}",
+              "run_id": os.environ["GITHUB_RUN_ID"],
+              "run_number": os.environ["GITHUB_RUN_NUMBER"],
+              "commit": os.environ["GITHUB_SHA"],
+              "short_commit": os.environ["GITHUB_SHA"][:7],
+              "branch": os.environ["GITHUB_REF_NAME"],
+              "deployed_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
+          }
+          os.makedirs("portal/data", exist_ok=True)
+          with open("portal/data/version.json", "w", encoding="utf-8") as f:
+              json.dump(payload, f, indent=2)
+              f.write("\n")
+          print(f"Stamped {payload['version']} ({payload['short_commit']})")
+          PYEOF
+
       - name: Deploy portal (static + functions) via Netlify CLI
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}

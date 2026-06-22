@@ -27,6 +27,7 @@ nav a.active{color:var(--teal);background:var(--teal-dim)}
   font-family:var(--mono);font-size:11px;padding:6px 12px;border-radius:6px;cursor:pointer}
 .refresh:hover{border-color:var(--teal);color:var(--teal)}
 .lastseen{font-family:var(--mono);font-size:11px;color:var(--faint);margin-left:10px}
+.deploy-version{font-family:var(--mono);font-size:11px;color:var(--muted);margin-left:10px}
 
 /* metric grid */
 .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:24px}
@@ -107,6 +108,7 @@ canvas{width:100%!important;display:block}
     <a href="scanner.html">Scanner</a>
     <button class="refresh" onclick="loadAll()">↻ Refresh</button>
     <span class="lastseen" id="lastseen"></span>
+    <span class="deploy-version" id="deploy-version"></span>
   </nav>
 
   <!-- metrics -->
@@ -433,9 +435,21 @@ async function loadActionCenter() {
   }
 }
 
+async function loadVersion() {
+  try {
+    const res = await fetch(`data/version.json?ts=${Date.now()}`, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const v = await res.json();
+    const when = v.deployed_at ? new Date(v.deployed_at).toLocaleString() : 'pending';
+    $('deploy-version').textContent = `${v.version || 'build'} | ${v.short_commit || 'local'} | ${when}`;
+  } catch(e) {
+    $('deploy-version').textContent = 'build pending';
+  }
+}
+
 async function loadAll() {
   $('lastseen').textContent = 'Refreshing…';
-  await Promise.all([loadAccount(), loadPositions(), loadOrders(), loadPortfolioChart(), loadActionCenter(), loadSignals(), loadIncome()]);
+  await Promise.all([loadAccount(), loadPositions(), loadOrders(), loadPortfolioChart(), loadActionCenter(), loadSignals(), loadIncome(), loadVersion()]);
   $('lastseen').textContent = 'Updated ' + new Date().toLocaleTimeString();
 }
 
