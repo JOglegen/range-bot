@@ -13,10 +13,23 @@ Required environment variables (set as GitHub secrets):
 
 from __future__ import annotations
 import os
-import textwrap
+import re
 from typing import List, Optional
 
 from screener import Setup
+
+
+def _normalize_phone(value: str) -> str:
+    """Return a Twilio-friendly E.164-ish phone number."""
+    raw = re.sub(r"\s+", "", value or "")
+    if raw.startswith("+"):
+        return raw
+    digits = re.sub(r"\D+", "", raw)
+    if len(digits) == 10:
+        return "+1" + digits
+    if len(digits) == 11 and digits.startswith("1"):
+        return "+" + digits
+    return raw
 
 
 def _fmt_setup(s: Setup, include_levels: bool = True) -> str:
@@ -66,8 +79,8 @@ def send_sms(body: str,
 
     sid   = account_sid or os.environ.get("TWILIO_ACCOUNT_SID", "")
     token = auth_token  or os.environ.get("TWILIO_AUTH_TOKEN", "")
-    frm   = from_       or os.environ.get("TWILIO_FROM", "")
-    to_   = to          or os.environ.get("TWILIO_TO", "")
+    frm   = _normalize_phone(from_ or os.environ.get("TWILIO_FROM", ""))
+    to_   = _normalize_phone(to or os.environ.get("TWILIO_TO", ""))
 
     missing = [k for k, v in [("SID", sid), ("TOKEN", token),
                                 ("FROM", frm), ("TO", to_)] if not v]
