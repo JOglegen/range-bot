@@ -72,6 +72,22 @@ canvas{width:100%!important;display:block}
   border-radius:10px}
 .spin{display:inline-block;animation:spin 1s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
+
+/* latest scan */
+.scan-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:2px 0 10px}
+.scan-meta{font-family:var(--mono);font-size:11px;color:var(--faint)}
+.signals{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:18px}
+.signal-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px}
+.signal-card.buy{border-color:rgba(69,182,156,.45)}
+.signal-card.watch{border-color:rgba(224,162,74,.35)}
+.signal-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.signal-symbol{font-family:var(--disp);font-weight:700;font-size:20px}
+.signal-price{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.level{background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:8px}
+.level .k{font-family:var(--mono);font-size:9px;color:var(--faint);letter-spacing:.1em;text-transform:uppercase}
+.level .v{font-family:var(--mono);font-size:13px;margin-top:2px}
+.note{font-size:12px;color:var(--muted);min-height:34px}
 </style>
 </head>
 <body>
@@ -93,6 +109,13 @@ canvas{width:100%!important;display:block}
     <div class="metric"><div class="k">Open Positions</div><div class="v neutral" id="m-pos">—</div></div>
     <div class="metric"><div class="k">Account Status</div><div class="v neutral" id="m-status">—</div></div>
   </div>
+
+  <!-- latest scanner -->
+  <div class="scan-head">
+    <div class="sec" style="margin:0;border-bottom:none;padding-bottom:0">Latest 20-day range scan</div>
+    <div class="scan-meta" id="scan-meta">Loading scan...</div>
+  </div>
+  <div id="signals-wrap"><div class="empty"><span class="spin">o</span> Loading signals...</div></div>
 
   <!-- equity chart -->
   <div class="sec">Portfolio history (30 days)</div>
@@ -249,9 +272,61 @@ async function loadPortfolioChart() {
   } catch(e) { console.warn('chart:', e); }
 }
 
+function fmtLevel(n) {
+  return n === null || n === undefined ? '-' : fmt(Number(n));
+}
+
+function renderSignals(data) {
+  const buys = data.buys || [];
+  const watches = data.watches || [];
+  const rows = [...buys.slice(0, 5), ...watches.slice(0, 3)];
+  const scannedAt = data.scanned_at ? new Date(data.scanned_at) : null;
+  $('scan-meta').textContent = scannedAt
+    ? `${String(data.mode || 'range').toUpperCase()} | ${data.total_scanned || 0} scanned | ${scannedAt.toLocaleString()}`
+    : 'Waiting for first scheduled scan';
+
+  if (!rows.length) {
+    $('signals-wrap').innerHTML = '<div class="empty">No BUY or WATCH/EXIT signals in the latest scan</div>';
+    return;
+  }
+
+  $('signals-wrap').innerHTML = `<div class="signals">${rows.map(s => {
+    const isBuy = s.signal === 'BUY';
+    const entry = s.entry_low && s.entry_high
+      ? `${fmtLevel(s.entry_low)}-${fmtLevel(s.entry_high)}`
+      : fmtLevel(s.entry_low);
+    return `<div class="signal-card ${isBuy ? 'buy' : 'watch'}">
+      <div class="signal-top">
+        <div>
+          <div class="signal-symbol">${s.symbol}</div>
+          <div class="signal-price">${fmtLevel(s.price)} | score ${s.score} | pos ${s.pos_pct}%</div>
+        </div>
+        <span class="tag ${isBuy ? 'tag-buy' : 'tag-pending'}">${s.signal}</span>
+      </div>
+      <div class="note">${s.note || ''}</div>
+      <div class="levels">
+        <div class="level"><div class="k">Entry</div><div class="v">${entry}</div></div>
+        <div class="level"><div class="k">Target</div><div class="v">${fmtLevel(s.target)}</div></div>
+        <div class="level"><div class="k">Stop</div><div class="v">${fmtLevel(s.stop)}</div></div>
+      </div>
+    </div>`;
+  }).join('')}</div>`;
+}
+
+async function loadSignals() {
+  try {
+    const res = await fetch(`data/screener_results.json?ts=${Date.now()}`, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    renderSignals(await res.json());
+  } catch(e) {
+    $('signals-wrap').innerHTML = `<div class="empty">Signal data unavailable: ${e.message}</div>`;
+    $('scan-meta').textContent = 'No scan file loaded';
+  }
+}
+
 async function loadAll() {
   $('lastseen').textContent = 'Refreshing…';
-  await Promise.all([loadAccount(), loadPositions(), loadOrders(), loadPortfolioChart()]);
+  await Promise.all([loadAccount(), loadPositions(), loadOrders(), loadPortfolioChart(), loadSignals()]);
   $('lastseen').textContent = 'Updated ' + new Date().toLocaleTimeString();
 }
 

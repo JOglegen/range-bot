@@ -56,7 +56,7 @@ def main() -> int:
     ok &= check("bracket target attached", o.take_profit is not None)
     ok &= check("stop below target", o.stop_loss < o.take_profit)
 
-    print("\n" + ("ALL GOOD ✓" if ok else "SOMETHING FAILED ✗"))
+    print("\n" + ("ALL GOOD" if ok else "SOMETHING FAILED"))
     return 0 if ok else 1
 
 
