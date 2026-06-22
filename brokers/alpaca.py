@@ -70,17 +70,20 @@ class AlpacaBroker(Broker):
     def get_daily_bars(self, symbol: str, limit: int = 45) -> List[Bar]:
         start = (dt.date.today() - dt.timedelta(days=limit * 2 + 20)).isoformat()
         params = {
-            "symbols": symbol,
             "timeframe": "1Day",
             "start": start,
             "limit": limit + 5,
             "adjustment": "split",
             "feed": self.feed,
         }
-        r = requests.get(f"{DATA_BASE}/v2/stocks/bars", headers=self.h,
-                         params=params, timeout=20)
-        r.raise_for_status()
-        rows = r.json().get("bars", {}).get(symbol, [])
+        # Use single-symbol path — more reliable across free/paid tiers
+        url = f"{DATA_BASE}/v2/stocks/{symbol}/bars"
+        r = requests.get(url, headers=self.h, params=params, timeout=20)
+        if not r.ok:
+            raise RuntimeError(
+                f"Alpaca data error {r.status_code} for {symbol}: {r.text[:200]}"
+            )
+        rows = r.json().get("bars", [])
         bars = [Bar(h=b["h"], l=b["l"], c=b["c"], v=b["v"]) for b in rows]
         return bars[-limit:]
 

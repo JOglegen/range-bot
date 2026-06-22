@@ -60,7 +60,7 @@ def run_once(s: Settings, dry_run: bool = False) -> None:
         try:
             bars = broker.get_daily_bars(sym, limit=s.lookback + 25)
         except Exception as e:
-            log.error("%s: data error: %s", sym, e)
+            log.error("%s: data error: %s", sym, e, exc_info=True)
             continue
 
         m = compute_metrics(bars, lookback=s.lookback)
