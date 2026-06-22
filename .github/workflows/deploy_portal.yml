@@ -13,35 +13,37 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Create or find Netlify site
+      - name: Install Netlify CLI
+        run: npm install -g netlify-cli
+
+      - name: Create or find Netlify site ID
         id: site
         env:
-          NETLIFY_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         run: |
           python3 - << 'PYEOF'
           import json, os, requests, sys
-          TOKEN = os.environ["NETLIFY_TOKEN"]
+
+          TOKEN = os.environ["NETLIFY_AUTH_TOKEN"]
           h = {"Authorization": f"Bearer {TOKEN}", "Content-Type": "application/json"}
 
-          # Try creating a new site
-          r = requests.post("https://api.netlify.com/api/v1/sites",
-                            headers=h, json={"name": "range-bot-portal"})
-          if r.ok:
-              site = r.json()
+          # Check if site already exists
+          sites = requests.get("https://api.netlify.com/api/v1/sites?per_page=100", headers=h).json()
+          match = [s for s in sites if "range-bot-portal" in s.get("name", "")]
+
+          if match:
+              site = match[0]
+              print(f"Found existing site: {site['name']}")
           else:
-              # Site name taken — find existing
-              sites = requests.get("https://api.netlify.com/api/v1/sites?per_page=100", headers=h).json()
-              matches = [s for s in sites if "range-bot" in s.get("name","")]
-              if not matches:
-                  print("ERROR: could not create or find site"); sys.exit(1)
-              site = matches[0]
+              site = requests.post("https://api.netlify.com/api/v1/sites",
+                                   headers=h, json={"name": "range-bot-portal"}).json()
+              print(f"Created new site: {site.get('name')}")
 
           site_id  = site["id"]
-          site_url = site.get("ssl_url") or site.get("url","")
-          print(f"Site ID : {site_id}")
+          site_url = site.get("ssl_url") or site.get("url", "")
+          print(f"Site ID:  {site_id}")
           print(f"Site URL: {site_url}")
 
-          # Write to GITHUB_OUTPUT
           with open(os.environ["GITHUB_OUTPUT"], "a") as f:
               f.write(f"site_id={site_id}\n")
               f.write(f"site_url={site_url}\n")
@@ -49,49 +51,43 @@ jobs:
 
       - name: Set Alpaca env vars on Netlify site
         env:
-          NETLIFY_TOKEN:     ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          ALPACA_API_KEY:    ${{ secrets.ALPACA_API_KEY }}
-          ALPACA_API_SECRET: ${{ secrets.ALPACA_API_SECRET }}
-          SITE_ID:           ${{ steps.site.outputs.site_id }}
+          NETLIFY_AUTH_TOKEN:  ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          ALPACA_API_KEY:      ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_API_SECRET:   ${{ secrets.ALPACA_API_SECRET }}
+          SITE_ID:             ${{ steps.site.outputs.site_id }}
         run: |
           python3 - << 'PYEOF'
           import json, os, requests
-          TOKEN  = os.environ["NETLIFY_TOKEN"]
-          SITE   = os.environ["SITE_ID"]
-          KEY    = os.environ["ALPACA_API_KEY"]
-          SECRET = os.environ["ALPACA_API_SECRET"]
-          h = {"Authorization": f"Bearer {TOKEN}", "Content-Type": "application/json"}
-          payload = {"build_settings": {"env": {
-              "ALPACA_API_KEY":    KEY,
-              "ALPACA_API_SECRET": SECRET,
-          }}}
-          r = requests.patch(f"https://api.netlify.com/api/v1/sites/{SITE}",
-                             headers=h, json=payload)
-          print("Env vars:", r.status_code, "OK" if r.ok else r.text[:120])
+          h = {"Authorization": f"Bearer {os.environ['NETLIFY_AUTH_TOKEN']}",
+               "Content-Type": "application/json"}
+          r = requests.patch(
+              f"https://api.netlify.com/api/v1/sites/{os.environ['SITE_ID']}",
+              headers=h,
+              json={"build_settings": {"env": {
+                  "ALPACA_API_KEY":    os.environ["ALPACA_API_KEY"],
+                  "ALPACA_API_SECRET": os.environ["ALPACA_API_SECRET"],
+              }}})
+          print("Env vars:", "✓" if r.ok else f"✗ {r.text[:100]}")
           PYEOF
 
-      - name: Zip portal and deploy
+      - name: Deploy portal (static + functions) via Netlify CLI
         env:
-          NETLIFY_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          SITE_ID:       ${{ steps.site.outputs.site_id }}
-          SITE_URL:      ${{ steps.site.outputs.site_url }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID:    ${{ steps.site.outputs.site_id }}
         run: |
-          cd portal && zip -r ../portal.zip . -x "*.DS_Store" && cd ..
-          python3 - << 'PYEOF'
-          import json, os, requests
-          TOKEN   = os.environ["NETLIFY_TOKEN"]
-          SITE    = os.environ["SITE_ID"]
-          SITE_URL= os.environ["SITE_URL"]
-          h = {"Authorization": f"Bearer {TOKEN}", "Content-Type": "application/zip"}
-          with open("portal.zip","rb") as f:
-              data = f.read()
-          r = requests.post(f"https://api.netlify.com/api/v1/sites/{SITE}/deploys",
-                            headers=h, data=data)
-          d = r.json()
-          deploy_url = d.get("deploy_ssl_url") or d.get("ssl_url") or SITE_URL
-          print(f"\n✅  Portal live at: {deploy_url}")
-          print(f"   Dashboard : {deploy_url}/index.html")
-          print(f"   Scanner   : {deploy_url}/scanner.html")
-          if not r.ok:
-              print("Deploy error:", r.text[:200])
-          PYEOF
+          netlify deploy \
+            --prod \
+            --dir=portal \
+            --functions=portal/netlify/functions \
+            --auth=$NETLIFY_AUTH_TOKEN \
+            --site=$NETLIFY_SITE_ID \
+            --message="Deploy from GitHub Actions $(date -u +%Y-%m-%dT%H:%M)"
+
+      - name: Print live URL
+        env:
+          SITE_URL: ${{ steps.site.outputs.site_url }}
+        run: |
+          echo ""
+          echo "✅ Portal live at: $SITE_URL"
+          echo "   Dashboard : $SITE_URL/index.html"
+          echo "   Scanner   : $SITE_URL/scanner.html"
