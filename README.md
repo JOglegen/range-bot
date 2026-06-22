@@ -19,6 +19,7 @@ run_screener.py         daily scan, JSON output, SMS alerts
 run_from_screener.py    trades top screener BUYs through Alpaca paper
 monthly_dividend.py     verifies monthly dividend cadence and income quality
 run_monthly_income.py   monthly dividend scanner, JSON output, SMS alerts
+build_action_center.py  merges scans into one ranked operational action list
 runner.py               broker-backed execution loop with risk checks
 risk.py                 position sizing and account guardrails
 backtest.py             portfolio backtester
@@ -48,9 +49,11 @@ paper workflow:
 3. Send the SMS summaries through Twilio, if Twilio secrets are configured.
 4. Paper-trade the top range BUY signals through Alpaca paper using
    `run_from_screener.py`.
-5. Save `portal/data/screener_results.json` and
-   `portal/data/monthly_income.json` back to the repo.
-6. The portal deploy workflow publishes the latest scan to Netlify.
+5. Build `action_center.json`, a ranked operational list of trade entries,
+   watch/exit alerts, and monthly income candidates.
+6. Save `portal/data/screener_results.json`, `portal/data/monthly_income.json`,
+   and `portal/data/action_center.json` back to the repo.
+7. The portal deploy workflow publishes the latest scan to Netlify.
 
 Required GitHub secrets for alerts:
 
@@ -98,6 +101,16 @@ python run_monthly_income.py --dry-run
 Its default filters look for monthly payers with a trailing yield between 4%
 and 15%, at least 10 paid months in the last year, and an income-quality score
 of at least 55. This is an alert/watchlist tool, not an auto-buy rule.
+
+Build the action center from existing scan files:
+
+```bash
+python build_action_center.py --screener screener_results.json --income monthly_income.json
+```
+
+The portal Action Center is the operational view. `TRADE ENTRY` rows are
+paper-bot eligible, but Alpaca rechecks them before any paper order. `INCOME
+WATCH` rows are alert-only and require manual review.
 
 Paper-trade the latest BUY list after a scan:
 

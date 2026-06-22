@@ -90,6 +90,13 @@ canvas{width:100%!important;display:block}
 .note{font-size:12px;color:var(--muted);min-height:34px}
 .income-card{border-color:rgba(224,162,74,.35)}
 .income-yield{color:var(--amber)}
+.action-table td{vertical-align:top}
+.action-type{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.08em;padding:3px 8px;border-radius:4px;text-transform:uppercase;white-space:nowrap}
+.action-trade{background:var(--teal-dim);color:var(--teal);border:1px solid rgba(69,182,156,.4)}
+.action-income{background:var(--amber-dim);color:var(--amber);border:1px solid rgba(224,162,74,.4)}
+.action-watch{background:rgba(110,124,138,.12);color:var(--muted);border:1px solid rgba(110,124,138,.35)}
+.action-detail{color:var(--muted);font-size:12px;margin-top:3px}
+.action-risk{color:var(--faint);font-size:12px}
 </style>
 </head>
 <body>
@@ -111,6 +118,13 @@ canvas{width:100%!important;display:block}
     <div class="metric"><div class="k">Open Positions</div><div class="v neutral" id="m-pos">—</div></div>
     <div class="metric"><div class="k">Account Status</div><div class="v neutral" id="m-status">—</div></div>
   </div>
+
+  <!-- action center -->
+  <div class="scan-head">
+    <div class="sec" style="margin:0;border-bottom:none;padding-bottom:0">Action center</div>
+    <div class="scan-meta" id="action-meta">Loading actions...</div>
+  </div>
+  <div id="action-wrap"><div class="empty"><span class="spin">o</span> Loading action center...</div></div>
 
   <!-- latest scanner -->
   <div class="scan-head">
@@ -375,9 +389,53 @@ async function loadIncome() {
   }
 }
 
+function renderActionCenter(data) {
+  const rows = data.actions || [];
+  const builtAt = data.built_at ? new Date(data.built_at) : null;
+  const summary = data.summary || {};
+  $('action-meta').textContent = builtAt
+    ? `${summary.trade_entries || 0} trade entries | ${summary.income_candidates || 0} income candidates | ${builtAt.toLocaleString()}`
+    : 'Waiting for first action build';
+
+  if (!rows.length) {
+    $('action-wrap').innerHTML = '<div class="empty">No current actions from the latest scans</div>';
+    return;
+  }
+
+  const typeClass = type => type === 'TRADE ENTRY'
+    ? 'action-trade'
+    : type === 'INCOME WATCH'
+      ? 'action-income'
+      : 'action-watch';
+
+  $('action-wrap').innerHTML = `<table class="action-table">
+    <thead><tr><th>Type</th><th>Symbol</th><th>Action</th><th>Details</th><th>Status</th></tr></thead>
+    <tbody>${rows.slice(0, 12).map(r => `
+      <tr>
+        <td><span class="action-type ${typeClass(r.type)}">${r.type}</span></td>
+        <td><span class="sym">${r.symbol || '-'}</span><div class="action-risk">${r.source || ''}</div></td>
+        <td>${r.action || '-'}<div class="action-risk">${r.risk || ''}</div></td>
+        <td>${r.detail || '-'}</td>
+        <td>${r.status || '-'}</td>
+      </tr>
+    `).join('')}</tbody>
+  </table>`;
+}
+
+async function loadActionCenter() {
+  try {
+    const res = await fetch(`data/action_center.json?ts=${Date.now()}`, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    renderActionCenter(await res.json());
+  } catch(e) {
+    $('action-wrap').innerHTML = `<div class="empty">Action center unavailable: ${e.message}</div>`;
+    $('action-meta').textContent = 'No action file loaded';
+  }
+}
+
 async function loadAll() {
   $('lastseen').textContent = 'Refreshing…';
-  await Promise.all([loadAccount(), loadPositions(), loadOrders(), loadPortfolioChart(), loadSignals(), loadIncome()]);
+  await Promise.all([loadAccount(), loadPositions(), loadOrders(), loadPortfolioChart(), loadActionCenter(), loadSignals(), loadIncome()]);
   $('lastseen').textContent = 'Updated ' + new Date().toLocaleTimeString();
 }
 
