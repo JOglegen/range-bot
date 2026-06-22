@@ -105,6 +105,15 @@ def run_once(s: Settings, dry_run: bool = False) -> None:
 
             tp = sig.target if s.use_bracket_orders else None
             sl = sig.stop if s.use_bracket_orders else None
+            # Pre-flight: stop must be meaningfully below current price.
+            # If the stock has dropped since the close signal, the range
+            # may have already been violated — skip rather than submit a
+            # bracket where the stop is above the fill.
+            if sl and sl >= entry_px * 0.995:
+                log.info("   -> skip %s: stop $%.2f too close to entry $%.2f "
+                         "(stock may have moved since close)", sym, sl, entry_px)
+                continue
+
             order = OrderRequest(
                 symbol=sym, qty=decision.qty, side="buy",
                 type=s.entry_order_type,
@@ -117,9 +126,12 @@ def run_once(s: Settings, dry_run: bool = False) -> None:
                 log.info("   -> would BUY %d %s @ ~$%.2f  (%s)%s",
                          decision.qty, sym, entry_px, decision.reason, bracket)
             else:
-                broker.submit_order(order)
-                log.info("   -> BUY %d %s @ ~$%.2f  (%s)%s",
-                         decision.qty, sym, entry_px, decision.reason, bracket)
+                try:
+                    broker.submit_order(order)
+                    log.info("   -> BUY %d %s @ ~$%.2f  (%s)%s",
+                             decision.qty, sym, entry_px, decision.reason, bracket)
+                except RuntimeError as e:
+                    log.warning("   -> ORDER SKIPPED %s: %s", sym, e)
 
 
 def main(argv=None) -> int:
