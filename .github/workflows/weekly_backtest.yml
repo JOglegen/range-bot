@@ -1,0 +1,35 @@
+name: Range Bot — Weekly Backtest
+
+on:
+  schedule:
+    # Every Sunday at 6 AM CT (12:00 UTC)
+    - cron: '0 12 * * 0'
+  workflow_dispatch:
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install requests python-dotenv yfinance pandas numpy matplotlib
+
+      - name: Run backtest (both modes, real data)
+        run: python run_backtest.py --mode both --no-walkforward --mc-sims 1000
+
+      - name: Upload backtest report
+        uses: actions/upload-artifact@v4
+        with:
+          name: backtest-report-${{ github.run_id }}
+          path: backtest_report.html
+          retention-days: 90
