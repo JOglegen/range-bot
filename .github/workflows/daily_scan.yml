@@ -2,11 +2,8 @@ name: Range Bot — Daily Scan
 
 on:
   schedule:
-    # 3:50 PM Central Time = 20:50 UTC (CST) / 21:50 UTC (CDT)
-    # Runs Mon–Fri. Strategy signal fires at the close (4 PM ET),
-    # we want to be in position to act a few minutes before that.
     - cron: '50 20 * * 1-5'
-  workflow_dispatch:   # also lets you trigger it manually from GitHub
+  workflow_dispatch:
 
 jobs:
   run-bot:
@@ -26,16 +23,54 @@ jobs:
       - name: Install dependencies
         run: pip install requests python-dotenv
 
+      - name: Verify secrets are loaded (no values exposed)
+        env:
+          ALPACA_API_KEY:    ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_API_SECRET: ${{ secrets.ALPACA_API_SECRET }}
+        run: |
+          python3 -c "
+          import os
+          key = os.environ.get('ALPACA_API_KEY','')
+          sec = os.environ.get('ALPACA_API_SECRET','')
+          print('ALPACA_API_KEY    present:', bool(key), '| length:', len(key), '| starts with:', key[:3] if key else 'MISSING')
+          print('ALPACA_API_SECRET present:', bool(sec), '| length:', len(sec))
+          if not key or not sec:
+              raise SystemExit('Secrets not loaded — check GitHub repo Settings > Secrets')
+          if not key.startswith('PK'):
+              print('WARNING: Key does not start with PK — this may be a live key, not paper')
+          else:
+              print('Key format looks correct (starts with PK)')
+          "
+
+      - name: Test Alpaca paper connection
+        env:
+          ALPACA_API_KEY:    ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_API_SECRET: ${{ secrets.ALPACA_API_SECRET }}
+        run: |
+          python3 -c "
+          import os, requests
+          key = os.environ['ALPACA_API_KEY']
+          sec = os.environ['ALPACA_API_SECRET']
+          headers = {'APCA-API-KEY-ID': key, 'APCA-API-SECRET-KEY': sec}
+          r = requests.get('https://paper-api.alpaca.markets/v2/account', headers=headers, timeout=15)
+          print('Status:', r.status_code)
+          if r.ok:
+              d = r.json()
+              print('Account status:', d.get('status'))
+              print('Equity:        \$', d.get('equity'))
+              print('Connection OK — paper account is live')
+          else:
+              print('ERROR:', r.text)
+              raise SystemExit('Connection failed')
+          "
+
       - name: Run range bot (Alpaca paper)
         env:
           ALPACA_API_KEY:    ${{ secrets.ALPACA_API_KEY }}
           ALPACA_API_SECRET: ${{ secrets.ALPACA_API_SECRET }}
         run: python runner.py --broker alpaca_paper
 
-      # ── Optional: flip to live with Schwab when you're ready ──────────────
-      # To go live, comment out the paper step above and uncomment this one.
-      # Also add SCHWAB_* secrets in repo Settings → Secrets and variables.
-      #
+      # ── Flip to Schwab live when ready ────────────────────────────────────
       # - name: Run range bot (Schwab LIVE)
       #   env:
       #     SCHWAB_APP_KEY:        ${{ secrets.SCHWAB_APP_KEY }}
