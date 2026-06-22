@@ -56,6 +56,13 @@ TWILIO_FROM
 TWILIO_TO
 ```
 
+`TWILIO_TO` can be one number or several numbers separated by commas, spaces,
+or new lines:
+
+```text
++14175551234,+14175559876
+```
+
 Required GitHub secrets for Alpaca paper execution:
 
 ```text
