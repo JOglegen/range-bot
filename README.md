@@ -17,6 +17,8 @@ strategy.py             range and breakout signal math
 screener.py             S&P 500 scanner using yfinance
 run_screener.py         daily scan, JSON output, SMS alerts
 run_from_screener.py    trades top screener BUYs through Alpaca paper
+monthly_dividend.py     verifies monthly dividend cadence and income quality
+run_monthly_income.py   monthly dividend scanner, JSON output, SMS alerts
 runner.py               broker-backed execution loop with risk checks
 risk.py                 position sizing and account guardrails
 backtest.py             portfolio backtester
@@ -41,11 +43,14 @@ The `Range Bot - S&P 500 Screener + SMS` GitHub Action now does the full
 paper workflow:
 
 1. Scan the S&P 500 for 20-day range BUY, WATCH, EXIT, and BREAKDOWN signals.
-2. Send the SMS summary through Twilio, if Twilio secrets are configured.
-3. Paper-trade the top BUY signals through Alpaca paper using
+2. Scan a monthly dividend universe for income candidates using live dividend
+   history, trailing yield, monthly cadence, drawdown, and trend filters.
+3. Send the SMS summaries through Twilio, if Twilio secrets are configured.
+4. Paper-trade the top range BUY signals through Alpaca paper using
    `run_from_screener.py`.
-4. Save `portal/data/screener_results.json` and commit it back to the repo.
-5. The portal deploy workflow publishes the latest scan to Netlify.
+5. Save `portal/data/screener_results.json` and
+   `portal/data/monthly_income.json` back to the repo.
+6. The portal deploy workflow publishes the latest scan to Netlify.
 
 Required GitHub secrets for alerts:
 
@@ -83,6 +88,16 @@ Print the SMS without sending it:
 ```bash
 python run_screener.py --mode range --dry-run
 ```
+
+Run the monthly dividend income scanner:
+
+```bash
+python run_monthly_income.py --dry-run
+```
+
+Its default filters look for monthly payers with a trailing yield between 4%
+and 15%, at least 10 paid months in the last year, and an income-quality score
+of at least 55. This is an alert/watchlist tool, not an auto-buy rule.
 
 Paper-trade the latest BUY list after a scan:
 
