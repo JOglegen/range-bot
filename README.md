@@ -16,6 +16,7 @@ Schwab developer app.
 strategy.py             range and breakout signal math
 screener.py             S&P 500 scanner using yfinance
 run_screener.py         daily scan, JSON output, SMS alerts
+run_study_list.py       focused issue-driven study list scan
 run_from_screener.py    trades top screener BUYs through Alpaca paper
 monthly_dividend.py     verifies monthly dividend cadence and income quality
 run_monthly_income.py   monthly dividend scanner, JSON output, SMS alerts
@@ -46,14 +47,16 @@ paper workflow:
 1. Scan the S&P 500 for 20-day range BUY, WATCH, EXIT, and BREAKDOWN signals.
 2. Scan a monthly dividend universe for income candidates using live dividend
    history, trailing yield, monthly cadence, drawdown, and trend filters.
-3. Send the SMS summaries through Twilio, if Twilio secrets are configured.
-4. Paper-trade the top range BUY signals through Alpaca paper using
+3. Scan the focused study list for symbols requested in GitHub issues.
+4. Send the SMS summaries through Twilio, if Twilio secrets are configured.
+5. Paper-trade the top range BUY signals through Alpaca paper using
    `run_from_screener.py`.
-5. Build `action_center.json`, a ranked operational list of trade entries,
-   watch/exit alerts, and monthly income candidates.
-6. Save `portal/data/screener_results.json`, `portal/data/monthly_income.json`,
-   and `portal/data/action_center.json` back to the repo.
-7. The portal deploy workflow publishes the latest scan to Netlify.
+6. Build `action_center.json`, a ranked operational list of trade entries,
+   study-list alerts, watch/exit alerts, and monthly income candidates.
+7. Save `portal/data/screener_results.json`, `portal/data/monthly_income.json`,
+   `portal/data/study_results.json`, and `portal/data/action_center.json` back
+   to the repo.
+8. The portal deploy workflow publishes the latest scan to Netlify.
 
 Required GitHub secrets for alerts:
 
@@ -96,6 +99,12 @@ Run the monthly dividend income scanner:
 
 ```bash
 python run_monthly_income.py --dry-run
+```
+
+Run the focused study list from issue #5:
+
+```bash
+python run_study_list.py --dry-run
 ```
 
 Its default filters look for monthly payers with a trailing yield between 4%

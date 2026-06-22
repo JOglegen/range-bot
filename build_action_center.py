@@ -89,28 +89,59 @@ def _income_rows(income: dict[str, Any], limit: int) -> list[dict[str, Any]]:
     return rows
 
 
+def _study_rows(study: dict[str, Any], limit: int) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    items = (study.get("buys") or []) + (study.get("watches") or [])
+    seen: set[str] = set()
+    for item in items:
+        symbol = item.get("symbol")
+        if not symbol or symbol in seen:
+            continue
+        seen.add(symbol)
+        signal = item.get("signal") or "WATCH"
+        rows.append({
+            "type": "STUDY ENTRY" if signal == "BUY" else "STUDY WATCH",
+            "symbol": symbol,
+            "priority": int(item.get("score") or 0),
+            "action": signal,
+            "status": "Study list alert, manual review",
+            "detail": item.get("note") or "",
+            "risk": f"pos {item.get('pos_pct')}%" if item.get("pos_pct") is not None else "",
+            "source": study.get("source") or "study list",
+        })
+        if len(rows) >= limit:
+            break
+    return rows
+
+
 def build_action_center(
     screener_path: Path,
     income_path: Path,
+    study_path: Path | None = None,
     trade_limit: int = 5,
     income_limit: int = 6,
+    study_limit: int = 5,
 ) -> dict[str, Any]:
     scan = _load(screener_path)
     income = _load(income_path)
-    rows = _trade_rows(scan, trade_limit) + _income_rows(income, income_limit)
+    study = _load(study_path) if study_path else {}
+    rows = _trade_rows(scan, trade_limit) + _study_rows(study, study_limit) + _income_rows(income, income_limit)
     rows.sort(key=lambda r: (r["type"] != "TRADE ENTRY", -int(r.get("priority") or 0)))
 
     return {
         "built_at": max(
             scan.get("scanned_at") or "",
             income.get("scanned_at") or "",
+            study.get("scanned_at") or "",
         ) or None,
         "range_scanned_at": scan.get("scanned_at"),
         "income_scanned_at": income.get("scanned_at"),
+        "study_scanned_at": study.get("scanned_at"),
         "summary": {
             "trade_entries": len(scan.get("buys") or []),
             "range_watches": len(scan.get("watches") or []),
             "income_candidates": len(income.get("top_candidates") or []),
+            "study_items": len(study.get("all_setups") or []),
         },
         "actions": rows,
     }
@@ -120,12 +151,14 @@ def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description="Build RangeBot action center JSON")
     parser.add_argument("--screener", default="screener_results.json")
     parser.add_argument("--income", default="monthly_income.json")
+    parser.add_argument("--study", default=None)
     parser.add_argument("--output", default="action_center.json")
     args = parser.parse_args(argv)
 
     payload = build_action_center(
         screener_path=Path(args.screener),
         income_path=Path(args.income),
+        study_path=Path(args.study) if args.study else None,
     )
     Path(args.output).write_text(json.dumps(payload, indent=2), encoding="utf-8")
     print(f"Action center saved -> {args.output}")

@@ -44,21 +44,30 @@ jobs:
           TWILIO_TO:          ${{ secrets.TWILIO_TO }}
         run: python run_monthly_income.py --output monthly_income.json
 
+      - name: Run study-list scanner
+        env:
+          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_AUTH_TOKEN:  ${{ secrets.TWILIO_AUTH_TOKEN }}
+          TWILIO_FROM:        ${{ secrets.TWILIO_FROM }}
+          TWILIO_TO:          ${{ secrets.TWILIO_TO }}
+        run: python run_study_list.py --output study_results.json
+
       - name: Build action center
-        run: python build_action_center.py --screener screener_results.json --income monthly_income.json --output action_center.json
+        run: python build_action_center.py --screener screener_results.json --income monthly_income.json --study study_results.json --output action_center.json
 
       - name: Publish latest screener data to portal
         run: |
           mkdir -p portal/data
           cp screener_results.json portal/data/screener_results.json
           cp monthly_income.json portal/data/monthly_income.json
+          cp study_results.json portal/data/study_results.json
           cp action_center.json portal/data/action_center.json
 
       - name: Commit portal screener data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add portal/data/screener_results.json portal/data/monthly_income.json portal/data/action_center.json
+          git add portal/data/screener_results.json portal/data/monthly_income.json portal/data/study_results.json portal/data/action_center.json
           if git diff --cached --quiet; then
             echo "Portal screener data unchanged."
           else
@@ -94,6 +103,14 @@ jobs:
         with:
           name: action-center-${{ github.run_id }}
           path: action_center.json
+          retention-days: 30
+
+      - name: Upload study-list results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: study-list-${{ github.run_id }}
+          path: study_results.json
           retention-days: 30
 
       - name: Run breakout screen
