@@ -91,7 +91,7 @@ def _income_rows(income: dict[str, Any], limit: int) -> list[dict[str, Any]]:
 
 def _study_rows(study: dict[str, Any], limit: int) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
-    items = (study.get("buys") or []) + (study.get("watches") or [])
+    items = (study.get("buys") or []) + (study.get("watches") or []) + (study.get("all_setups") or [])
     seen: set[str] = set()
     for item in items:
         symbol = item.get("symbol")
