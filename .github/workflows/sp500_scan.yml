@@ -83,6 +83,49 @@ jobs:
             git push
           fi
 
+      - name: Deploy updated portal to Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: |
+          python3 - << 'PYEOF'
+          import json, os, requests, subprocess
+          from datetime import datetime, timezone
+
+          token = os.environ["NETLIFY_AUTH_TOKEN"]
+          headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
+          sites = requests.get("https://api.netlify.com/api/v1/sites?per_page=100", headers=headers, timeout=30).json()
+          matches = [site for site in sites if "range-bot-portal" in site.get("name", "")]
+          if not matches:
+              raise SystemExit("Could not find Netlify site named range-bot-portal")
+
+          site = matches[0]
+          payload = {
+              "version": f"scan-{os.environ['GITHUB_RUN_NUMBER']}",
+              "run_id": os.environ["GITHUB_RUN_ID"],
+              "run_number": os.environ["GITHUB_RUN_NUMBER"],
+              "commit": os.environ["GITHUB_SHA"],
+              "short_commit": os.environ["GITHUB_SHA"][:7],
+              "branch": os.environ["GITHUB_REF_NAME"],
+              "deployed_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
+          }
+          os.makedirs("portal/data", exist_ok=True)
+          with open("portal/data/version.json", "w", encoding="utf-8") as f:
+              json.dump(payload, f, indent=2)
+              f.write("\n")
+
+          subprocess.run(["npm", "install", "-g", "netlify-cli"], check=True)
+          subprocess.run([
+              "netlify", "deploy",
+              "--prod",
+              "--dir=portal",
+              "--functions=portal/netlify/functions",
+              f"--auth={token}",
+              f"--site={site['id']}",
+              f"--message=Scanner deploy {payload['version']}",
+          ], check=True)
+          print(f"Portal live at {site.get('ssl_url') or site.get('url')}")
+          PYEOF
+
       - name: Paper trade top BUY signals
         env:
           ALPACA_API_KEY:    ${{ secrets.ALPACA_API_KEY }}
