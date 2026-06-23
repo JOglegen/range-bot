@@ -2,9 +2,11 @@ name: Range Bot - S&P 500 Screener + SMS
 
 on:
   schedule:
-    # 20:45 UTC is 3:45 PM Central during daylight time and 2:45 PM during
-    # standard time. GitHub schedules are UTC.
-    - cron: '45 20 * * 1-5'
+    # Market-hours refreshes while U.S. equities are open.
+    # In daylight time this covers 8:30 AM-3:00 PM Central.
+    - cron: '30,45 13 * * 1-5'
+    - cron: '*/15 14-19 * * 1-5'
+    - cron: '0 20 * * 1-5'
   workflow_dispatch:
 
 permissions:
