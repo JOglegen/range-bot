@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-06-24T21:21:11.994206",
+  "updated_at": "2026-06-25T16:02:41.409753",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
   "cash": 0.0,
-  "equity": 1012.73,
-  "return_pct": 1.27,
-  "progress_to_double_pct": 1.27,
+  "equity": 1013.78,
+  "return_pct": 1.38,
+  "progress_to_double_pct": 1.38,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 733.24,
+    "last_price": 733.88,
     "shares": 1.343382,
-    "equity": 985.02,
-    "return_pct": -1.5,
+    "equity": 985.88,
+    "return_pct": -1.41,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 27.71,
-    "return_delta_pct": 2.77,
+    "equity_delta": 27.9,
+    "return_delta_pct": 2.79,
     "leader": "RangeBot"
   },
   "positions": {
     "PM": {
       "qty": 1.435379,
       "entry_price": 174.17,
-      "last_price": 178.78,
+      "last_price": 179.02,
       "stop": 166.6,
       "target": 190.49,
       "entry_time": "2026-06-22T19:17:34.020719",
@@ -36,7 +36,7 @@
     "ZTS": {
       "qty": 3.291639,
       "entry_price": 75.95,
-      "last_price": 78.17,
+      "last_price": 78.74,
       "stop": 73.37,
       "target": 82.98,
       "entry_time": "2026-06-22T19:17:34.020719",
@@ -46,21 +46,21 @@
     "ADP": {
       "qty": 1.167897,
       "entry_price": 214.06,
-      "last_price": 219.855,
+      "last_price": 221.97,
       "stop": 209.7,
       "target": 235.32,
       "entry_time": "2026-06-22T19:17:34.020719",
       "ma20_at_entry": 223.7402,
       "source": "20-day range BUY"
     },
-    "NKE": {
-      "qty": 5.787707,
-      "entry_price": 43.195,
-      "last_price": 41.82,
-      "stop": 41.8,
-      "target": 47.23,
-      "entry_time": "2026-06-22T19:17:34.020719",
-      "ma20_at_entry": 44.6389,
+    "BLK": {
+      "qty": 0.242496,
+      "entry_price": 983.09,
+      "last_price": 983.09,
+      "stop": 950.63,
+      "target": 1078.92,
+      "entry_time": "2026-06-25T16:02:41.409753",
+      "ma20_at_entry": 1020.4484,
       "source": "20-day range BUY"
     }
   },
@@ -104,9 +104,29 @@
       "value": 250.0,
       "pnl": 0,
       "reason": "20-day range BUY"
+    },
+    {
+      "time": "2026-06-25T16:02:41.409753",
+      "symbol": "NKE",
+      "side": "SELL",
+      "qty": 5.787707,
+      "price": 41.19,
+      "value": 238.4,
+      "pnl": -11.6,
+      "reason": "WAIT"
+    },
+    {
+      "time": "2026-06-25T16:02:41.409753",
+      "symbol": "BLK",
+      "side": "BUY",
+      "qty": 0.242496,
+      "price": 983.09,
+      "value": 238.4,
+      "pnl": 0,
+      "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-06-24T21:20:42.137439",
+  "latest_scan_at": "2026-06-25T16:02:19.642460",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
