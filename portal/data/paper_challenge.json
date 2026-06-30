@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-06-29T21:23:36.480311",
+  "updated_at": "2026-06-30T16:06:13.882072",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
   "cash": 0.0,
-  "equity": 988.57,
-  "return_pct": -1.14,
+  "equity": 986.5,
+  "return_pct": -1.35,
   "progress_to_double_pct": 0,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 741.0,
+    "last_price": 746.165,
     "shares": 1.343382,
-    "equity": 995.45,
-    "return_pct": -0.46,
+    "equity": 1002.38,
+    "return_pct": 0.24,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": -6.88,
-    "return_delta_pct": -0.68,
+    "equity_delta": -15.88,
+    "return_delta_pct": -1.59,
     "leader": "SPY"
   },
   "positions": {
     "ADP": {
       "qty": 1.167897,
       "entry_price": 214.06,
-      "last_price": 224.97,
+      "last_price": 223.78,
       "stop": 209.7,
       "target": 235.32,
       "entry_time": "2026-06-22T19:17:34.020719",
@@ -36,7 +36,7 @@
     "MCD": {
       "qty": 0.934073,
       "entry_price": 270.3,
-      "last_price": 267.18,
+      "last_price": 269.54,
       "stop": 259.24,
       "target": 289.29,
       "entry_time": "2026-06-26T15:39:43.404524",
@@ -46,7 +46,7 @@
     "TJX": {
       "qty": 1.554932,
       "entry_price": 153.095,
-      "last_price": 151.23,
+      "last_price": 151.765,
       "stop": 149.29,
       "target": 170.0,
       "entry_time": "2026-06-29T16:45:52.881588",
@@ -56,7 +56,7 @@
     "PLD": {
       "qty": 1.735997,
       "entry_price": 138.89,
-      "last_price": 138.89,
+      "last_price": 136.745,
       "stop": 133.51,
       "target": 149.1,
       "entry_time": "2026-06-29T20:50:26.157980",
@@ -186,7 +186,7 @@
       "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-06-29T21:23:16.258303",
+  "latest_scan_at": "2026-06-30T16:05:47.704024",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
