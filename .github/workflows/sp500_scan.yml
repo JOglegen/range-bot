@@ -36,7 +36,7 @@ jobs:
           TWILIO_AUTH_TOKEN:  ${{ secrets.TWILIO_AUTH_TOKEN }}
           TWILIO_FROM:        ${{ secrets.TWILIO_FROM }}
           TWILIO_TO:          ${{ secrets.TWILIO_TO }}
-        run: python run_screener.py --mode range
+        run: python run_screener.py --mode range --dry-run  # SMS paused (issue #7)
 
       - name: Run monthly dividend income scanner
         env:

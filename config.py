@@ -26,11 +26,11 @@ class Settings:
     lookback: int = 20            # trading days in the range
     min_score: int = 60           # skip setups below this setup score (0-100)
 
-    # ---- risk controls (per the validation-first plan) ----
-    risk_per_trade_pct: float = 0.01   # risk 1% of equity between entry and stop
-    max_position_pct: float = 0.25     # never put more than 25% of equity in one name
-    max_open_positions: int = 4        # cap concurrent positions
-    daily_loss_limit_pct: float = 0.03 # halt NEW entries if down 3% on the day
+    # ---- risk controls — tuned for $1,000 paper test (issue #6) ----
+    risk_per_trade_pct: float = 0.01   # risk 1% of equity per trade ($10 on $1k)
+    max_position_pct: float = 0.30     # max 30% per position ($300 on $1k)
+    max_open_positions: int = 3        # max 3 concurrent positions on small account
+    daily_loss_limit_pct: float = 0.03 # halt new entries if down 3% on the day
     min_dollar_volume: float = 2_000_000  # liquidity floor
 
     # ---- execution ----
