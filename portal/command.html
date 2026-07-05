@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Ogle Command Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E1217;--panel:#151B23;--panel2:#1A222B;--line:#29333E;--text:#E7E3D6;
+  --muted:#8C97A4;--faint:#5C6671;--teal:#45B69C;--teal-dim:rgba(69,182,156,.13);
+  --amber:#E0A24A;--amber-dim:rgba(224,162,74,.13);--red:#D96A6A;--red-dim:rgba(217,106,106,.13);
+  --mono:'IBM Plex Mono',monospace;--disp:'Space Grotesk',sans-serif;--ui:'Inter',sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--text);font-family:var(--ui);font-size:15px;line-height:1.5}
+body{padding:0 16px 60px}
+.wrap{max-width:1000px;margin:0 auto}
+
+nav{display:flex;align-items:center;border-bottom:1px solid var(--line);padding:16px 0;margin-bottom:24px;gap:0;flex-wrap:wrap}
+.logo{font-family:var(--disp);font-weight:700;font-size:20px;color:var(--teal);letter-spacing:-.02em;margin-right:24px}
+nav a{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--muted);
+  padding:7px 12px;border-radius:6px;text-decoration:none;text-transform:uppercase}
+nav a:hover{color:var(--text);background:var(--panel)}
+nav a.active{color:var(--teal);background:var(--teal-dim)}
+.updated{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--faint)}
+
+/* best opportunity hero */
+.hero{background:linear-gradient(135deg,var(--panel) 0%,var(--panel2) 100%);
+  border:1px solid var(--teal);border-radius:14px;padding:22px 24px;margin-bottom:24px;
+  display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.hero .label{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
+.hero .name{font-family:var(--disp);font-weight:700;font-size:32px;letter-spacing:-.02em;margin-top:2px}
+.hero .bigscore{font-family:var(--mono);font-size:52px;font-weight:600;color:var(--teal);line-height:1}
+.hero .bigscore small{font-size:16px;color:var(--muted)}
+.hero .dir{font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.1em;
+  padding:8px 18px;border-radius:8px;text-transform:uppercase}
+.dir.BUY{background:var(--teal-dim);color:var(--teal);border:1px solid rgba(69,182,156,.5)}
+.dir.SELL{background:var(--red-dim);color:var(--red);border:1px solid rgba(217,106,106,.5)}
+.dir.HOLD{background:rgba(110,124,138,.12);color:var(--muted);border:1px solid rgba(110,124,138,.4)}
+.hero .meta{font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* category sections */
+.cat{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--faint);margin:26px 0 10px;border-bottom:1px solid var(--line);padding-bottom:6px;
+  display:flex;justify-content:space-between}
+.cat .count{color:var(--faint)}
+
+.rows{display:grid;gap:8px}
+.row{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;
+  transition:border-color .15s}
+.row.buy{border-left:3px solid var(--teal)}
+.row.sell{border-left:3px solid var(--red)}
+.rhead{display:flex;align-items:center;gap:14px;padding:13px 16px;cursor:pointer}
+.aname{font-family:var(--disp);font-weight:600;font-size:16px;min-width:130px}
+.aticker{font-family:var(--mono);font-size:11px;color:var(--faint)}
+.aprice{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.spacer{flex:1}
+.ballot{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.03em}
+.ballot b{color:var(--teal)} .ballot i{color:var(--red);font-style:normal}
+.scorewrap{display:flex;align-items:center;gap:10px;min-width:130px;justify-content:flex-end}
+.scorebar{width:64px;height:5px;background:var(--line);border-radius:3px;overflow:hidden}
+.scorebar>div{height:100%;border-radius:3px}
+.scoreval{font-family:var(--mono);font-size:18px;font-weight:600;width:34px;text-align:right}
+.tag{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.08em;
+  padding:4px 9px;border-radius:5px;text-transform:uppercase;min-width:48px;text-align:center}
+.tag.BUY{background:var(--teal-dim);color:var(--teal)}
+.tag.SELL{background:var(--red-dim);color:var(--red)}
+.tag.HOLD{background:rgba(110,124,138,.1);color:var(--muted)}
+
+/* expandable ballot detail */
+.detail{display:none;border-top:1px solid var(--line);background:var(--panel2);padding:14px 16px}
+.row.open .detail{display:block}
+.detail h4{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:10px}
+.vote-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:6px}
+.vote{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;
+  padding:7px 10px;background:var(--bg);border:1px solid var(--line);border-radius:6px}
+.vdot{width:8px;height:8px;border-radius:50%;flex:none}
+.vdot.b{background:var(--teal)} .vdot.s{background:var(--red)} .vdot.h{background:var(--faint)}
+.vote .vm{color:var(--text);min-width:90px}
+.vote .vn{color:var(--faint);font-size:10.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.empty{color:var(--faint);font-family:var(--mono);font-size:13px;padding:30px;text-align:center;
+  background:var(--panel);border:1px solid var(--line);border-radius:10px}
+.disclaimer{margin-top:28px;padding:14px 18px;border:1px solid var(--line);border-radius:10px;
+  background:var(--panel);color:var(--faint);font-size:12px;line-height:1.6}
+@media(max-width:640px){.aname{min-width:90px;font-size:14px}.ballot{display:none}
+  .hero .bigscore{font-size:38px}.hero{gap:14px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <span class="logo">OGLE AI</span>
+    <a href="command.html" class="active">Command Center</a>
+    <a href="index.html">Trading</a>
+    <a href="scanner.html">Scanner</a>
+    <span class="updated" id="updated">loading…</span>
+  </nav>
+
+  <div id="hero"></div>
+  <div id="sections"><div class="empty">Loading market scores…</div></div>
+
+  <div class="disclaimer">
+    Scores are derived directly from a 13-model technical consensus (trend, momentum,
+    mean-reversion, volume, volatility, structure). Every point of every score traces to a
+    model vote you can inspect — tap any row. Scores refresh once daily after the close.
+    This is a research dashboard, not investment advice. Futures involve substantial risk
+    of loss. Paper-validate before trading anything.
+  </div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const CATS = {crypto:"Crypto", etf:"Index ETFs", stock:"Stocks", ag:"Ag Futures"};
+const fmt = n => n>=1000 ? '$'+n.toLocaleString('en-US',{maximumFractionDigits:2}) : '$'+n.toFixed(2);
+
+function scoreColor(s){ return s>=65?'var(--teal)':s<=35?'var(--red)':'var(--amber)'; }
+
+function heroCard(a){
+  return `<div class="hero">
+    <div>
+      <div class="label">★ Today's Best Opportunity</div>
+      <div class="name">${a.name}</div>
+      <div class="meta">${a.ticker} · ${fmt(a.price)} · consensus ${a.buy_votes}/${a.buy_votes+a.sell_votes+a.hold_votes} models</div>
+    </div>
+    <div class="spacer"></div>
+    <div class="bigscore">${a.score}<small>/100</small></div>
+    <div class="dir ${a.direction}">${a.direction}</div>
+  </div>`;
+}
+
+function voteRow(v){
+  const cls = v.vote===1?'b':v.vote===-1?'s':'h';
+  return `<div class="vote"><span class="vdot ${cls}"></span>
+    <span class="vm">${v.model}</span><span class="vn">${v.note}</span></div>`;
+}
+
+function assetRow(a){
+  const cls = a.direction==='BUY'?'buy':a.direction==='SELL'?'sell':'';
+  const col = scoreColor(a.score);
+  return `<div class="row ${cls}" onclick="this.classList.toggle('open')">
+    <div class="rhead">
+      <div><div class="aname">${a.name}</div><div class="aticker">${a.ticker}</div></div>
+      <div class="aprice">${fmt(a.price)}</div>
+      <span class="spacer"></span>
+      <span class="ballot"><b>${a.buy_votes}↑</b> <i>${a.sell_votes}↓</i> ${a.hold_votes}·</span>
+      <span class="tag ${a.direction}">${a.direction}</span>
+      <div class="scorewrap">
+        <div class="scorebar"><div style="width:${a.score}%;background:${col}"></div></div>
+        <div class="scoreval" style="color:${col}">${a.score}</div>
+      </div>
+    </div>
+    <div class="detail">
+      <h4>Model ballot — why this score</h4>
+      <div class="vote-grid">${a.votes.map(voteRow).join('')}</div>
+    </div>
+  </div>`;
+}
+
+async function load(){
+  try{
+    const r = await fetch('market_scores.json?t='+Date.now());
+    if(!r.ok) throw new Error('scores not generated yet');
+    const d = await r.json();
+
+    const dt = new Date(d.generated_at);
+    $('updated').textContent = 'Updated '+dt.toLocaleString('en-US',
+      {month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
+
+    const best = d.assets.find(a=>a.name===d.best_opportunity);
+    $('hero').innerHTML = best ? heroCard(best) : '';
+
+    let html='';
+    for(const [cat,label] of Object.entries(CATS)){
+      const list = d.assets.filter(a=>a.category===cat);
+      if(!list.length) continue;
+      html += `<div class="cat"><span>${label}</span><span class="count">${list.length}</span></div>`;
+      html += `<div class="rows">${list.map(assetRow).join('')}</div>`;
+    }
+    $('sections').innerHTML = html || '<div class="empty">No assets scored yet.</div>';
+  }catch(e){
+    $('sections').innerHTML = `<div class="empty">Scores not available yet — the daily scan
+      generates them after market close. (${e.message})</div>`;
+    $('updated').textContent = '';
+  }
+}
+load();
+</script>
+</body>
+</html>
