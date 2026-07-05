@@ -25,6 +25,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from command_center.models import Bar, run_all
 from command_center.consensus import ConsensusEngine, ConsensusConfig
+from command_center.cot_feed import fetch_cot
+from command_center.ag_models import cot_votes
 
 # ── asset universe ────────────────────────────────────────────────────────────
 
@@ -97,6 +99,27 @@ def main() -> int:
             print("no data — skipped")
             continue
         sig = engine.analyse(bars, symbol=ticker)
+
+        # Ag contracts get 2 extra CoT models (CFTC managed-money positioning)
+        if category == "ag":
+            extra = cot_votes(fetch_cot(ticker))
+            if extra:
+                sig.votes.extend(extra)
+                sig.buy_votes  += sum(1 for v in extra if v.vote == 1)
+                sig.sell_votes += sum(1 for v in extra if v.vote == -1)
+                sig.hold_votes += sum(1 for v in extra if v.vote == 0)
+                sig.score       = sig.buy_votes - sig.sell_votes
+                n = len(sig.votes)
+                sig.confidence  = round(sig.score / n, 3)
+                # Re-derive direction with the fuller ballot (6-of-13 ratio ≈ 46%)
+                thresh = max(6, round(n * 6 / 13))
+                if sig.buy_votes >= thresh:
+                    sig.direction = "BUY"
+                elif sig.sell_votes >= thresh:
+                    sig.direction = "SELL"
+                else:
+                    sig.direction = "HOLD"
+
         score = score_from_signal(sig)
         print(f"score {score:>3}  {sig.direction:<4}  "
               f"[{sig.buy_votes}↑ {sig.sell_votes}↓ {sig.hold_votes}·]  "
@@ -127,7 +150,7 @@ def main() -> int:
 
     payload = {
         "generated_at": datetime.datetime.utcnow().isoformat() + "Z",
-        "model_count": 13,
+        "model_count": "13 technical + 2 CoT (ag only)",
         "asset_count": len(results),
         "best_opportunity": best["name"] if best else None,
         "assets": results,
