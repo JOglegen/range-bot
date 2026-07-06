@@ -1,24 +1,24 @@
 {
-  "updated_at": "2026-07-06T16:37:15.816374",
+  "updated_at": "2026-07-06T16:48:33.759256",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
   "cash": 25.38,
-  "equity": 1016.15,
-  "return_pct": 1.61,
-  "progress_to_double_pct": 1.61,
+  "equity": 1016.54,
+  "return_pct": 1.65,
+  "progress_to_double_pct": 1.65,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 750.63,
+    "last_price": 750.925,
     "shares": 1.343382,
-    "equity": 1008.38,
-    "return_pct": 0.84,
+    "equity": 1008.78,
+    "return_pct": 0.88,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 7.77,
+    "equity_delta": 7.76,
     "return_delta_pct": 0.77,
     "leader": "RangeBot"
   },
@@ -26,7 +26,7 @@
     "MCD": {
       "qty": 0.934073,
       "entry_price": 270.3,
-      "last_price": 275.6599,
+      "last_price": 276.23,
       "stop": 259.24,
       "target": 289.29,
       "entry_time": "2026-06-26T15:39:43.404524",
@@ -36,7 +36,7 @@
     "TJX": {
       "qty": 1.554932,
       "entry_price": 153.095,
-      "last_price": 151.09,
+      "last_price": 151.035,
       "stop": 149.29,
       "target": 170.0,
       "entry_time": "2026-06-29T16:45:52.881588",
@@ -46,7 +46,7 @@
     "PLD": {
       "qty": 1.735997,
       "entry_price": 138.89,
-      "last_price": 139.17,
+      "last_price": 139.21,
       "stop": 133.51,
       "target": 149.1,
       "entry_time": "2026-06-29T20:50:26.157980",
@@ -56,7 +56,7 @@
     "GS": {
       "qty": 0.244186,
       "entry_price": 1026.0742,
-      "last_price": 1051.4399,
+      "last_price": 1050.925,
       "stop": 980.04,
       "target": 1125.0,
       "entry_time": "2026-07-01T16:06:53.179017",
@@ -206,7 +206,7 @@
       "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-07-06T16:36:55.544405",
+  "latest_scan_at": "2026-07-06T16:48:09.984894",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
