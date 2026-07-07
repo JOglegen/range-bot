@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-07-07T16:19:28.069493",
+  "scanned_at": "2026-07-07T18:26:49.683575",
   "mode": "range",
   "source": "GitHub issue #5 study list",
   "symbols": [
@@ -9,46 +9,17 @@
   ],
   "total_scanned": 3,
   "total_qualifying": 3,
-  "buys": [
-    {
-      "symbol": "TECL",
-      "price": 192.78,
-      "signal": "BUY",
-      "score": 33,
-      "pos_pct": 23.9,
-      "width_pct": 41.3,
-      "vol_ratio": 0.5,
-      "stop": 171.96,
-      "target": 247.85,
-      "entry_low": 175.47,
-      "entry_high": 193.56,
-      "note": "price at the floor of a clean range"
-    }
-  ],
+  "buys": [],
   "watches": [],
   "all_setups": [
     {
-      "symbol": "TECL",
-      "price": 192.78,
-      "signal": "BUY",
-      "score": 33,
-      "pos_pct": 23.9,
-      "width_pct": 41.3,
-      "vol_ratio": 0.5,
-      "stop": 171.96,
-      "target": 247.85,
-      "entry_low": 175.47,
-      "entry_high": 193.56,
-      "note": "price at the floor of a clean range"
-    },
-    {
       "symbol": "ERX",
-      "price": 78.06,
+      "price": 78.71,
       "signal": "WAIT",
       "score": 39,
-      "pos_pct": 18.3,
+      "pos_pct": 21.9,
       "width_pct": 24.7,
-      "vol_ratio": 0.74,
+      "vol_ratio": 0.85,
       "stop": 73.18,
       "target": 93.14,
       "entry_low": null,
@@ -56,13 +27,27 @@
       "note": "mid-range, no edge yet"
     },
     {
+      "symbol": "TECL",
+      "price": 194.11,
+      "signal": "WAIT",
+      "score": 34,
+      "pos_pct": 25.8,
+      "width_pct": 41.3,
+      "vol_ratio": 0.6,
+      "stop": 171.96,
+      "target": 247.85,
+      "entry_low": null,
+      "entry_high": null,
+      "note": "mid-range, no edge yet"
+    },
+    {
       "symbol": "EIX",
-      "price": 75.63,
+      "price": 75.82,
       "signal": "EXIT",
       "score": 65,
-      "pos_pct": 90.1,
+      "pos_pct": 93.5,
       "width_pct": 8.0,
-      "vol_ratio": 0.28,
+      "vol_ratio": 0.43,
       "stop": 69.13,
       "target": 76.19,
       "entry_low": null,
