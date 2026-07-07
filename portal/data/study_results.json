@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-07-07T18:26:49.683575",
+  "scanned_at": "2026-07-07T20:23:31.661391",
   "mode": "range",
   "source": "GitHub issue #5 study list",
   "symbols": [
@@ -9,17 +9,46 @@
   ],
   "total_scanned": 3,
   "total_qualifying": 3,
-  "buys": [],
+  "buys": [
+    {
+      "symbol": "TECL",
+      "price": 190.26,
+      "signal": "BUY",
+      "score": 32,
+      "pos_pct": 20.4,
+      "width_pct": 41.3,
+      "vol_ratio": 0.79,
+      "stop": 171.96,
+      "target": 247.85,
+      "entry_low": 175.47,
+      "entry_high": 193.56,
+      "note": "price at the floor of a clean range"
+    }
+  ],
   "watches": [],
   "all_setups": [
     {
+      "symbol": "TECL",
+      "price": 190.26,
+      "signal": "BUY",
+      "score": 32,
+      "pos_pct": 20.4,
+      "width_pct": 41.3,
+      "vol_ratio": 0.79,
+      "stop": 171.96,
+      "target": 247.85,
+      "entry_low": 175.47,
+      "entry_high": 193.56,
+      "note": "price at the floor of a clean range"
+    },
+    {
       "symbol": "ERX",
-      "price": 78.71,
+      "price": 80.22,
       "signal": "WAIT",
       "score": 39,
-      "pos_pct": 21.9,
+      "pos_pct": 30.0,
       "width_pct": 24.7,
-      "vol_ratio": 0.85,
+      "vol_ratio": 1.18,
       "stop": 73.18,
       "target": 93.14,
       "entry_low": null,
@@ -27,27 +56,13 @@
       "note": "mid-range, no edge yet"
     },
     {
-      "symbol": "TECL",
-      "price": 194.11,
-      "signal": "WAIT",
-      "score": 34,
-      "pos_pct": 25.8,
-      "width_pct": 41.3,
-      "vol_ratio": 0.6,
-      "stop": 171.96,
-      "target": 247.85,
-      "entry_low": null,
-      "entry_high": null,
-      "note": "mid-range, no edge yet"
-    },
-    {
       "symbol": "EIX",
-      "price": 75.82,
+      "price": 75.74,
       "signal": "EXIT",
       "score": 65,
-      "pos_pct": 93.5,
+      "pos_pct": 92.0,
       "width_pct": 8.0,
-      "vol_ratio": 0.43,
+      "vol_ratio": 0.72,
       "stop": 69.13,
       "target": 76.19,
       "entry_low": null,
