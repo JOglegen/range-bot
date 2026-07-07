@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-07-07T20:23:31.661391",
+  "scanned_at": "2026-07-07T21:21:26.296424",
   "mode": "range",
   "source": "GitHub issue #5 study list",
   "symbols": [
@@ -48,7 +48,7 @@
       "score": 39,
       "pos_pct": 30.0,
       "width_pct": 24.7,
-      "vol_ratio": 1.18,
+      "vol_ratio": 1.19,
       "stop": 73.18,
       "target": 93.14,
       "entry_low": null,
@@ -62,7 +62,7 @@
       "score": 65,
       "pos_pct": 92.0,
       "width_pct": 8.0,
-      "vol_ratio": 0.72,
+      "vol_ratio": 1.0,
       "stop": 69.13,
       "target": 76.19,
       "entry_low": null,
