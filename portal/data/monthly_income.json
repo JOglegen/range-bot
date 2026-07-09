@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-07-09T20:15:18.666403",
+  "scanned_at": "2026-07-09T21:20:38.588584",
   "min_yield": 4.0,
   "max_yield": 15.0,
   "min_score": 55,
@@ -360,15 +360,15 @@
     },
     {
       "symbol": "SBR",
-      "price": 72.87,
-      "trailing_yield_pct": 6.61,
+      "price": 73.0,
+      "trailing_yield_pct": 6.6,
       "annual_dividend": 4.815,
       "avg_monthly_dividend": 0.4013,
       "payments_12m": 12,
       "months_paid_12m": 12,
       "dividend_growth_pct": -14.67,
-      "price_vs_200dma_pct": -0.68,
-      "drawdown_52w_pct": 11.26,
+      "price_vs_200dma_pct": -0.5,
+      "drawdown_52w_pct": 11.11,
       "score": 77,
       "note": "healthy yield, paid every month, dividend shrinking, near 200dma, controlled drawdown"
     },
