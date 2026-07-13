@@ -1,10 +1,10 @@
 {
-  "built_at": "2026-07-13T18:16:18.321746",
-  "range_scanned_at": "2026-07-13T18:15:59.743579",
-  "income_scanned_at": "2026-07-13T18:16:07.193856",
-  "study_scanned_at": "2026-07-13T18:16:18.321746",
+  "built_at": "2026-07-13T19:56:47.497995",
+  "range_scanned_at": "2026-07-13T19:56:24.679973",
+  "income_scanned_at": "2026-07-13T19:56:34.122004",
+  "study_scanned_at": "2026-07-13T19:56:47.497995",
   "summary": {
-    "trade_entries": 2,
+    "trade_entries": 3,
     "range_watches": 0,
     "income_candidates": 10,
     "study_items": 3
@@ -12,12 +12,22 @@
   "actions": [
     {
       "type": "TRADE ENTRY",
+      "symbol": "ISRG",
+      "priority": 92,
+      "action": "Review buy zone",
+      "status": "Paper bot will recheck before any order",
+      "detail": "Entry $397.52-$409.10 | target $443.84 | stop $389.57",
+      "risk": "4.3% to stop",
+      "source": "20-day range"
+    },
+    {
+      "type": "TRADE ENTRY",
       "symbol": "COST",
       "priority": 72,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $907.21-$929.25 | target $995.38 | stop $889.07",
-      "risk": "4.0% to stop",
+      "risk": "4.1% to stop",
       "source": "20-day range"
     },
     {
@@ -27,7 +37,7 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $519.90-$574.84 | target $739.67 | stop $509.50",
-      "risk": "11.3% to stop",
+      "risk": "11.4% to stop",
       "source": "20-day range"
     },
     {
@@ -36,8 +46,8 @@
       "priority": 100,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 4.47% | avg/mo $0.194 | paid 12/12 months",
-      "risk": "1.0% 52w drawdown",
+      "detail": "Yield 4.46% | avg/mo $0.194 | paid 12/12 months",
+      "risk": "0.9% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -56,8 +66,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 6.03% | avg/mo $0.300 | paid 12/12 months",
-      "risk": "2.5% 52w drawdown",
+      "detail": "Yield 6.02% | avg/mo $0.300 | paid 12/12 months",
+      "risk": "2.4% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -66,8 +76,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.88% | avg/mo $0.080 | paid 12/12 months",
-      "risk": "4.2% 52w drawdown",
+      "detail": "Yield 5.87% | avg/mo $0.080 | paid 12/12 months",
+      "risk": "4.1% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -76,7 +86,7 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.85% | avg/mo $0.080 | paid 12/12 months",
+      "detail": "Yield 5.84% | avg/mo $0.080 | paid 12/12 months",
       "risk": "3.4% 52w drawdown",
       "source": "monthly dividend"
     },
@@ -86,8 +96,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.78% | avg/mo $0.190 | paid 12/12 months",
-      "risk": "2.3% 52w drawdown",
+      "detail": "Yield 5.75% | avg/mo $0.190 | paid 12/12 months",
+      "risk": "1.7% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -97,7 +107,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 65.3%",
+      "risk": "pos 64.6%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -107,7 +117,7 @@
       "action": "EXIT",
       "status": "Study list alert, manual review",
       "detail": "at/above the ceiling \u2014 take profits, no new longs",
-      "risk": "pos 95.4%",
+      "risk": "pos 92.6%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -117,7 +127,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 23.3%",
+      "risk": "pos 23.0%",
       "source": "GitHub issue #5 study list"
     }
   ]
