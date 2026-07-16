@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-07-16T20:11:30.754780",
-  "range_scanned_at": "2026-07-16T20:11:07.740990",
-  "income_scanned_at": "2026-07-16T20:11:16.686074",
-  "study_scanned_at": "2026-07-16T20:11:30.754780",
+  "built_at": "2026-07-16T20:54:17.105775",
+  "range_scanned_at": "2026-07-16T20:53:59.340685",
+  "income_scanned_at": "2026-07-16T20:54:06.468163",
+  "study_scanned_at": "2026-07-16T20:54:17.105775",
   "summary": {
     "trade_entries": 3,
     "range_watches": 0,
@@ -117,7 +117,7 @@
       "action": "EXIT",
       "status": "Study list alert, manual review",
       "detail": "at/above the ceiling \u2014 take profits, no new longs",
-      "risk": "pos 94.9%",
+      "risk": "pos 95.4%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -127,7 +127,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 4.0%",
+      "risk": "pos 3.5%",
       "source": "GitHub issue #5 study list"
     }
   ]
