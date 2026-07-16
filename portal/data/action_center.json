@@ -1,10 +1,10 @@
 {
-  "built_at": "2026-07-16T19:12:43.812373",
-  "range_scanned_at": "2026-07-16T19:12:19.236025",
-  "income_scanned_at": "2026-07-16T19:12:30.312670",
-  "study_scanned_at": "2026-07-16T19:12:43.812373",
+  "built_at": "2026-07-16T20:11:30.754780",
+  "range_scanned_at": "2026-07-16T20:11:07.740990",
+  "income_scanned_at": "2026-07-16T20:11:16.686074",
+  "study_scanned_at": "2026-07-16T20:11:30.754780",
   "summary": {
-    "trade_entries": 4,
+    "trade_entries": 3,
     "range_watches": 0,
     "income_candidates": 10,
     "study_items": 3
@@ -12,22 +12,22 @@
   "actions": [
     {
       "type": "TRADE ENTRY",
-      "symbol": "BRK-B",
-      "priority": 85,
+      "symbol": "GE",
+      "priority": 91,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
-      "detail": "Entry $485.77-$492.47 | target $512.58 | stop $476.05",
-      "risk": "2.9% to stop",
+      "detail": "Entry $343.61-$353.33 | target $382.49 | stop $336.74",
+      "risk": "2.6% to stop",
       "source": "20-day range"
     },
     {
       "type": "TRADE ENTRY",
       "symbol": "AMD",
-      "priority": 80,
+      "priority": 79,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $495.35-$517.69 | target $584.73 | stop $485.44",
-      "risk": "2.2% to stop",
+      "risk": "3.1% to stop",
       "source": "20-day range"
     },
     {
@@ -37,17 +37,7 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $388.10-$400.26 | target $436.74 | stop $380.34",
-      "risk": "4.1% to stop",
-      "source": "20-day range"
-    },
-    {
-      "type": "TRADE ENTRY",
-      "symbol": "SLB",
-      "priority": 64,
-      "action": "Review buy zone",
-      "status": "Paper bot will recheck before any order",
-      "detail": "Entry $44.59-$47.03 | target $54.37 | stop $43.70",
-      "risk": "7.0% to stop",
+      "risk": "4.0% to stop",
       "source": "20-day range"
     },
     {
@@ -66,7 +56,7 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 7.83% | avg/mo $0.125 | paid 12/12 months",
+      "detail": "Yield 7.81% | avg/mo $0.125 | paid 12/12 months",
       "risk": "0.0% 52w drawdown",
       "source": "monthly dividend"
     },
@@ -76,18 +66,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.82% | avg/mo $0.300 | paid 12/12 months",
+      "detail": "Yield 5.78% | avg/mo $0.300 | paid 12/12 months",
       "risk": "0.0% 52w drawdown",
-      "source": "monthly dividend"
-    },
-    {
-      "type": "INCOME WATCH",
-      "symbol": "APLE",
-      "priority": 93,
-      "action": "Review for income list",
-      "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.72% | avg/mo $0.080 | paid 12/12 months",
-      "risk": "1.6% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -96,7 +76,17 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.71% | avg/mo $0.080 | paid 12/12 months",
+      "detail": "Yield 5.70% | avg/mo $0.080 | paid 12/12 months",
+      "risk": "0.9% 52w drawdown",
+      "source": "monthly dividend"
+    },
+    {
+      "type": "INCOME WATCH",
+      "symbol": "APLE",
+      "priority": 93,
+      "action": "Review for income list",
+      "status": "Alert only, no auto-buy",
+      "detail": "Yield 5.69% | avg/mo $0.080 | paid 12/12 months",
       "risk": "1.1% 52w drawdown",
       "source": "monthly dividend"
     },
@@ -106,18 +96,18 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.53% | avg/mo $0.190 | paid 12/12 months",
+      "detail": "Yield 5.47% | avg/mo $0.190 | paid 12/12 months",
       "risk": "0.0% 52w drawdown",
       "source": "monthly dividend"
     },
     {
       "type": "STUDY WATCH",
       "symbol": "EIX",
-      "priority": 62,
+      "priority": 61,
       "action": "EXIT",
       "status": "Study list alert, manual review",
       "detail": "at/above the ceiling \u2014 take profits, no new longs",
-      "risk": "pos 98.5%",
+      "risk": "pos 100.0%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -127,7 +117,7 @@
       "action": "EXIT",
       "status": "Study list alert, manual review",
       "detail": "at/above the ceiling \u2014 take profits, no new longs",
-      "risk": "pos 96.9%",
+      "risk": "pos 94.9%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -137,7 +127,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 2.1%",
+      "risk": "pos 4.0%",
       "source": "GitHub issue #5 study list"
     }
   ]
