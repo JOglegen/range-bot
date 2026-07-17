@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-07-17T14:58:38.484586",
-  "range_scanned_at": "2026-07-17T14:57:52.113146",
-  "income_scanned_at": "2026-07-17T14:58:12.465770",
-  "study_scanned_at": "2026-07-17T14:58:38.484586",
+  "built_at": "2026-07-17T15:07:12.106609",
+  "range_scanned_at": "2026-07-17T15:06:35.781503",
+  "income_scanned_at": "2026-07-17T15:06:48.277531",
+  "study_scanned_at": "2026-07-17T15:07:12.106609",
   "summary": {
     "trade_entries": 5,
     "range_watches": 0,
@@ -13,31 +13,21 @@
     {
       "type": "TRADE ENTRY",
       "symbol": "TSLA",
-      "priority": 84,
+      "priority": 85,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $368.60-$384.67 | target $432.86 | stop $361.23",
-      "risk": "5.1% to stop",
+      "risk": "4.9% to stop",
       "source": "20-day range"
     },
     {
       "type": "TRADE ENTRY",
       "symbol": "AVGO",
-      "priority": 81,
+      "priority": 80,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $356.43-$370.98 | target $414.64 | stop $349.30",
-      "risk": "5.6% to stop",
-      "source": "20-day range"
-    },
-    {
-      "type": "TRADE ENTRY",
-      "symbol": "ETN",
-      "priority": 77,
-      "action": "Review buy zone",
-      "status": "Paper bot will recheck before any order",
-      "detail": "Entry $388.10-$400.26 | target $436.74 | stop $380.34",
-      "risk": "4.5% to stop",
+      "risk": "5.1% to stop",
       "source": "20-day range"
     },
     {
@@ -47,7 +37,17 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $201.74-$211.15 | target $239.38 | stop $197.71",
-      "risk": "5.6% to stop",
+      "risk": "5.8% to stop",
+      "source": "20-day range"
+    },
+    {
+      "type": "TRADE ENTRY",
+      "symbol": "ETN",
+      "priority": 76,
+      "action": "Review buy zone",
+      "status": "Paper bot will recheck before any order",
+      "detail": "Entry $388.10-$400.26 | target $436.74 | stop $380.34",
+      "risk": "4.1% to stop",
       "source": "20-day range"
     },
     {
@@ -57,7 +57,7 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $44.59-$46.73 | target $53.14 | stop $43.70",
-      "risk": "6.2% to stop",
+      "risk": "6.0% to stop",
       "source": "20-day range"
     },
     {
@@ -86,7 +86,7 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.76% | avg/mo $0.300 | paid 12/12 months",
+      "detail": "Yield 5.74% | avg/mo $0.300 | paid 12/12 months",
       "risk": "0.0% 52w drawdown",
       "source": "monthly dividend"
     },
@@ -97,7 +97,7 @@
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
       "detail": "Yield 5.73% | avg/mo $0.080 | paid 12/12 months",
-      "risk": "1.4% 52w drawdown",
+      "risk": "1.5% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -106,8 +106,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.71% | avg/mo $0.080 | paid 12/12 months",
-      "risk": "1.3% 52w drawdown",
+      "detail": "Yield 5.72% | avg/mo $0.080 | paid 12/12 months",
+      "risk": "1.5% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -116,7 +116,7 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.38% | avg/mo $0.190 | paid 12/12 months",
+      "detail": "Yield 5.36% | avg/mo $0.190 | paid 12/12 months",
       "risk": "0.0% 52w drawdown",
       "source": "monthly dividend"
     },
