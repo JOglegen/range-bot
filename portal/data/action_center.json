@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-07-21T15:22:53.372176",
-  "range_scanned_at": "2026-07-21T15:22:30.298353",
-  "income_scanned_at": "2026-07-21T15:22:40.121908",
-  "study_scanned_at": "2026-07-21T15:22:53.372176",
+  "built_at": "2026-07-21T15:30:00.547260",
+  "range_scanned_at": "2026-07-21T15:29:22.354896",
+  "income_scanned_at": "2026-07-21T15:29:36.342084",
+  "study_scanned_at": "2026-07-21T15:30:00.547260",
   "summary": {
     "trade_entries": 5,
     "range_watches": 0,
@@ -17,7 +17,7 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $264.09-$269.84 | target $287.10 | stop $258.81",
-      "risk": "2.4% to stop",
+      "risk": "2.3% to stop",
       "source": "20-day range"
     },
     {
@@ -28,6 +28,16 @@
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $321.70-$330.99 | target $358.85 | stop $315.27",
       "risk": "4.4% to stop",
+      "source": "20-day range"
+    },
+    {
+      "type": "TRADE ENTRY",
+      "symbol": "LIN",
+      "priority": 88,
+      "action": "Review buy zone",
+      "status": "Paper bot will recheck before any order",
+      "detail": "Entry $506.78-$517.14 | target $548.20 | stop $496.64",
+      "risk": "2.1% to stop",
       "source": "20-day range"
     },
     {
@@ -51,16 +61,6 @@
       "source": "20-day range"
     },
     {
-      "type": "TRADE ENTRY",
-      "symbol": "DUK",
-      "priority": 81,
-      "action": "Review buy zone",
-      "status": "Paper bot will recheck before any order",
-      "detail": "Entry $123.35-$125.10 | target $130.37 | stop $120.88",
-      "risk": "3.2% to stop",
-      "source": "20-day range"
-    },
-    {
       "type": "INCOME WATCH",
       "symbol": "SPHD",
       "priority": 100,
@@ -76,7 +76,7 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 8.60% | avg/mo $0.124 | paid 13/12 months",
+      "detail": "Yield 8.61% | avg/mo $0.124 | paid 13/12 months",
       "risk": "2.0% 52w drawdown",
       "source": "monthly dividend"
     },
@@ -127,7 +127,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 73.2%",
+      "risk": "pos 73.7%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -137,7 +137,7 @@
       "action": "EXIT",
       "status": "Study list alert, manual review",
       "detail": "at/above the ceiling \u2014 take profits, no new longs",
-      "risk": "pos 95.9%",
+      "risk": "pos 99.1%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -147,7 +147,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 31.9%",
+      "risk": "pos 32.5%",
       "source": "GitHub issue #5 study list"
     }
   ]
