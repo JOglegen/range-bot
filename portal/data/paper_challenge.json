@@ -1,24 +1,24 @@
 {
-  "updated_at": "2026-07-22T16:55:15.852975",
+  "updated_at": "2026-07-22T18:03:18.226230",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
   "cash": 36.41,
-  "equity": 1042.39,
-  "return_pct": 4.24,
-  "progress_to_double_pct": 4.24,
+  "equity": 1040.75,
+  "return_pct": 4.08,
+  "progress_to_double_pct": 4.08,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 749.54,
+    "last_price": 748.36,
     "shares": 1.343382,
-    "equity": 1006.92,
-    "return_pct": 0.69,
+    "equity": 1005.33,
+    "return_pct": 0.53,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 35.47,
+    "equity_delta": 35.42,
     "return_delta_pct": 3.55,
     "leader": "RangeBot"
   },
@@ -26,7 +26,7 @@
     "MCD": {
       "qty": 0.934073,
       "entry_price": 270.3,
-      "last_price": 264.17,
+      "last_price": 264.28,
       "stop": 259.24,
       "target": 289.29,
       "entry_time": "2026-06-26T15:39:43.404524",
@@ -36,7 +36,7 @@
     "TJX": {
       "qty": 1.554932,
       "entry_price": 153.095,
-      "last_price": 155.4384,
+      "last_price": 154.6,
       "stop": 149.29,
       "target": 170.0,
       "entry_time": "2026-06-29T16:45:52.881588",
@@ -46,7 +46,7 @@
     "PEP": {
       "qty": 1.886619,
       "entry_price": 136.905,
-      "last_price": 135.91,
+      "last_price": 136.0,
       "stop": 132.0,
       "target": 149.04,
       "entry_time": "2026-07-14T15:08:32.589992",
@@ -56,7 +56,7 @@
     "GE": {
       "qty": 0.759722,
       "entry_price": 347.0,
-      "last_price": 343.7,
+      "last_price": 342.905,
       "stop": 336.74,
       "target": 382.49,
       "entry_time": "2026-07-16T15:18:22.113184",
@@ -246,7 +246,7 @@
       "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-07-22T16:54:52.841312",
+  "latest_scan_at": "2026-07-22T18:02:45.296101",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
