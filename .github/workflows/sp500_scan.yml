@@ -1,4 +1,4 @@
-name: Range Bot - S&P 500 Screener + SMS
+name: Range Bot - S&P 500 Screener
 
 on:
   schedule:
@@ -30,29 +30,14 @@ jobs:
       - name: Install dependencies
         run: pip install requests yfinance pandas python-dotenv lxml beautifulsoup4 html5lib
 
-      - name: Run S&P 500 screener + send SMS
-        env:
-          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
-          TWILIO_AUTH_TOKEN:  ${{ secrets.TWILIO_AUTH_TOKEN }}
-          TWILIO_FROM:        ${{ secrets.TWILIO_FROM }}
-          TWILIO_TO:          ${{ secrets.TWILIO_TO }}
-        run: python run_screener.py --mode range --dry-run  # SMS paused (issue #7)
+      - name: Run S&P 500 screener
+        run: python run_screener.py --mode range --dry-run
 
       - name: Run monthly dividend income scanner
-        env:
-          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
-          TWILIO_AUTH_TOKEN:  ${{ secrets.TWILIO_AUTH_TOKEN }}
-          TWILIO_FROM:        ${{ secrets.TWILIO_FROM }}
-          TWILIO_TO:          ${{ secrets.TWILIO_TO }}
-        run: python run_monthly_income.py --output monthly_income.json
+        run: python run_monthly_income.py --output monthly_income.json --dry-run
 
       - name: Run study-list scanner
-        env:
-          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
-          TWILIO_AUTH_TOKEN:  ${{ secrets.TWILIO_AUTH_TOKEN }}
-          TWILIO_FROM:        ${{ secrets.TWILIO_FROM }}
-          TWILIO_TO:          ${{ secrets.TWILIO_TO }}
-        run: python run_study_list.py --output study_results.json
+        run: python run_study_list.py --output study_results.json --dry-run
 
       - name: Build action center
         run: python build_action_center.py --screener screener_results.json --income monthly_income.json --study study_results.json --output action_center.json

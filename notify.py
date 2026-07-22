@@ -6,6 +6,9 @@ Set these as GitHub Actions repository secrets:
   TWILIO_AUTH_TOKEN
   TWILIO_FROM
   TWILIO_TO            one or more recipient numbers, comma/newline separated
+
+SMS is disabled by default. To intentionally re-enable sending, set:
+  RANGEBOT_SMS_ENABLED=true
 """
 
 from __future__ import annotations
@@ -84,6 +87,11 @@ def send_sms(body: str,
     Send an SMS via Twilio REST API. Supports multiple recipients in TWILIO_TO.
     Returns True only when every recipient is sent successfully.
     """
+    enabled = os.environ.get("RANGEBOT_SMS_ENABLED", "").strip().lower()
+    if enabled not in {"1", "true", "yes", "on"}:
+        print("[notify] SMS disabled. Set RANGEBOT_SMS_ENABLED=true to send.")
+        return False
+
     import requests as req
 
     sid = account_sid or os.environ.get("TWILIO_ACCOUNT_SID", "")
