@@ -1,25 +1,25 @@
 {
-  "updated_at": "2026-07-24T15:13:59.969464",
+  "updated_at": "2026-07-24T15:21:13.860581",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
   "cash": 36.41,
-  "equity": 1052.11,
-  "return_pct": 5.21,
-  "progress_to_double_pct": 5.21,
+  "equity": 1053.14,
+  "return_pct": 5.31,
+  "progress_to_double_pct": 5.31,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 738.25,
+    "last_price": 742.23,
     "shares": 1.343382,
-    "equity": 991.75,
-    "return_pct": -0.82,
+    "equity": 997.1,
+    "return_pct": -0.29,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 60.36,
-    "return_delta_pct": 6.03,
+    "equity_delta": 56.04,
+    "return_delta_pct": 5.6,
     "leader": "RangeBot"
   },
   "positions": {
@@ -36,7 +36,7 @@
     "TJX": {
       "qty": 1.554932,
       "entry_price": 153.095,
-      "last_price": 154.0,
+      "last_price": 154.66,
       "stop": 149.29,
       "target": 170.0,
       "entry_time": "2026-06-29T16:45:52.881588",
@@ -246,7 +246,7 @@
       "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-07-24T15:13:24.824992",
+  "latest_scan_at": "2026-07-24T15:20:50.304084",
   "rules": {
     "paper_only": true,
     "max_positions": 4,

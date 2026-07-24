@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-07-24T15:13:58.874865",
-  "range_scanned_at": "2026-07-24T15:13:24.824992",
-  "income_scanned_at": "2026-07-24T15:13:38.393200",
-  "study_scanned_at": "2026-07-24T15:13:58.874865",
+  "built_at": "2026-07-24T15:21:12.998073",
+  "range_scanned_at": "2026-07-24T15:20:50.304084",
+  "income_scanned_at": "2026-07-24T15:20:58.860638",
+  "study_scanned_at": "2026-07-24T15:21:12.998073",
   "summary": {
     "trade_entries": 5,
     "range_watches": 0,
@@ -18,16 +18,6 @@
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $40.00-$41.26 | target $45.04 | stop $39.20",
       "risk": "4.7% to stop",
-      "source": "20-day range"
-    },
-    {
-      "type": "TRADE ENTRY",
-      "symbol": "CL",
-      "priority": 83,
-      "action": "Review buy zone",
-      "status": "Paper bot will recheck before any order",
-      "detail": "Entry $89.08-$90.68 | target $95.46 | stop $87.30",
-      "risk": "3.7% to stop",
       "source": "20-day range"
     },
     {
@@ -61,6 +51,16 @@
       "source": "20-day range"
     },
     {
+      "type": "TRADE ENTRY",
+      "symbol": "MCD",
+      "priority": 80,
+      "action": "Review buy zone",
+      "status": "Paper bot will recheck before any order",
+      "detail": "Entry $260.96-$267.49 | target $287.10 | stop $255.74",
+      "risk": "3.7% to stop",
+      "source": "20-day range"
+    },
+    {
       "type": "INCOME WATCH",
       "symbol": "SPHD",
       "priority": 100,
@@ -76,8 +76,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 8.64% | avg/mo $0.124 | paid 13/12 months",
-      "risk": "2.4% 52w drawdown",
+      "detail": "Yield 8.60% | avg/mo $0.124 | paid 13/12 months",
+      "risk": "2.0% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -147,7 +147,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 23.1%",
+      "risk": "pos 26.4%",
       "source": "GitHub issue #5 study list"
     }
   ]
