@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-07-28T20:11:28.310091",
-  "range_scanned_at": "2026-07-28T20:11:09.889798",
-  "income_scanned_at": "2026-07-28T20:11:17.234210",
-  "study_scanned_at": "2026-07-28T20:11:28.310091",
+  "built_at": "2026-07-28T21:04:44.119452",
+  "range_scanned_at": "2026-07-28T21:04:12.039250",
+  "income_scanned_at": "2026-07-28T21:04:24.562324",
+  "study_scanned_at": "2026-07-28T21:04:44.119452",
   "summary": {
     "trade_entries": 5,
     "range_watches": 0,
@@ -17,7 +17,7 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $206.72-$213.10 | target $232.25 | stop $202.59",
-      "risk": "4.3% to stop",
+      "risk": "4.2% to stop",
       "source": "20-day range"
     },
     {
@@ -106,8 +106,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.70% | avg/mo $0.080 | paid 12/12 months",
-      "risk": "1.4% 52w drawdown",
+      "detail": "Yield 5.71% | avg/mo $0.080 | paid 12/12 months",
+      "risk": "1.5% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -127,7 +127,7 @@
       "action": "EXIT",
       "status": "Study list alert, manual review",
       "detail": "at/above the ceiling \u2014 take profits, no new longs",
-      "risk": "pos 86.7%",
+      "risk": "pos 87.0%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -137,7 +137,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 60.1%",
+      "risk": "pos 60.5%",
       "source": "GitHub issue #5 study list"
     },
     {
