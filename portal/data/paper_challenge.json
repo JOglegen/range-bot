@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-07-30T18:53:28.158242",
+  "updated_at": "2026-07-30T20:11:46.385186",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
   "cash": 36.41,
-  "equity": 1068.74,
-  "return_pct": 6.87,
-  "progress_to_double_pct": 6.87,
+  "equity": 1069.12,
+  "return_pct": 6.91,
+  "progress_to_double_pct": 6.91,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 740.52,
+    "last_price": 741.74,
     "shares": 1.343382,
-    "equity": 994.8,
-    "return_pct": -0.52,
+    "equity": 996.44,
+    "return_pct": -0.36,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 73.94,
-    "return_delta_pct": 7.39,
+    "equity_delta": 72.68,
+    "return_delta_pct": 7.27,
     "leader": "RangeBot"
   },
   "positions": {
     "MCD": {
       "qty": 0.934073,
       "entry_price": 270.3,
-      "last_price": 268.15,
+      "last_price": 268.46,
       "stop": 259.24,
       "target": 289.29,
       "entry_time": "2026-06-26T15:39:43.404524",
@@ -36,7 +36,7 @@
     "TJX": {
       "qty": 1.554932,
       "entry_price": 153.095,
-      "last_price": 159.34,
+      "last_price": 159.275,
       "stop": 149.29,
       "target": 170.0,
       "entry_time": "2026-06-29T16:45:52.881588",
@@ -46,7 +46,7 @@
     "PEP": {
       "qty": 1.886619,
       "entry_price": 136.905,
-      "last_price": 140.28,
+      "last_price": 140.2,
       "stop": 132.0,
       "target": 149.04,
       "entry_time": "2026-07-14T15:08:32.589992",
@@ -56,7 +56,7 @@
     "GE": {
       "qty": 0.759722,
       "entry_price": 347.0,
-      "last_price": 354.66,
+      "last_price": 355.11,
       "stop": 336.74,
       "target": 382.49,
       "entry_time": "2026-07-16T15:18:22.113184",
@@ -246,7 +246,7 @@
       "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-07-30T18:53:10.316358",
+  "latest_scan_at": "2026-07-30T20:11:11.315341",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
