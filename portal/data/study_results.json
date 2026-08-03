@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-08-03T18:06:44.015874",
+  "scanned_at": "2026-08-03T19:55:08.139383",
   "mode": "range",
   "source": "GitHub issue #5 study list",
   "symbols": [
@@ -14,12 +14,12 @@
   "all_setups": [
     {
       "symbol": "EIX",
-      "price": 71.93,
+      "price": 71.71,
       "signal": "WAIT",
       "score": 91,
       "pos_pct": 0.0,
       "width_pct": 11.6,
-      "vol_ratio": 0.6,
+      "vol_ratio": 1.03,
       "stop": 71.69,
       "target": 81.62,
       "entry_low": null,
@@ -28,12 +28,12 @@
     },
     {
       "symbol": "TECL",
-      "price": 183.49,
+      "price": 181.65,
       "signal": "WAIT",
       "score": 20,
-      "pos_pct": 52.8,
+      "pos_pct": 50.0,
       "width_pct": 42.6,
-      "vol_ratio": 0.5,
+      "vol_ratio": 0.72,
       "stop": 146.79,
       "target": 213.55,
       "entry_low": null,
@@ -42,17 +42,17 @@
     },
     {
       "symbol": "ERX",
-      "price": 92.44,
-      "signal": "EXIT",
+      "price": 92.11,
+      "signal": "WAIT",
       "score": 16,
-      "pos_pct": 75.5,
+      "pos_pct": 74.0,
       "width_pct": 29.1,
-      "vol_ratio": 0.57,
+      "vol_ratio": 0.83,
       "stop": 74.27,
       "target": 97.85,
       "entry_low": null,
       "entry_high": null,
-      "note": "at/above the ceiling \u2014 take profits, no new longs"
+      "note": "mid-range, no edge yet"
     }
   ]
 }
