@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-08-03T20:59:09.546287",
+  "scanned_at": "2026-08-04T15:55:19.316105",
   "mode": "range",
   "source": "GitHub issue #5 study list",
   "symbols": [
@@ -9,50 +9,65 @@
   ],
   "total_scanned": 3,
   "total_qualifying": 3,
-  "buys": [],
+  "buys": [
+    {
+      "symbol": "EIX",
+      "price": 71.77,
+      "signal": "BUY",
+      "score": 88,
+      "pos_pct": 6.1,
+      "width_pct": 14.7,
+      "vol_ratio": 0.29,
+      "stop": 69.71,
+      "target": 81.62,
+      "entry_low": 71.13,
+      "entry_high": 73.75,
+      "note": "price at the floor of a clean range"
+    }
+  ],
   "watches": [],
   "all_setups": [
     {
       "symbol": "EIX",
-      "price": 71.46,
-      "signal": "WAIT",
-      "score": 91,
-      "pos_pct": 0.0,
-      "width_pct": 11.6,
-      "vol_ratio": 1.19,
-      "stop": 71.69,
+      "price": 71.77,
+      "signal": "BUY",
+      "score": 88,
+      "pos_pct": 6.1,
+      "width_pct": 14.7,
+      "vol_ratio": 0.29,
+      "stop": 69.71,
       "target": 81.62,
+      "entry_low": 71.13,
+      "entry_high": 73.75,
+      "note": "price at the floor of a clean range"
+    },
+    {
+      "symbol": "ERX",
+      "price": 90.75,
+      "signal": "WAIT",
+      "score": 21,
+      "pos_pct": 65.3,
+      "width_pct": 26.4,
+      "vol_ratio": 0.58,
+      "stop": 75.87,
+      "target": 97.85,
       "entry_low": null,
       "entry_high": null,
       "note": "mid-range, no edge yet"
     },
     {
       "symbol": "TECL",
-      "price": 181.24,
-      "signal": "WAIT",
-      "score": 20,
-      "pos_pct": 49.3,
+      "price": 205.24,
+      "signal": "EXIT",
+      "score": 15,
+      "pos_pct": 87.0,
       "width_pct": 42.6,
-      "vol_ratio": 0.76,
+      "vol_ratio": 0.66,
       "stop": 146.79,
       "target": 213.55,
       "entry_low": null,
       "entry_high": null,
-      "note": "mid-range, no edge yet"
-    },
-    {
-      "symbol": "ERX",
-      "price": 92.25,
-      "signal": "WAIT",
-      "score": 16,
-      "pos_pct": 74.6,
-      "width_pct": 29.1,
-      "vol_ratio": 0.88,
-      "stop": 74.27,
-      "target": 97.85,
-      "entry_low": null,
-      "entry_high": null,
-      "note": "mid-range, no edge yet"
+      "note": "at/above the ceiling \u2014 take profits, no new longs"
     }
   ]
 }
