@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-08-07T00:04:25.171769",
+  "updated_at": "2026-08-07T00:52:02.564800",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
   "cash": 35.3,
-  "equity": 1096.7,
+  "equity": 1096.69,
   "return_pct": 9.67,
   "progress_to_double_pct": 9.67,
   "benchmark": {
@@ -18,7 +18,7 @@
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 64.23,
+    "equity_delta": 64.22,
     "return_delta_pct": 6.42,
     "leader": "RangeBot"
   },
@@ -286,7 +286,7 @@
       "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-08-07T00:04:06.936544",
+  "latest_scan_at": "2026-08-07T00:51:34.107764",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
