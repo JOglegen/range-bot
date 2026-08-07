@@ -1,42 +1,32 @@
 {
-  "updated_at": "2026-08-05T21:04:02.583005",
+  "updated_at": "2026-08-07T00:04:25.171769",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
-  "cash": 51.43,
-  "equity": 1092.55,
-  "return_pct": 9.25,
-  "progress_to_double_pct": 9.25,
+  "cash": 35.3,
+  "equity": 1096.7,
+  "return_pct": 9.67,
+  "progress_to_double_pct": 9.67,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 769.79,
+    "last_price": 768.56,
     "shares": 1.343382,
-    "equity": 1034.12,
-    "return_pct": 3.41,
+    "equity": 1032.47,
+    "return_pct": 3.25,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 58.43,
-    "return_delta_pct": 5.84,
+    "equity_delta": 64.23,
+    "return_delta_pct": 6.42,
     "leader": "RangeBot"
   },
   "positions": {
-    "MCD": {
-      "qty": 0.934073,
-      "entry_price": 270.3,
-      "last_price": 274.0,
-      "stop": 259.24,
-      "target": 289.29,
-      "entry_time": "2026-06-26T15:39:43.404524",
-      "ma20_at_entry": 277.6435,
-      "source": "20-day range BUY"
-    },
     "TJX": {
       "qty": 1.554932,
       "entry_price": 153.095,
-      "last_price": 159.92,
+      "last_price": 162.06,
       "stop": 149.29,
       "target": 170.0,
       "entry_time": "2026-06-29T16:45:52.881588",
@@ -46,7 +36,7 @@
     "PEP": {
       "qty": 1.886619,
       "entry_price": 136.905,
-      "last_price": 138.78,
+      "last_price": 138.44,
       "stop": 132.0,
       "target": 149.04,
       "entry_time": "2026-07-14T15:08:32.589992",
@@ -56,11 +46,21 @@
     "JNJ": {
       "qty": 1.066397,
       "entry_price": 252.7,
-      "last_price": 257.59,
+      "last_price": 256.98,
       "stop": 240.58,
       "target": 274.9,
       "entry_time": "2026-08-04T16:08:35.895942",
       "ma20_at_entry": 256.8175,
+      "source": "20-day range BUY"
+    },
+    "ABBV": {
+      "qty": 1.124262,
+      "entry_price": 243.87,
+      "last_price": 243.87,
+      "stop": 236.64,
+      "target": 267.47,
+      "entry_time": "2026-08-07T00:04:25.171769",
+      "ma20_at_entry": 251.9202,
       "source": "20-day range BUY"
     }
   },
@@ -264,9 +264,29 @@
       "value": 269.48,
       "pnl": 0,
       "reason": "20-day range BUY"
+    },
+    {
+      "time": "2026-08-07T00:04:25.171769",
+      "symbol": "MCD",
+      "side": "SELL",
+      "qty": 0.934073,
+      "price": 276.26,
+      "value": 258.05,
+      "pnl": 5.57,
+      "reason": "EXIT"
+    },
+    {
+      "time": "2026-08-07T00:04:25.171769",
+      "symbol": "ABBV",
+      "side": "BUY",
+      "qty": 1.124262,
+      "price": 243.87,
+      "value": 274.17,
+      "pnl": 0,
+      "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-08-05T21:03:45.722918",
+  "latest_scan_at": "2026-08-07T00:04:06.936544",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
