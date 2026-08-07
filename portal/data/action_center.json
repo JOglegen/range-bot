@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-08-07T18:28:49.960320",
-  "range_scanned_at": "2026-08-07T18:28:26.085132",
-  "income_scanned_at": "2026-08-07T18:28:36.388419",
-  "study_scanned_at": "2026-08-07T18:28:49.960320",
+  "built_at": "2026-08-07T19:29:33.520495",
+  "range_scanned_at": "2026-08-07T19:29:15.586457",
+  "income_scanned_at": "2026-08-07T19:29:23.178293",
+  "study_scanned_at": "2026-08-07T19:29:33.520495",
   "summary": {
     "trade_entries": 5,
     "range_watches": 0,
@@ -17,7 +17,17 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $241.20-$247.77 | target $267.47 | stop $236.38",
-      "risk": "3.6% to stop",
+      "risk": "3.7% to stop",
+      "source": "20-day range"
+    },
+    {
+      "type": "TRADE ENTRY",
+      "symbol": "AON",
+      "priority": 93,
+      "action": "Review buy zone",
+      "status": "Paper bot will recheck before any order",
+      "detail": "Entry $349.66-$357.61 | target $381.47 | stop $342.67",
+      "risk": "4.1% to stop",
       "source": "20-day range"
     },
     {
@@ -27,17 +37,17 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $131.57-$135.85 | target $148.69 | stop $128.94",
-      "risk": "5.0% to stop",
+      "risk": "4.2% to stop",
       "source": "20-day range"
     },
     {
       "type": "TRADE ENTRY",
-      "symbol": "SO",
+      "symbol": "NKE",
       "priority": 80,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
-      "detail": "Entry $91.25-$93.15 | target $98.86 | stop $89.42",
-      "risk": "3.8% to stop",
+      "detail": "Entry $40.69-$41.76 | target $44.98 | stop $39.88",
+      "risk": "4.5% to stop",
       "source": "20-day range"
     },
     {
@@ -47,17 +57,7 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $138.55-$142.25 | target $153.35 | stop $135.78",
-      "risk": "3.0% to stop",
-      "source": "20-day range"
-    },
-    {
-      "type": "TRADE ENTRY",
-      "symbol": "WM",
-      "priority": 76,
-      "action": "Review buy zone",
-      "status": "Paper bot will recheck before any order",
-      "detail": "Entry $222.16-$228.41 | target $247.15 | stop $217.72",
-      "risk": "4.6% to stop",
+      "risk": "2.8% to stop",
       "source": "20-day range"
     },
     {
@@ -76,8 +76,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 8.21% | avg/mo $0.124 | paid 12/12 months",
-      "risk": "5.3% 52w drawdown",
+      "detail": "Yield 8.19% | avg/mo $0.124 | paid 12/12 months",
+      "risk": "5.0% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -87,7 +87,7 @@
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
       "detail": "Yield 7.26% | avg/mo $0.358 | paid 12/12 months",
-      "risk": "12.3% 52w drawdown",
+      "risk": "12.4% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -96,8 +96,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.95% | avg/mo $0.080 | paid 12/12 months",
-      "risk": "5.5% 52w drawdown",
+      "detail": "Yield 5.92% | avg/mo $0.080 | paid 12/12 months",
+      "risk": "5.0% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -106,8 +106,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.85% | avg/mo $0.301 | paid 12/12 months",
-      "risk": "4.0% 52w drawdown",
+      "detail": "Yield 5.82% | avg/mo $0.301 | paid 12/12 months",
+      "risk": "3.4% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -117,27 +117,27 @@
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
       "detail": "Yield 5.75% | avg/mo $0.080 | paid 12/12 months",
-      "risk": "1.7% 52w drawdown",
+      "risk": "1.8% 52w drawdown",
       "source": "monthly dividend"
     },
     {
       "type": "STUDY WATCH",
       "symbol": "ERX",
-      "priority": 51,
+      "priority": 52,
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 52.3%",
+      "risk": "pos 45.8%",
       "source": "GitHub issue #5 study list"
     },
     {
       "type": "STUDY WATCH",
       "symbol": "TECL",
-      "priority": 46,
+      "priority": 45,
       "action": "EXIT",
       "status": "Study list alert, manual review",
       "detail": "at/above the ceiling \u2014 take profits, no new longs",
-      "risk": "pos 91.5%",
+      "risk": "pos 95.1%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -147,7 +147,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 12.9%",
+      "risk": "pos 13.2%",
       "source": "GitHub issue #5 study list"
     }
   ]
