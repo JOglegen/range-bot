@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-08-11T15:52:18.968955",
-  "range_scanned_at": "2026-08-11T15:51:54.725200",
-  "income_scanned_at": "2026-08-11T15:52:05.536800",
-  "study_scanned_at": "2026-08-11T15:52:18.968955",
+  "built_at": "2026-08-11T16:48:22.631055",
+  "range_scanned_at": "2026-08-11T16:48:04.373185",
+  "income_scanned_at": "2026-08-11T16:48:12.475178",
+  "study_scanned_at": "2026-08-11T16:48:22.631055",
   "summary": {
     "trade_entries": 5,
     "range_watches": 0,
@@ -12,32 +12,22 @@
   "actions": [
     {
       "type": "TRADE ENTRY",
-      "symbol": "AON",
-      "priority": 91,
-      "action": "Review buy zone",
-      "status": "Paper bot will recheck before any order",
-      "detail": "Entry $349.66-$357.61 | target $381.47 | stop $342.67",
-      "risk": "4.1% to stop",
-      "source": "20-day range"
-    },
-    {
-      "type": "TRADE ENTRY",
       "symbol": "DUK",
       "priority": 83,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $120.73-$123.71 | target $132.65 | stop $118.32",
-      "risk": "3.4% to stop",
+      "risk": "3.6% to stop",
       "source": "20-day range"
     },
     {
       "type": "TRADE ENTRY",
       "symbol": "NKE",
-      "priority": 80,
+      "priority": 79,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $40.69-$41.76 | target $44.98 | stop $39.88",
-      "risk": "2.9% to stop",
+      "risk": "2.6% to stop",
       "source": "20-day range"
     },
     {
@@ -47,17 +37,27 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $91.05-$93.00 | target $98.86 | stop $89.23",
-      "risk": "2.9% to stop",
+      "risk": "2.8% to stop",
+      "source": "20-day range"
+    },
+    {
+      "type": "TRADE ENTRY",
+      "symbol": "CI",
+      "priority": 65,
+      "action": "Review buy zone",
+      "status": "Paper bot will recheck before any order",
+      "detail": "Entry $263.11-$273.69 | target $305.44 | stop $257.85",
+      "risk": "5.1% to stop",
       "source": "20-day range"
     },
     {
       "type": "TRADE ENTRY",
       "symbol": "UNH",
-      "priority": 61,
+      "priority": 60,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $397.80-$413.75 | target $461.62 | stop $389.84",
-      "risk": "3.9% to stop",
+      "risk": "3.5% to stop",
       "source": "20-day range"
     },
     {
@@ -76,8 +76,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 8.34% | avg/mo $0.124 | paid 12/12 months",
-      "risk": "6.8% 52w drawdown",
+      "detail": "Yield 8.33% | avg/mo $0.124 | paid 12/12 months",
+      "risk": "6.6% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -97,7 +97,7 @@
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
       "detail": "Yield 6.13% | avg/mo $0.080 | paid 12/12 months",
-      "risk": "8.2% 52w drawdown",
+      "risk": "8.3% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -116,14 +116,14 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.94% | avg/mo $0.190 | paid 12/12 months",
-      "risk": "10.4% 52w drawdown",
+      "detail": "Yield 6.01% | avg/mo $0.190 | paid 12/12 months",
+      "risk": "11.4% 52w drawdown",
       "source": "monthly dividend"
     },
     {
       "type": "STUDY WATCH",
       "symbol": "ERX",
-      "priority": 60,
+      "priority": 61,
       "action": "EXIT",
       "status": "Study list alert, manual review",
       "detail": "at/above the ceiling \u2014 take profits, no new longs",
@@ -137,7 +137,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 17.1%",
+      "risk": "pos 17.3%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -147,7 +147,7 @@
       "action": "EXIT",
       "status": "Study list alert, manual review",
       "detail": "at/above the ceiling \u2014 take profits, no new longs",
-      "risk": "pos 86.7%",
+      "risk": "pos 84.9%",
       "source": "GitHub issue #5 study list"
     }
   ]
