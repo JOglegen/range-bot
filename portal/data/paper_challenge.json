@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-08-12T19:56:32.671133",
+  "updated_at": "2026-08-12T20:38:52.067449",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
   "cash": 35.3,
-  "equity": 1092.13,
+  "equity": 1092.12,
   "return_pct": 9.21,
   "progress_to_double_pct": 9.21,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 772.12,
+    "last_price": 772.49,
     "shares": 1.343382,
-    "equity": 1037.25,
-    "return_pct": 3.73,
+    "equity": 1037.75,
+    "return_pct": 3.77,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 54.88,
-    "return_delta_pct": 5.48,
+    "equity_delta": 54.37,
+    "return_delta_pct": 5.44,
     "leader": "RangeBot"
   },
   "positions": {
     "TJX": {
       "qty": 1.554932,
       "entry_price": 153.095,
-      "last_price": 152.46,
+      "last_price": 152.61,
       "stop": 149.29,
       "target": 170.0,
       "entry_time": "2026-06-29T16:45:52.881588",
@@ -46,7 +46,7 @@
     "JNJ": {
       "qty": 1.066397,
       "entry_price": 252.7,
-      "last_price": 260.6017,
+      "last_price": 260.86,
       "stop": 240.58,
       "target": 274.9,
       "entry_time": "2026-08-04T16:08:35.895942",
@@ -56,7 +56,7 @@
     "ABBV": {
       "qty": 1.124262,
       "entry_price": 243.87,
-      "last_price": 249.215,
+      "last_price": 248.76,
       "stop": 236.64,
       "target": 267.47,
       "entry_time": "2026-08-07T00:04:25.171769",
@@ -286,7 +286,7 @@
       "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-08-12T19:56:13.750499",
+  "latest_scan_at": "2026-08-12T20:38:38.445818",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
