@@ -1,35 +1,15 @@
 {
-  "built_at": "2026-08-14T20:01:53.794542",
-  "range_scanned_at": "2026-08-14T20:01:35.930055",
-  "income_scanned_at": "2026-08-14T20:01:43.502684",
-  "study_scanned_at": "2026-08-14T20:01:53.794542",
+  "built_at": "2026-08-14T20:27:16.949059",
+  "range_scanned_at": "2026-08-14T20:26:48.880827",
+  "income_scanned_at": "2026-08-14T20:27:01.565333",
+  "study_scanned_at": "2026-08-14T20:27:16.949059",
   "summary": {
-    "trade_entries": 5,
+    "trade_entries": 4,
     "range_watches": 0,
     "income_candidates": 10,
     "study_items": 3
   },
   "actions": [
-    {
-      "type": "TRADE ENTRY",
-      "symbol": "NSC",
-      "priority": 93,
-      "action": "Review buy zone",
-      "status": "Paper bot will recheck before any order",
-      "detail": "Entry $327.48-$334.91 | target $357.19 | stop $320.93",
-      "risk": "4.0% to stop",
-      "source": "20-day range"
-    },
-    {
-      "type": "TRADE ENTRY",
-      "symbol": "AON",
-      "priority": 86,
-      "action": "Review buy zone",
-      "status": "Paper bot will recheck before any order",
-      "detail": "Entry $349.33-$357.37 | target $381.47 | stop $342.34",
-      "risk": "3.8% to stop",
-      "source": "20-day range"
-    },
     {
       "type": "TRADE ENTRY",
       "symbol": "NKE",
@@ -42,18 +22,28 @@
     },
     {
       "type": "TRADE ENTRY",
-      "symbol": "CB",
-      "priority": 80,
+      "symbol": "AON",
+      "priority": 81,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
-      "detail": "Entry $338.05-$345.01 | target $365.91 | stop $331.29",
+      "detail": "Entry $349.33-$357.58 | target $382.34 | stop $342.34",
+      "risk": "3.8% to stop",
+      "source": "20-day range"
+    },
+    {
+      "type": "TRADE ENTRY",
+      "symbol": "CB",
+      "priority": 78,
+      "action": "Review buy zone",
+      "status": "Paper bot will recheck before any order",
+      "detail": "Entry $338.00-$344.98 | target $365.91 | stop $331.24",
       "risk": "3.6% to stop",
       "source": "20-day range"
     },
     {
       "type": "TRADE ENTRY",
       "symbol": "SO",
-      "priority": 74,
+      "priority": 71,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $91.03-$92.99 | target $98.86 | stop $89.21",
@@ -97,7 +87,7 @@
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
       "detail": "Yield 5.97% | avg/mo $0.080 | paid 12/12 months",
-      "risk": "5.9% 52w drawdown",
+      "risk": "5.7% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -107,7 +97,7 @@
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
       "detail": "Yield 5.90% | avg/mo $0.301 | paid 12/12 months",
-      "risk": "4.7% 52w drawdown",
+      "risk": "4.8% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -122,22 +112,22 @@
     },
     {
       "type": "STUDY WATCH",
-      "symbol": "ERX",
-      "priority": 67,
-      "action": "EXIT",
-      "status": "Study list alert, manual review",
-      "detail": "at/above the ceiling \u2014 take profits, no new longs",
-      "risk": "pos 100.0%",
-      "source": "GitHub issue #5 study list"
-    },
-    {
-      "type": "STUDY WATCH",
       "symbol": "EIX",
       "priority": 42,
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 32.2%",
+      "risk": "pos 32.1%",
+      "source": "GitHub issue #5 study list"
+    },
+    {
+      "type": "STUDY WATCH",
+      "symbol": "ERX",
+      "priority": 39,
+      "action": "EXIT",
+      "status": "Study list alert, manual review",
+      "detail": "at/above the ceiling \u2014 take profits, no new longs",
+      "risk": "pos 100.0%",
       "source": "GitHub issue #5 study list"
     },
     {
