@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-08-17T15:47:41.280657",
-  "range_scanned_at": "2026-08-17T15:47:08.544043",
-  "income_scanned_at": "2026-08-17T15:47:23.639071",
-  "study_scanned_at": "2026-08-17T15:47:41.280657",
+  "built_at": "2026-08-17T16:16:52.561273",
+  "range_scanned_at": "2026-08-17T16:16:28.546314",
+  "income_scanned_at": "2026-08-17T16:16:38.191791",
+  "study_scanned_at": "2026-08-17T16:16:52.561273",
   "summary": {
     "trade_entries": 5,
     "range_watches": 0,
@@ -17,7 +17,7 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $203.11-$208.11 | target $223.10 | stop $199.05",
-      "risk": "2.9% to stop",
+      "risk": "3.2% to stop",
       "source": "20-day range"
     },
     {
@@ -27,7 +27,7 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $222.92-$230.00 | target $251.25 | stop $218.46",
-      "risk": "4.8% to stop",
+      "risk": "4.9% to stop",
       "source": "20-day range"
     },
     {
@@ -42,22 +42,22 @@
     },
     {
       "type": "TRADE ENTRY",
+      "symbol": "TJX",
+      "priority": 86,
+      "action": "Review buy zone",
+      "status": "Paper bot will recheck before any order",
+      "detail": "Entry $151.43-$154.20 | target $162.53 | stop $148.40",
+      "risk": "2.0% to stop",
+      "source": "20-day range"
+    },
+    {
+      "type": "TRADE ENTRY",
       "symbol": "CL",
       "priority": 85,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $89.17-$90.74 | target $95.46 | stop $87.39",
-      "risk": "2.4% to stop",
-      "source": "20-day range"
-    },
-    {
-      "type": "TRADE ENTRY",
-      "symbol": "AON",
-      "priority": 84,
-      "action": "Review buy zone",
-      "status": "Paper bot will recheck before any order",
-      "detail": "Entry $349.33-$357.37 | target $381.47 | stop $342.34",
-      "risk": "2.5% to stop",
+      "risk": "3.1% to stop",
       "source": "20-day range"
     },
     {
@@ -67,7 +67,7 @@
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
       "detail": "Yield 4.52% | avg/mo $0.199 | paid 12/12 months",
-      "risk": "1.5% 52w drawdown",
+      "risk": "1.4% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -106,8 +106,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 6.04% | avg/mo $0.301 | paid 12/12 months",
-      "risk": "6.9% 52w drawdown",
+      "detail": "Yield 6.03% | avg/mo $0.301 | paid 12/12 months",
+      "risk": "6.8% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -117,13 +117,13 @@
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
       "detail": "Yield 5.90% | avg/mo $0.080 | paid 12/12 months",
-      "risk": "4.4% 52w drawdown",
+      "risk": "4.3% 52w drawdown",
       "source": "monthly dividend"
     },
     {
       "type": "STUDY WATCH",
       "symbol": "ERX",
-      "priority": 50,
+      "priority": 49,
       "action": "EXIT",
       "status": "Study list alert, manual review",
       "detail": "at/above the ceiling \u2014 take profits, no new longs",
@@ -137,7 +137,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 26.1%",
+      "risk": "pos 29.0%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -147,7 +147,7 @@
       "action": "EXIT",
       "status": "Study list alert, manual review",
       "detail": "at/above the ceiling \u2014 take profits, no new longs",
-      "risk": "pos 97.9%",
+      "risk": "pos 97.3%",
       "source": "GitHub issue #5 study list"
     }
   ]
