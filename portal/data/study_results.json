@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-08-17T20:21:59.413040",
+  "scanned_at": "2026-08-18T14:06:11.113474",
   "mode": "range",
   "source": "GitHub issue #5 study list",
   "symbols": [
@@ -14,12 +14,12 @@
   "all_setups": [
     {
       "symbol": "EIX",
-      "price": 71.3,
+      "price": 73.14,
       "signal": "WAIT",
       "score": 42,
-      "pos_pct": 31.4,
+      "pos_pct": 43.6,
       "width_pct": 22.6,
-      "vol_ratio": 1.29,
+      "vol_ratio": 0.09,
       "stop": 65.25,
       "target": 81.62,
       "entry_low": null,
@@ -27,29 +27,29 @@
       "note": "mid-range, no edge yet"
     },
     {
-      "symbol": "ERX",
-      "price": 104.05,
-      "signal": "EXIT",
-      "score": 48,
-      "pos_pct": 100.0,
-      "width_pct": 17.9,
-      "vol_ratio": 0.96,
-      "stop": 85.24,
-      "target": 102.52,
-      "entry_low": null,
-      "entry_high": null,
-      "note": "at/above the ceiling \u2014 take profits, no new longs"
-    },
-    {
       "symbol": "TECL",
-      "price": 218.9,
-      "signal": "EXIT",
+      "price": 204.59,
+      "signal": "WAIT",
       "score": 15,
-      "pos_pct": 93.4,
+      "pos_pct": 74.0,
       "width_pct": 49.4,
-      "vol_ratio": 0.6,
+      "vol_ratio": 0.37,
       "stop": 146.79,
       "target": 223.82,
+      "entry_low": null,
+      "entry_high": null,
+      "note": "mid-range, no edge yet"
+    },
+    {
+      "symbol": "ERX",
+      "price": 106.62,
+      "signal": "EXIT",
+      "score": 45,
+      "pos_pct": 100.0,
+      "width_pct": 17.9,
+      "vol_ratio": 0.33,
+      "stop": 85.24,
+      "target": 102.52,
       "entry_low": null,
       "entry_high": null,
       "note": "at/above the ceiling \u2014 take profits, no new longs"
