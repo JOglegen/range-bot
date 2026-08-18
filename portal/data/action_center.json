@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-08-18T20:00:43.621763",
-  "range_scanned_at": "2026-08-18T20:00:29.480472",
-  "income_scanned_at": "2026-08-18T20:00:35.987238",
-  "study_scanned_at": "2026-08-18T20:00:43.621763",
+  "built_at": "2026-08-18T20:19:10.015265",
+  "range_scanned_at": "2026-08-18T20:18:42.486867",
+  "income_scanned_at": "2026-08-18T20:18:57.917578",
+  "study_scanned_at": "2026-08-18T20:19:10.015265",
   "summary": {
     "trade_entries": 5,
     "range_watches": 0,
@@ -22,16 +22,6 @@
     },
     {
       "type": "TRADE ENTRY",
-      "symbol": "PGR",
-      "priority": 87,
-      "action": "Review buy zone",
-      "status": "Paper bot will recheck before any order",
-      "detail": "Entry $203.11-$208.11 | target $223.10 | stop $199.05",
-      "risk": "3.9% to stop",
-      "source": "20-day range"
-    },
-    {
-      "type": "TRADE ENTRY",
       "symbol": "TXN",
       "priority": 85,
       "action": "Review buy zone",
@@ -42,8 +32,18 @@
     },
     {
       "type": "TRADE ENTRY",
+      "symbol": "PGR",
+      "priority": 83,
+      "action": "Review buy zone",
+      "status": "Paper bot will recheck before any order",
+      "detail": "Entry $203.11-$208.11 | target $223.10 | stop $199.05",
+      "risk": "3.9% to stop",
+      "source": "20-day range"
+    },
+    {
+      "type": "TRADE ENTRY",
       "symbol": "TJX",
-      "priority": 82,
+      "priority": 81,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $150.41-$153.44 | target $162.53 | stop $147.40",
@@ -53,11 +53,11 @@
     {
       "type": "TRADE ENTRY",
       "symbol": "HON",
-      "priority": 78,
+      "priority": 77,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
-      "detail": "Entry $224.84-$231.44 | target $251.25 | stop $220.34",
-      "risk": "3.2% to stop",
+      "detail": "Entry $222.92-$230.00 | target $251.25 | stop $218.46",
+      "risk": "4.1% to stop",
       "source": "20-day range"
     },
     {
@@ -67,7 +67,7 @@
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
       "detail": "Yield 4.50% | avg/mo $0.199 | paid 12/12 months",
-      "risk": "1.1% 52w drawdown",
+      "risk": "1.0% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -86,7 +86,7 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 7.45% | avg/mo $0.359 | paid 12/12 months",
+      "detail": "Yield 7.46% | avg/mo $0.359 | paid 12/12 months",
       "risk": "13.9% 52w drawdown",
       "source": "monthly dividend"
     },
@@ -107,7 +107,7 @@
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
       "detail": "Yield 5.97% | avg/mo $0.080 | paid 12/12 months",
-      "risk": "5.8% 52w drawdown",
+      "risk": "5.9% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -122,6 +122,16 @@
     },
     {
       "type": "STUDY WATCH",
+      "symbol": "ERX",
+      "priority": 47,
+      "action": "EXIT",
+      "status": "Study list alert, manual review",
+      "detail": "at/above the ceiling \u2014 take profits, no new longs",
+      "risk": "pos 100.0%",
+      "source": "GitHub issue #5 study list"
+    },
+    {
+      "type": "STUDY WATCH",
       "symbol": "EIX",
       "priority": 42,
       "action": "WAIT",
@@ -132,22 +142,12 @@
     },
     {
       "type": "STUDY WATCH",
-      "symbol": "ERX",
-      "priority": 42,
-      "action": "EXIT",
-      "status": "Study list alert, manual review",
-      "detail": "at/above the ceiling \u2014 take profits, no new longs",
-      "risk": "pos 100.0%",
-      "source": "GitHub issue #5 study list"
-    },
-    {
-      "type": "STUDY WATCH",
       "symbol": "TECL",
       "priority": 20,
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 71.2%",
+      "risk": "pos 70.7%",
       "source": "GitHub issue #5 study list"
     }
   ]

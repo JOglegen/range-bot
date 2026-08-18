@@ -1,25 +1,25 @@
 {
-  "updated_at": "2026-08-18T20:00:44.224208",
+  "updated_at": "2026-08-18T20:19:11.230368",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
   "cash": 35.3,
-  "equity": 1114.65,
-  "return_pct": 11.47,
-  "progress_to_double_pct": 11.47,
+  "equity": 1114.61,
+  "return_pct": 11.46,
+  "progress_to_double_pct": 11.46,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 767.36,
+    "last_price": 767.45,
     "shares": 1.343382,
-    "equity": 1030.86,
-    "return_pct": 3.09,
+    "equity": 1030.98,
+    "return_pct": 3.1,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 83.79,
-    "return_delta_pct": 8.38,
+    "equity_delta": 83.63,
+    "return_delta_pct": 8.36,
     "leader": "RangeBot"
   },
   "positions": {
@@ -46,7 +46,7 @@
     "JNJ": {
       "qty": 1.066397,
       "entry_price": 252.7,
-      "last_price": 271.13,
+      "last_price": 271.11,
       "stop": 240.58,
       "target": 274.9,
       "entry_time": "2026-08-04T16:08:35.895942",
@@ -56,7 +56,7 @@
     "ABBV": {
       "qty": 1.124262,
       "entry_price": 243.87,
-      "last_price": 258.94,
+      "last_price": 258.92,
       "stop": 236.64,
       "target": 267.47,
       "entry_time": "2026-08-07T00:04:25.171769",
@@ -286,7 +286,7 @@
       "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-08-18T20:00:29.480472",
+  "latest_scan_at": "2026-08-18T20:18:42.486867",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
