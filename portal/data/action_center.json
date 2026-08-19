@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-08-19T17:03:49.730304",
-  "range_scanned_at": "2026-08-19T17:03:29.988491",
-  "income_scanned_at": "2026-08-19T17:03:38.209261",
-  "study_scanned_at": "2026-08-19T17:03:49.730304",
+  "built_at": "2026-08-19T17:37:49.022090",
+  "range_scanned_at": "2026-08-19T17:37:27.653436",
+  "income_scanned_at": "2026-08-19T17:37:38.316065",
+  "study_scanned_at": "2026-08-19T17:37:49.022090",
   "summary": {
     "trade_entries": 5,
     "range_watches": 0,
@@ -13,11 +13,11 @@
     {
       "type": "TRADE ENTRY",
       "symbol": "CSCO",
-      "priority": 97,
+      "priority": 96,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $110.06-$113.72 | target $124.71 | stop $107.86",
-      "risk": "3.3% to stop",
+      "risk": "3.6% to stop",
       "source": "20-day range"
     },
     {
@@ -27,7 +27,7 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $264.74-$272.24 | target $294.74 | stop $259.45",
-      "risk": "4.4% to stop",
+      "risk": "4.3% to stop",
       "source": "20-day range"
     },
     {
@@ -37,7 +37,7 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $184.02-$189.96 | target $207.76 | stop $180.34",
-      "risk": "4.4% to stop",
+      "risk": "4.2% to stop",
       "source": "20-day range"
     },
     {
@@ -57,7 +57,7 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $90.28-$92.23 | target $98.05 | stop $88.48",
-      "risk": "3.8% to stop",
+      "risk": "3.9% to stop",
       "source": "20-day range"
     },
     {
@@ -66,8 +66,8 @@
       "priority": 100,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 4.47% | avg/mo $0.199 | paid 12/12 months",
-      "risk": "0.4% 52w drawdown",
+      "detail": "Yield 4.48% | avg/mo $0.199 | paid 12/12 months",
+      "risk": "0.5% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -86,8 +86,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 7.43% | avg/mo $0.359 | paid 12/12 months",
-      "risk": "13.6% 52w drawdown",
+      "detail": "Yield 7.44% | avg/mo $0.359 | paid 12/12 months",
+      "risk": "13.7% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -96,8 +96,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 6.40% | avg/mo $0.080 | paid 13/12 months",
-      "risk": "4.4% 52w drawdown",
+      "detail": "Yield 6.41% | avg/mo $0.080 | paid 13/12 months",
+      "risk": "4.6% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -106,8 +106,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.99% | avg/mo $0.301 | paid 12/12 months",
-      "risk": "6.2% 52w drawdown",
+      "detail": "Yield 6.00% | avg/mo $0.301 | paid 12/12 months",
+      "risk": "6.3% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -127,7 +127,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 44.5%",
+      "risk": "pos 43.1%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -137,7 +137,7 @@
       "action": "EXIT",
       "status": "Study list alert, manual review",
       "detail": "at/above the ceiling \u2014 take profits, no new longs",
-      "risk": "pos 100.0%",
+      "risk": "pos 99.1%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -147,7 +147,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 64.6%",
+      "risk": "pos 62.9%",
       "source": "GitHub issue #5 study list"
     }
   ]
