@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-08-21T17:57:06.774179",
+  "updated_at": "2026-08-21T18:29:27.713600",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
-  "cash": 13.77,
-  "equity": 1145.95,
-  "return_pct": 14.59,
-  "progress_to_double_pct": 14.59,
+  "cash": 33.23,
+  "equity": 1149.17,
+  "return_pct": 14.92,
+  "progress_to_double_pct": 14.92,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 765.535,
+    "last_price": 765.33,
     "shares": 1.343382,
-    "equity": 1028.41,
-    "return_pct": 2.84,
+    "equity": 1028.13,
+    "return_pct": 2.81,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 117.54,
-    "return_delta_pct": 11.75,
+    "equity_delta": 121.04,
+    "return_delta_pct": 12.11,
     "leader": "RangeBot"
   },
   "positions": {
     "PEP": {
       "qty": 1.886619,
       "entry_price": 136.905,
-      "last_price": 143.0,
+      "last_price": 142.93,
       "stop": 132.0,
       "target": 149.04,
       "entry_time": "2026-07-14T15:08:32.589992",
@@ -36,7 +36,7 @@
     "CSCO": {
       "qty": 2.538509,
       "entry_price": 110.785,
-      "last_price": 111.46,
+      "last_price": 111.68,
       "stop": 107.86,
       "target": 124.71,
       "entry_time": "2026-08-19T14:06:42.225825",
@@ -46,21 +46,21 @@
     "TXN": {
       "qty": 1.04383,
       "entry_price": 269.42,
-      "last_price": 263.02,
+      "last_price": 263.92,
       "stop": 259.45,
       "target": 294.74,
       "entry_time": "2026-08-19T14:06:42.225825",
       "ma20_at_entry": 277.4529,
       "source": "20-day range BUY"
     },
-    "DE": {
-      "qty": 0.476207,
-      "entry_price": 590.56,
-      "last_price": 640.265,
-      "stop": 570.85,
-      "target": 643.99,
-      "entry_time": "2026-08-19T14:06:42.225825",
-      "ma20_at_entry": 610.8495,
+    "WMT": {
+      "qty": 2.784894,
+      "entry_price": 103.1607,
+      "last_price": 103.1607,
+      "stop": 100.79,
+      "target": 116.87,
+      "entry_time": "2026-08-21T18:29:27.713600",
+      "ma20_at_entry": 112.1815,
       "source": "20-day range BUY"
     }
   },
@@ -344,9 +344,29 @@
       "value": 281.23,
       "pnl": 0,
       "reason": "20-day range BUY"
+    },
+    {
+      "time": "2026-08-21T18:29:27.713600",
+      "symbol": "DE",
+      "side": "SELL",
+      "qty": 0.476207,
+      "price": 644.16,
+      "value": 306.75,
+      "pnl": 25.52,
+      "reason": "stop/target"
+    },
+    {
+      "time": "2026-08-21T18:29:27.713600",
+      "symbol": "WMT",
+      "side": "BUY",
+      "qty": 2.784894,
+      "price": 103.1607,
+      "value": 287.29,
+      "pnl": 0,
+      "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-08-21T17:56:47.567899",
+  "latest_scan_at": "2026-08-21T18:29:02.987069",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
