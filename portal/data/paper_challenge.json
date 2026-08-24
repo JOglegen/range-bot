@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-08-21T20:21:12.751860",
+  "updated_at": "2026-08-24T14:10:53.086907",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
-  "cash": 33.23,
-  "equity": 1150.54,
-  "return_pct": 15.05,
-  "progress_to_double_pct": 15.05,
+  "cash": 15.45,
+  "equity": 1145.78,
+  "return_pct": 14.58,
+  "progress_to_double_pct": 14.58,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 765.72,
+    "last_price": 762.82,
     "shares": 1.343382,
-    "equity": 1028.65,
-    "return_pct": 2.87,
+    "equity": 1024.76,
+    "return_pct": 2.48,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 121.89,
-    "return_delta_pct": 12.18,
+    "equity_delta": 121.02,
+    "return_delta_pct": 12.1,
     "leader": "RangeBot"
   },
   "positions": {
     "PEP": {
       "qty": 1.886619,
       "entry_price": 136.905,
-      "last_price": 143.48,
+      "last_price": 145.58,
       "stop": 132.0,
       "target": 149.04,
       "entry_time": "2026-07-14T15:08:32.589992",
@@ -36,31 +36,31 @@
     "CSCO": {
       "qty": 2.538509,
       "entry_price": 110.785,
-      "last_price": 111.04,
+      "last_price": 109.63,
       "stop": 107.86,
       "target": 124.71,
       "entry_time": "2026-08-19T14:06:42.225825",
       "ma20_at_entry": 116.3923,
       "source": "20-day range BUY"
     },
-    "TXN": {
-      "qty": 1.04383,
-      "entry_price": 269.42,
-      "last_price": 264.36,
-      "stop": 259.45,
-      "target": 294.74,
-      "entry_time": "2026-08-19T14:06:42.225825",
-      "ma20_at_entry": 277.4529,
-      "source": "20-day range BUY"
-    },
     "WMT": {
       "qty": 2.784894,
       "entry_price": 103.1607,
-      "last_price": 103.7,
+      "last_price": 104.47,
       "stop": 100.79,
       "target": 116.87,
       "entry_time": "2026-08-21T18:29:27.713600",
       "ma20_at_entry": 112.1815,
+      "source": "20-day range BUY"
+    },
+    "RTX": {
+      "qty": 1.36754,
+      "entry_price": 209.46,
+      "last_price": 209.46,
+      "stop": 204.52,
+      "target": 226.41,
+      "entry_time": "2026-08-24T14:10:53.086907",
+      "ma20_at_entry": 218.5234,
       "source": "20-day range BUY"
     }
   },
@@ -364,9 +364,29 @@
       "value": 287.29,
       "pnl": 0,
       "reason": "20-day range BUY"
+    },
+    {
+      "time": "2026-08-24T14:10:53.086907",
+      "symbol": "TXN",
+      "side": "SELL",
+      "qty": 1.04383,
+      "price": 257.38,
+      "value": 268.66,
+      "pnl": -12.57,
+      "reason": "WAIT"
+    },
+    {
+      "time": "2026-08-24T14:10:53.086907",
+      "symbol": "RTX",
+      "side": "BUY",
+      "qty": 1.36754,
+      "price": 209.46,
+      "value": 286.44,
+      "pnl": 0,
+      "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-08-21T20:20:53.932240",
+  "latest_scan_at": "2026-08-24T14:10:38.738963",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
