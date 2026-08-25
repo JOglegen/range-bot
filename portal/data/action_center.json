@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-08-25T17:53:08.173967",
-  "range_scanned_at": "2026-08-25T17:52:49.371942",
-  "income_scanned_at": "2026-08-25T17:52:57.274110",
-  "study_scanned_at": "2026-08-25T17:53:08.173967",
+  "built_at": "2026-08-25T18:25:23.152926",
+  "range_scanned_at": "2026-08-25T18:25:05.292071",
+  "income_scanned_at": "2026-08-25T18:25:12.729257",
+  "study_scanned_at": "2026-08-25T18:25:23.152926",
   "summary": {
     "trade_entries": 5,
     "range_watches": 0,
@@ -47,7 +47,7 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $83.24-$85.18 | target $90.99 | stop $81.58",
-      "risk": "3.2% to stop",
+      "risk": "3.3% to stop",
       "source": "20-day range"
     },
     {
@@ -59,6 +59,16 @@
       "detail": "Entry $299.74-$310.87 | target $344.27 | stop $293.75",
       "risk": "5.1% to stop",
       "source": "20-day range"
+    },
+    {
+      "type": "INCOME WATCH",
+      "symbol": "SBR",
+      "priority": 100,
+      "action": "Review for income list",
+      "status": "Alert only, no auto-buy",
+      "detail": "Yield 6.47% | avg/mo $0.398 | paid 12/12 months",
+      "risk": "10.1% 52w drawdown",
+      "source": "monthly dividend"
     },
     {
       "type": "INCOME WATCH",
@@ -76,8 +86,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 7.34% | avg/mo $0.359 | paid 12/12 months",
-      "risk": "12.6% 52w drawdown",
+      "detail": "Yield 7.33% | avg/mo $0.359 | paid 12/12 months",
+      "risk": "12.5% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -96,7 +106,7 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 6.08% | avg/mo $0.190 | paid 13/12 months",
+      "detail": "Yield 6.07% | avg/mo $0.190 | paid 13/12 months",
       "risk": "5.0% 52w drawdown",
       "source": "monthly dividend"
     },
@@ -106,18 +116,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.94% | avg/mo $0.301 | paid 12/12 months",
-      "risk": "5.4% 52w drawdown",
-      "source": "monthly dividend"
-    },
-    {
-      "type": "INCOME WATCH",
-      "symbol": "APLE",
-      "priority": 93,
-      "action": "Review for income list",
-      "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.73% | avg/mo $0.080 | paid 12/12 months",
-      "risk": "1.9% 52w drawdown",
+      "detail": "Yield 5.95% | avg/mo $0.301 | paid 12/12 months",
+      "risk": "5.6% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -127,7 +127,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 53.8%",
+      "risk": "pos 52.9%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -137,7 +137,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 69.4%",
+      "risk": "pos 69.0%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -147,7 +147,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 50.9%",
+      "risk": "pos 51.2%",
       "source": "GitHub issue #5 study list"
     }
   ]
