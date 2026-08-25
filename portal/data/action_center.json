@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-08-25T20:01:29.335978",
-  "range_scanned_at": "2026-08-25T20:01:09.428947",
-  "income_scanned_at": "2026-08-25T20:01:18.310093",
-  "study_scanned_at": "2026-08-25T20:01:29.335978",
+  "built_at": "2026-08-25T20:24:08.911211",
+  "range_scanned_at": "2026-08-25T20:23:50.426113",
+  "income_scanned_at": "2026-08-25T20:23:57.536423",
+  "study_scanned_at": "2026-08-25T20:24:08.911211",
   "summary": {
     "trade_entries": 5,
     "range_watches": 0,
@@ -66,8 +66,8 @@
       "priority": 100,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 6.40% | avg/mo $0.398 | paid 12/12 months",
-      "risk": "9.2% 52w drawdown",
+      "detail": "Yield 6.41% | avg/mo $0.398 | paid 12/12 months",
+      "risk": "9.3% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -107,7 +107,7 @@
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
       "detail": "Yield 6.07% | avg/mo $0.190 | paid 13/12 months",
-      "risk": "4.9% 52w drawdown",
+      "risk": "5.0% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -123,7 +123,7 @@
     {
       "type": "STUDY WATCH",
       "symbol": "EIX",
-      "priority": 76,
+      "priority": 77,
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
@@ -137,7 +137,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 63.2%",
+      "risk": "pos 62.9%",
       "source": "GitHub issue #5 study list"
     },
     {
