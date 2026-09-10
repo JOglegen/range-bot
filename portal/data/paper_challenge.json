@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-09-10T17:05:10.744335",
+  "updated_at": "2026-09-10T17:24:32.501208",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
   "cash": 3.46,
-  "equity": 1115.06,
-  "return_pct": 11.51,
-  "progress_to_double_pct": 11.51,
+  "equity": 1114.69,
+  "return_pct": 11.47,
+  "progress_to_double_pct": 11.47,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 759.06,
+    "last_price": 758.66,
     "shares": 1.343382,
-    "equity": 1019.71,
-    "return_pct": 1.97,
+    "equity": 1019.17,
+    "return_pct": 1.92,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 95.35,
-    "return_delta_pct": 9.54,
+    "equity_delta": 95.52,
+    "return_delta_pct": 9.55,
     "leader": "RangeBot"
   },
   "positions": {
     "PEP": {
       "qty": 1.886619,
       "entry_price": 136.905,
-      "last_price": 137.04,
+      "last_price": 136.9,
       "stop": 132.0,
       "target": 149.04,
       "entry_time": "2026-07-14T15:08:32.589992",
@@ -36,7 +36,7 @@
     "CSCO": {
       "qty": 2.538509,
       "entry_price": 110.785,
-      "last_price": 108.46,
+      "last_price": 108.26,
       "stop": 107.86,
       "target": 124.71,
       "entry_time": "2026-08-19T14:06:42.225825",
@@ -46,7 +46,7 @@
     "WMT": {
       "qty": 2.784894,
       "entry_price": 103.1607,
-      "last_price": 105.925,
+      "last_price": 106.07,
       "stop": 100.79,
       "target": 116.87,
       "entry_time": "2026-08-21T18:29:27.713600",
@@ -426,7 +426,7 @@
       "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-09-10T17:04:52.355743",
+  "latest_scan_at": "2026-09-10T17:24:07.372803",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
