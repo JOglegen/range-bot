@@ -1,52 +1,42 @@
 {
-  "updated_at": "2026-09-10T17:24:32.501208",
+  "updated_at": "2026-09-10T19:54:29.080354",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
-  "cash": 3.46,
-  "equity": 1114.69,
-  "return_pct": 11.47,
-  "progress_to_double_pct": 11.47,
+  "cash": 0.0,
+  "equity": 1113.6,
+  "return_pct": 11.36,
+  "progress_to_double_pct": 11.36,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 758.66,
+    "last_price": 757.8,
     "shares": 1.343382,
-    "equity": 1019.17,
-    "return_pct": 1.92,
+    "equity": 1018.01,
+    "return_pct": 1.8,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 95.52,
-    "return_delta_pct": 9.55,
+    "equity_delta": 95.59,
+    "return_delta_pct": 9.56,
     "leader": "RangeBot"
   },
   "positions": {
     "PEP": {
       "qty": 1.886619,
       "entry_price": 136.905,
-      "last_price": 136.9,
+      "last_price": 136.76,
       "stop": 132.0,
       "target": 149.04,
       "entry_time": "2026-07-14T15:08:32.589992",
       "ma20_at_entry": 141.1397,
       "source": "20-day range BUY"
     },
-    "CSCO": {
-      "qty": 2.538509,
-      "entry_price": 110.785,
-      "last_price": 108.26,
-      "stop": 107.86,
-      "target": 124.71,
-      "entry_time": "2026-08-19T14:06:42.225825",
-      "ma20_at_entry": 116.3923,
-      "source": "20-day range BUY"
-    },
     "WMT": {
       "qty": 2.784894,
       "entry_price": 103.1607,
-      "last_price": 106.07,
+      "last_price": 105.675,
       "stop": 100.79,
       "target": 116.87,
       "entry_time": "2026-08-21T18:29:27.713600",
@@ -56,11 +46,21 @@
     "ABBV": {
       "qty": 1.119287,
       "entry_price": 248.6,
-      "last_price": 252.61,
+      "last_price": 254.19,
       "stop": 240.61,
       "target": 266.97,
       "entry_time": "2026-09-09T17:13:38.671752",
       "ma20_at_entry": 257.5035,
+      "source": "20-day range BUY"
+    },
+    "DHR": {
+      "qty": 1.376953,
+      "entry_price": 201.01,
+      "last_price": 201.01,
+      "stop": 195.5,
+      "target": 220.67,
+      "entry_time": "2026-09-10T19:54:29.080354",
+      "ma20_at_entry": 209.659,
       "source": "20-day range BUY"
     }
   },
@@ -424,9 +424,29 @@
       "value": 278.25,
       "pnl": 0,
       "reason": "20-day range BUY"
+    },
+    {
+      "time": "2026-09-10T19:54:29.080354",
+      "symbol": "CSCO",
+      "side": "SELL",
+      "qty": 2.538509,
+      "price": 107.67,
+      "value": 273.32,
+      "pnl": -7.91,
+      "reason": "BUY"
+    },
+    {
+      "time": "2026-09-10T19:54:29.080354",
+      "symbol": "DHR",
+      "side": "BUY",
+      "qty": 1.376953,
+      "price": 201.01,
+      "value": 276.78,
+      "pnl": 0,
+      "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-09-10T17:24:07.372803",
+  "latest_scan_at": "2026-09-10T19:54:12.220627",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
