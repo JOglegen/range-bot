@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-09-11T22:12:31.705789",
+  "updated_at": "2026-09-14T18:49:07.263008",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
   "cash": 0.0,
-  "equity": 1118.96,
-  "return_pct": 11.9,
-  "progress_to_double_pct": 11.9,
+  "equity": 1135.36,
+  "return_pct": 13.54,
+  "progress_to_double_pct": 13.54,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 764.29,
+    "last_price": 762.5,
     "shares": 1.343382,
-    "equity": 1026.73,
-    "return_pct": 2.67,
+    "equity": 1024.33,
+    "return_pct": 2.43,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 92.23,
-    "return_delta_pct": 9.23,
+    "equity_delta": 111.03,
+    "return_delta_pct": 11.11,
     "leader": "RangeBot"
   },
   "positions": {
     "PEP": {
       "qty": 1.886619,
       "entry_price": 136.905,
-      "last_price": 136.32,
+      "last_price": 136.74,
       "stop": 132.0,
       "target": 149.04,
       "entry_time": "2026-07-14T15:08:32.589992",
@@ -36,7 +36,7 @@
     "WMT": {
       "qty": 2.784894,
       "entry_price": 103.1607,
-      "last_price": 107.15,
+      "last_price": 109.626,
       "stop": 100.79,
       "target": 116.87,
       "entry_time": "2026-08-21T18:29:27.713600",
@@ -46,7 +46,7 @@
     "ABBV": {
       "qty": 1.119287,
       "entry_price": 248.6,
-      "last_price": 257.12,
+      "last_price": 261.705,
       "stop": 240.61,
       "target": 266.97,
       "entry_time": "2026-09-09T17:13:38.671752",
@@ -56,7 +56,7 @@
     "DHR": {
       "qty": 1.376953,
       "entry_price": 201.01,
-      "last_price": 200.14,
+      "last_price": 202.74,
       "stop": 195.5,
       "target": 220.67,
       "entry_time": "2026-09-10T19:54:29.080354",
@@ -446,7 +446,7 @@
       "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-09-11T22:12:08.523178",
+  "latest_scan_at": "2026-09-14T18:48:42.467505",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
