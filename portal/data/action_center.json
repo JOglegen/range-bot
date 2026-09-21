@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-09-21T18:52:06.921430",
-  "range_scanned_at": "2026-09-21T18:51:38.804141",
-  "income_scanned_at": "2026-09-21T18:51:50.226286",
-  "study_scanned_at": "2026-09-21T18:52:06.921430",
+  "built_at": "2026-09-21T18:59:16.964398",
+  "range_scanned_at": "2026-09-21T18:58:50.152230",
+  "income_scanned_at": "2026-09-21T18:59:01.588352",
+  "study_scanned_at": "2026-09-21T18:59:16.964398",
   "summary": {
     "trade_entries": 5,
     "range_watches": 0,
@@ -17,7 +17,7 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $272.34-$276.99 | target $290.94 | stop $266.89",
-      "risk": "2.9% to stop",
+      "risk": "2.8% to stop",
       "source": "20-day range"
     },
     {
@@ -27,7 +27,7 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $228.96-$234.68 | target $251.82 | stop $224.38",
-      "risk": "2.5% to stop",
+      "risk": "2.6% to stop",
       "source": "20-day range"
     },
     {
@@ -67,7 +67,7 @@
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
       "detail": "Yield 6.32% | avg/mo $0.302 | paid 12/12 months",
-      "risk": "10.8% 52w drawdown",
+      "risk": "10.7% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -76,8 +76,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 8.66% | avg/mo $0.124 | paid 12/12 months",
-      "risk": "10.6% 52w drawdown",
+      "detail": "Yield 8.65% | avg/mo $0.124 | paid 12/12 months",
+      "risk": "10.5% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -97,7 +97,7 @@
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
       "detail": "Yield 6.06% | avg/mo $0.080 | paid 12/12 months",
-      "risk": "6.8% 52w drawdown",
+      "risk": "6.9% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -106,7 +106,7 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.29% | avg/mo $0.190 | paid 12/12 months",
+      "detail": "Yield 5.28% | avg/mo $0.190 | paid 12/12 months",
       "risk": "0.8% 52w drawdown",
       "source": "monthly dividend"
     },
