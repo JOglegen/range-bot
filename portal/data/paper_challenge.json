@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-09-22T17:50:28.761279",
+  "updated_at": "2026-09-22T20:40:40.716416",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
-  "cash": 18.12,
-  "equity": 1147.6,
-  "return_pct": 14.76,
-  "progress_to_double_pct": 14.76,
+  "cash": 0.0,
+  "equity": 1147.33,
+  "return_pct": 14.73,
+  "progress_to_double_pct": 14.73,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 773.3901,
+    "last_price": 773.38,
     "shares": 1.343382,
-    "equity": 1038.96,
-    "return_pct": 3.9,
+    "equity": 1038.94,
+    "return_pct": 3.89,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 108.64,
-    "return_delta_pct": 10.86,
+    "equity_delta": 108.39,
+    "return_delta_pct": 10.84,
     "leader": "RangeBot"
   },
   "positions": {
     "WMT": {
       "qty": 2.784894,
       "entry_price": 103.1607,
-      "last_price": 109.7527,
+      "last_price": 110.12,
       "stop": 100.79,
       "target": 116.87,
       "entry_time": "2026-08-21T18:29:27.713600",
@@ -36,31 +36,31 @@
     "ABBV": {
       "qty": 1.119287,
       "entry_price": 248.6,
-      "last_price": 265.145,
+      "last_price": 265.21,
       "stop": 240.61,
       "target": 266.97,
       "entry_time": "2026-09-09T17:13:38.671752",
       "ma20_at_entry": 257.5035,
       "source": "20-day range BUY"
     },
-    "EOG": {
-      "qty": 1.706377,
-      "entry_price": 144.08,
-      "last_price": 140.65,
-      "stop": 139.9,
-      "target": 154.16,
-      "entry_time": "2026-09-18T17:09:07.117307",
-      "ma20_at_entry": 147.011,
-      "source": "20-day range BUY"
-    },
     "IBM": {
       "qty": 1.243043,
       "entry_price": 230.825,
-      "last_price": 230.93,
+      "last_price": 231.38,
       "stop": 223.78,
       "target": 251.82,
       "entry_time": "2026-09-22T17:42:22.842590",
       "ma20_at_entry": 235.9677,
+      "source": "20-day range BUY"
+    },
+    "C": {
+      "qty": 1.933975,
+      "entry_price": 132.47,
+      "last_price": 132.47,
+      "stop": 127.6,
+      "target": 141.27,
+      "entry_time": "2026-09-22T20:40:40.716416",
+      "ma20_at_entry": 134.795,
       "source": "20-day range BUY"
     }
   },
@@ -484,9 +484,29 @@
       "value": 286.93,
       "pnl": 0,
       "reason": "20-day range BUY"
+    },
+    {
+      "time": "2026-09-22T20:40:40.716416",
+      "symbol": "EOG",
+      "side": "SELL",
+      "qty": 1.706377,
+      "price": 139.52,
+      "value": 238.07,
+      "pnl": -7.78,
+      "reason": "WAIT"
+    },
+    {
+      "time": "2026-09-22T20:40:40.716416",
+      "symbol": "C",
+      "side": "BUY",
+      "qty": 1.933975,
+      "price": 132.47,
+      "value": 256.19,
+      "pnl": 0,
+      "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-09-22T17:50:09.053601",
+  "latest_scan_at": "2026-09-22T20:40:24.444783",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
