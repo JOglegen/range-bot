@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-09-21T22:59:04.770887",
+  "updated_at": "2026-09-22T17:42:22.842590",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
-  "cash": 0.0,
-  "equity": 1133.69,
-  "return_pct": 13.37,
-  "progress_to_double_pct": 13.37,
+  "cash": 18.12,
+  "equity": 1147.7,
+  "return_pct": 14.77,
+  "progress_to_double_pct": 14.77,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 773.5,
+    "last_price": 773.23,
     "shares": 1.343382,
-    "equity": 1039.11,
-    "return_pct": 3.91,
+    "equity": 1038.74,
+    "return_pct": 3.87,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 94.58,
-    "return_delta_pct": 9.46,
+    "equity_delta": 108.96,
+    "return_delta_pct": 10.9,
     "leader": "RangeBot"
   },
   "positions": {
     "WMT": {
       "qty": 2.784894,
       "entry_price": 103.1607,
-      "last_price": 107.44,
+      "last_price": 109.845,
       "stop": 100.79,
       "target": 116.87,
       "entry_time": "2026-08-21T18:29:27.713600",
@@ -36,31 +36,31 @@
     "ABBV": {
       "qty": 1.119287,
       "entry_price": 248.6,
-      "last_price": 264.48,
+      "last_price": 265.185,
       "stop": 240.61,
       "target": 266.97,
       "entry_time": "2026-09-09T17:13:38.671752",
       "ma20_at_entry": 257.5035,
       "source": "20-day range BUY"
     },
-    "DHR": {
-      "qty": 1.376953,
-      "entry_price": 201.01,
-      "last_price": 215.84,
-      "stop": 195.5,
-      "target": 220.67,
-      "entry_time": "2026-09-10T19:54:29.080354",
-      "ma20_at_entry": 209.659,
-      "source": "20-day range BUY"
-    },
     "EOG": {
       "qty": 1.706377,
       "entry_price": 144.08,
-      "last_price": 141.38,
+      "last_price": 140.61,
       "stop": 139.9,
       "target": 154.16,
       "entry_time": "2026-09-18T17:09:07.117307",
       "ma20_at_entry": 147.011,
+      "source": "20-day range BUY"
+    },
+    "IBM": {
+      "qty": 1.243043,
+      "entry_price": 230.825,
+      "last_price": 230.825,
+      "stop": 223.78,
+      "target": 251.82,
+      "entry_time": "2026-09-22T17:42:22.842590",
+      "ma20_at_entry": 235.9677,
       "source": "20-day range BUY"
     }
   },
@@ -464,9 +464,29 @@
       "value": 245.85,
       "pnl": 0,
       "reason": "20-day range BUY"
+    },
+    {
+      "time": "2026-09-22T17:42:22.842590",
+      "symbol": "DHR",
+      "side": "SELL",
+      "qty": 1.376953,
+      "price": 221.535,
+      "value": 305.04,
+      "pnl": 28.26,
+      "reason": "stop/target"
+    },
+    {
+      "time": "2026-09-22T17:42:22.842590",
+      "symbol": "IBM",
+      "side": "BUY",
+      "qty": 1.243043,
+      "price": 230.825,
+      "value": 286.93,
+      "pnl": 0,
+      "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-09-21T22:58:51.869942",
+  "latest_scan_at": "2026-09-22T17:41:59.588271",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
