@@ -1,8 +1,8 @@
 {
-  "scanned_at": "2026-09-23T21:27:42.981184",
+  "scanned_at": "2026-09-23T22:39:17.036807",
   "mode": "range",
   "total_scanned": 104,
-  "total_qualifying": 79,
+  "total_qualifying": 78,
   "buys": [
     {
       "symbol": "C",
@@ -512,20 +512,6 @@
       "note": "mid-range, no edge yet"
     },
     {
-      "symbol": "CVX",
-      "price": 205.51,
-      "signal": "WAIT",
-      "score": 79,
-      "pos_pct": 38.5,
-      "width_pct": 10.1,
-      "vol_ratio": 0.84,
-      "stop": 193.86,
-      "target": 217.78,
-      "entry_low": null,
-      "entry_high": null,
-      "note": "mid-range, no edge yet"
-    },
-    {
       "symbol": "MRK",
       "price": 148.08,
       "signal": "WAIT",
@@ -773,6 +759,20 @@
       "vol_ratio": 0.81,
       "stop": 68.85,
       "target": 78.75,
+      "entry_low": null,
+      "entry_high": null,
+      "note": "mid-range, no edge yet"
+    },
+    {
+      "symbol": "LIN",
+      "price": 469.72,
+      "signal": "WAIT",
+      "score": 63,
+      "pos_pct": 40.1,
+      "width_pct": 8.5,
+      "vol_ratio": 0.97,
+      "stop": 445.11,
+      "target": 492.88,
       "entry_low": null,
       "entry_high": null,
       "note": "mid-range, no edge yet"
