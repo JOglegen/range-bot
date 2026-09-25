@@ -1,24 +1,24 @@
 {
-  "updated_at": "2026-09-25T18:02:01.348667",
+  "updated_at": "2026-09-25T18:09:14.745925",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
   "cash": 0.0,
-  "equity": 1137.71,
-  "return_pct": 13.77,
-  "progress_to_double_pct": 13.77,
+  "equity": 1137.53,
+  "return_pct": 13.75,
+  "progress_to_double_pct": 13.75,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 771.19,
+    "last_price": 771.07,
     "shares": 1.343382,
-    "equity": 1036.0,
-    "return_pct": 3.6,
+    "equity": 1035.84,
+    "return_pct": 3.58,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 101.71,
+    "equity_delta": 101.69,
     "return_delta_pct": 10.17,
     "leader": "RangeBot"
   },
@@ -26,7 +26,7 @@
     "WMT": {
       "qty": 2.784894,
       "entry_price": 103.1607,
-      "last_price": 107.97,
+      "last_price": 107.94,
       "stop": 100.79,
       "target": 116.87,
       "entry_time": "2026-08-21T18:29:27.713600",
@@ -36,7 +36,7 @@
     "ABBV": {
       "qty": 1.119287,
       "entry_price": 248.6,
-      "last_price": 264.34,
+      "last_price": 264.2,
       "stop": 240.61,
       "target": 266.97,
       "entry_time": "2026-09-09T17:13:38.671752",
@@ -46,7 +46,7 @@
     "IBM": {
       "qty": 1.243043,
       "entry_price": 230.825,
-      "last_price": 226.5977,
+      "last_price": 226.68,
       "stop": 223.78,
       "target": 251.82,
       "entry_time": "2026-09-22T17:42:22.842590",
@@ -56,7 +56,7 @@
     "C": {
       "qty": 1.933975,
       "entry_price": 132.47,
-      "last_price": 134.17,
+      "last_price": 134.15,
       "stop": 127.6,
       "target": 141.27,
       "entry_time": "2026-09-22T20:40:40.716416",
@@ -506,7 +506,7 @@
       "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-09-25T18:01:43.719911",
+  "latest_scan_at": "2026-09-25T18:08:58.849309",
   "rules": {
     "paper_only": true,
     "max_positions": 4,

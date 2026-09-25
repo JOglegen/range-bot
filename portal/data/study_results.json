@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-09-25T18:02:00.635275",
+  "scanned_at": "2026-09-25T18:09:14.188049",
   "mode": "range",
   "source": "GitHub issue #5 study list",
   "symbols": [
@@ -12,12 +12,12 @@
   "buys": [
     {
       "symbol": "ERX",
-      "price": 101.14,
+      "price": 101.24,
       "signal": "BUY",
       "score": 69,
-      "pos_pct": 6.5,
+      "pos_pct": 7.1,
       "width_pct": 15.2,
-      "vol_ratio": 0.62,
+      "vol_ratio": 0.63,
       "stop": 98.15,
       "target": 115.4,
       "entry_low": 100.15,
@@ -29,12 +29,12 @@
   "all_setups": [
     {
       "symbol": "ERX",
-      "price": 101.14,
+      "price": 101.24,
       "signal": "BUY",
       "score": 69,
-      "pos_pct": 6.5,
+      "pos_pct": 7.1,
       "width_pct": 15.2,
-      "vol_ratio": 0.62,
+      "vol_ratio": 0.63,
       "stop": 98.15,
       "target": 115.4,
       "entry_low": 100.15,
@@ -43,10 +43,10 @@
     },
     {
       "symbol": "EIX",
-      "price": 52.43,
+      "price": 52.41,
       "signal": "WAIT",
       "score": 20,
-      "pos_pct": 0.1,
+      "pos_pct": 0.0,
       "width_pct": 43.7,
       "vol_ratio": 0.2,
       "stop": 51.36,
@@ -57,10 +57,10 @@
     },
     {
       "symbol": "TECL",
-      "price": 235.98,
+      "price": 235.77,
       "signal": "EXIT",
       "score": 32,
-      "pos_pct": 99.9,
+      "pos_pct": 99.5,
       "width_pct": 25.9,
       "vol_ratio": 0.66,
       "stop": 183.71,
