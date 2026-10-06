@@ -1,285 +1,180 @@
 {
-  "generated_at": "2026-10-03T00:27:13.409289Z",
+  "generated_at": "2026-10-06T01:44:51.725014Z",
   "model_count": "13 technical + 2 CoT (ag only)",
   "asset_count": 17,
-  "best_opportunity": "Soybeans",
+  "best_opportunity": "Nvidia",
   "assets": [
     {
-      "name": "Soybeans",
-      "ticker": "ZS=F",
-      "category": "ag",
-      "score": 70,
-      "direction": "BUY",
-      "buy_votes": 7,
-      "sell_votes": 1,
-      "hold_votes": 7,
-      "confidence": 0.4,
-      "kelly_size": 0.125,
-      "price": 1277.25,
-      "votes": [
-        {
-          "model": "ma50_cross",
-          "vote": 1,
-          "value": 2.39,
-          "note": "price +2.4% vs 50-MA"
-        },
-        {
-          "model": "macd",
-          "vote": 0,
-          "value": 5.75,
-          "note": "MACD +5.8 hist -3.3"
-        },
-        {
-          "model": "rsi14",
-          "vote": 0,
-          "value": 47.3,
-          "note": "RSI 47.3"
-        },
-        {
-          "model": "bollinger",
-          "vote": 1,
-          "value": 0.08,
-          "note": "%B 0.08 (0=lower, 1=upper)"
-        },
-        {
-          "model": "stochastic",
-          "vote": 1,
-          "value": 6.8,
-          "note": "Stoch %K 6.8"
-        },
-        {
-          "model": "roc10",
-          "vote": 0,
-          "value": -2.01,
-          "note": "10-day ROC -2.0%"
-        },
-        {
-          "model": "trend_slope",
-          "vote": 0,
-          "value": -0.028,
-          "note": "slope -0.028%/day"
-        },
-        {
-          "model": "volume_surge",
-          "vote": 0,
-          "value": 1.05,
-          "note": "vol ratio 1.05x price \u2193"
-        },
-        {
-          "model": "volume_trend",
-          "vote": 1,
-          "value": 1.925,
-          "note": "vol slope +1.92%/day"
-        },
-        {
-          "model": "atr_regime",
-          "vote": 1,
-          "value": 1.73,
-          "note": "ATR 1.73% (calm)"
-        },
-        {
-          "model": "range_pos",
-          "vote": 1,
-          "value": 0.06,
-          "note": "range position 6%"
-        },
-        {
-          "model": "candle",
-          "vote": 0,
-          "value": 0.46,
-          "note": "indecisive candle 46%"
-        },
-        {
-          "model": "zscore",
-          "vote": 1,
-          "value": -1.68,
-          "note": "z-score -1.68"
-        },
-        {
-          "model": "cot_extreme",
-          "vote": -1,
-          "value": 0.94,
-          "note": "funds near max-long (94% of 1y range) \u2014 crowded"
-        },
-        {
-          "model": "cot_momentum",
-          "vote": 0,
-          "value": -0.2,
-          "note": "positioning steady (-0.2pp over 4wk)"
-        }
-      ]
-    },
-    {
-      "name": "Ethereum",
-      "ticker": "ETH-USD",
-      "category": "crypto",
-      "score": 69,
-      "direction": "HOLD",
-      "buy_votes": 5,
-      "sell_votes": 0,
-      "hold_votes": 8,
-      "confidence": 0.385,
-      "kelly_size": 0.0,
-      "price": 2670.89,
-      "votes": [
-        {
-          "model": "ma50_cross",
-          "vote": 1,
-          "value": 8.22,
-          "note": "price +8.2% vs 50-MA"
-        },
-        {
-          "model": "macd",
-          "vote": 1,
-          "value": 81.53,
-          "note": "MACD +81.5 hist +15.0"
-        },
-        {
-          "model": "rsi14",
-          "vote": 0,
-          "value": 58.4,
-          "note": "RSI 58.4"
-        },
-        {
-          "model": "bollinger",
-          "vote": 0,
-          "value": 0.6,
-          "note": "%B 0.60 (0=lower, 1=upper)"
-        },
-        {
-          "model": "stochastic",
-          "vote": 0,
-          "value": 44.2,
-          "note": "Stoch %K 44.2"
-        },
-        {
-          "model": "roc10",
-          "vote": 0,
-          "value": -2.97,
-          "note": "10-day ROC -3.0%"
-        },
-        {
-          "model": "trend_slope",
-          "vote": 1,
-          "value": 0.523,
-          "note": "slope +0.523%/day"
-        },
-        {
-          "model": "volume_surge",
-          "vote": 0,
-          "value": 1.37,
-          "note": "vol ratio 1.37x price \u2193"
-        },
-        {
-          "model": "volume_trend",
-          "vote": 1,
-          "value": 2.55,
-          "note": "vol slope +2.55%/day"
-        },
-        {
-          "model": "atr_regime",
-          "vote": 0,
-          "value": 2.93,
-          "note": "ATR 2.93% (volatile)"
-        },
-        {
-          "model": "range_pos",
-          "vote": 0,
-          "value": 0.699,
-          "note": "range position 70%"
-        },
-        {
-          "model": "candle",
-          "vote": 1,
-          "value": 0.61,
-          "note": "bullish body 61%"
-        },
-        {
-          "model": "zscore",
-          "vote": 0,
-          "value": 0.4,
-          "note": "z-score +0.40"
-        }
-      ]
-    },
-    {
-      "name": "Coca-Cola",
-      "ticker": "KO",
+      "name": "Apple",
+      "ticker": "AAPL",
       "category": "stock",
-      "score": 62,
+      "score": 65,
       "direction": "HOLD",
-      "buy_votes": 5,
-      "sell_votes": 2,
-      "hold_votes": 6,
-      "confidence": 0.231,
+      "buy_votes": 4,
+      "sell_votes": 0,
+      "hold_votes": 9,
+      "confidence": 0.308,
       "kelly_size": 0.0,
-      "price": 86.1,
+      "price": 332.89,
       "votes": [
         {
           "model": "ma50_cross",
-          "vote": -1,
-          "value": -1.56,
-          "note": "price -1.6% vs 50-MA"
+          "vote": 1,
+          "value": 3.27,
+          "note": "price +3.3% vs 50-MA"
         },
         {
           "model": "macd",
           "vote": 0,
-          "value": -0.6,
-          "note": "MACD -0.6 hist +0.0"
+          "value": 3.67,
+          "note": "MACD +3.7 hist -1.3"
         },
         {
           "model": "rsi14",
           "vote": 0,
-          "value": 39.0,
-          "note": "RSI 39.0"
+          "value": 51.9,
+          "note": "RSI 51.9"
         },
         {
           "model": "bollinger",
-          "vote": 1,
-          "value": -0.02,
-          "note": "%B -0.02 (0=lower, 1=upper)"
+          "vote": 0,
+          "value": 0.513,
+          "note": "%B 0.51 (0=lower, 1=upper)"
         },
         {
           "model": "stochastic",
-          "vote": 1,
-          "value": 9.3,
-          "note": "Stoch %K 9.3"
+          "vote": 0,
+          "value": 36.3,
+          "note": "Stoch %K 36.3"
         },
         {
           "model": "roc10",
           "vote": 0,
-          "value": -2.23,
-          "note": "10-day ROC -2.2%"
+          "value": -1.8,
+          "note": "10-day ROC -1.8%"
         },
         {
           "model": "trend_slope",
-          "vote": 0,
-          "value": -0.067,
-          "note": "slope -0.067%/day"
+          "vote": 1,
+          "value": 0.176,
+          "note": "slope +0.176%/day"
         },
         {
           "model": "volume_surge",
           "vote": 0,
-          "value": 1.21,
-          "note": "vol ratio 1.21x price \u2191"
+          "value": 0.81,
+          "note": "vol ratio 0.81x price \u2193"
         },
         {
           "model": "volume_trend",
-          "vote": -1,
-          "value": -4.211,
-          "note": "vol slope -4.21%/day"
+          "vote": 1,
+          "value": 1.334,
+          "note": "vol slope +1.33%/day"
         },
         {
           "model": "atr_regime",
           "vote": 1,
-          "value": 1.36,
-          "note": "ATR 1.36% (calm)"
+          "value": 1.95,
+          "note": "ATR 1.95% (calm)"
         },
         {
           "model": "range_pos",
+          "vote": 0,
+          "value": 0.649,
+          "note": "range position 65%"
+        },
+        {
+          "model": "candle",
+          "vote": 0,
+          "value": 0.02,
+          "note": "indecisive candle 2%"
+        },
+        {
+          "model": "zscore",
+          "vote": 0,
+          "value": 0.05,
+          "note": "z-score +0.05"
+        }
+      ]
+    },
+    {
+      "name": "Feeder Cattle",
+      "ticker": "GF=F",
+      "category": "ag",
+      "score": 63,
+      "direction": "HOLD",
+      "buy_votes": 6,
+      "sell_votes": 2,
+      "hold_votes": 7,
+      "confidence": 0.267,
+      "kelly_size": 0.0,
+      "price": 330.35,
+      "votes": [
+        {
+          "model": "ma50_cross",
+          "vote": -1,
+          "value": -2.06,
+          "note": "price -2.1% vs 50-MA"
+        },
+        {
+          "model": "macd",
           "vote": 1,
-          "value": 0.008,
-          "note": "range position 1%"
+          "value": 2.25,
+          "note": "MACD +2.2 hist +1.1"
+        },
+        {
+          "model": "rsi14",
+          "vote": 0,
+          "value": 35.4,
+          "note": "RSI 35.4"
+        },
+        {
+          "model": "bollinger",
+          "vote": 1,
+          "value": 0.146,
+          "note": "%B 0.15 (0=lower, 1=upper)"
+        },
+        {
+          "model": "stochastic",
+          "vote": 1,
+          "value": 18.7,
+          "note": "Stoch %K 18.7"
+        },
+        {
+          "model": "roc10",
+          "vote": 0,
+          "value": -2.11,
+          "note": "10-day ROC -2.1%"
+        },
+        {
+          "model": "trend_slope",
+          "vote": 0,
+          "value": 0.0,
+          "note": "slope +0.000%/day"
+        },
+        {
+          "model": "volume_surge",
+          "vote": -1,
+          "value": 3.39,
+          "note": "vol ratio 3.39x price \u2193"
+        },
+        {
+          "model": "volume_trend",
+          "vote": 1,
+          "value": 10.372,
+          "note": "vol slope +10.37%/day"
+        },
+        {
+          "model": "atr_regime",
+          "vote": 1,
+          "value": 1.28,
+          "note": "ATR 1.28% (calm)"
+        },
+        {
+          "model": "range_pos",
+          "vote": 0,
+          "value": 0.389,
+          "note": "range position 39%"
         },
         {
           "model": "candle",
@@ -289,393 +184,9 @@
         },
         {
           "model": "zscore",
-          "vote": 1,
-          "value": -2.08,
-          "note": "z-score -2.08"
-        }
-      ]
-    },
-    {
-      "name": "Apple",
-      "ticker": "AAPL",
-      "category": "stock",
-      "score": 58,
-      "direction": "HOLD",
-      "buy_votes": 3,
-      "sell_votes": 1,
-      "hold_votes": 9,
-      "confidence": 0.154,
-      "kelly_size": 0.0,
-      "price": 330.32,
-      "votes": [
-        {
-          "model": "ma50_cross",
-          "vote": 1,
-          "value": 2.55,
-          "note": "price +2.5% vs 50-MA"
-        },
-        {
-          "model": "macd",
           "vote": 0,
-          "value": 4.97,
-          "note": "MACD +5.0 hist -1.2"
-        },
-        {
-          "model": "rsi14",
-          "vote": 0,
-          "value": 47.5,
-          "note": "RSI 47.5"
-        },
-        {
-          "model": "bollinger",
-          "vote": 0,
-          "value": 0.455,
-          "note": "%B 0.45 (0=lower, 1=upper)"
-        },
-        {
-          "model": "stochastic",
-          "vote": 0,
-          "value": 23.1,
-          "note": "Stoch %K 23.1"
-        },
-        {
-          "model": "roc10",
-          "vote": 0,
-          "value": -1.98,
-          "note": "10-day ROC -2.0%"
-        },
-        {
-          "model": "trend_slope",
-          "vote": 1,
-          "value": 0.236,
-          "note": "slope +0.236%/day"
-        },
-        {
-          "model": "volume_surge",
-          "vote": 0,
-          "value": 0.86,
-          "note": "vol ratio 0.86x price \u2193"
-        },
-        {
-          "model": "volume_trend",
-          "vote": -1,
-          "value": -5.221,
-          "note": "vol slope -5.22%/day"
-        },
-        {
-          "model": "atr_regime",
-          "vote": 1,
-          "value": 1.97,
-          "note": "ATR 1.97% (calm)"
-        },
-        {
-          "model": "range_pos",
-          "vote": 0,
-          "value": 0.576,
-          "note": "range position 58%"
-        },
-        {
-          "model": "candle",
-          "vote": 0,
-          "value": 0.05,
-          "note": "indecisive candle 5%"
-        },
-        {
-          "model": "zscore",
-          "vote": 0,
-          "value": -0.18,
-          "note": "z-score -0.18"
-        }
-      ]
-    },
-    {
-      "name": "Walmart",
-      "ticker": "WMT",
-      "category": "stock",
-      "score": 58,
-      "direction": "HOLD",
-      "buy_votes": 4,
-      "sell_votes": 2,
-      "hold_votes": 7,
-      "confidence": 0.154,
-      "kelly_size": 0.0,
-      "price": 104.26,
-      "votes": [
-        {
-          "model": "ma50_cross",
-          "vote": -1,
-          "value": -4.19,
-          "note": "price -4.2% vs 50-MA"
-        },
-        {
-          "model": "macd",
-          "vote": 0,
-          "value": 0.29,
-          "note": "MACD +0.3 hist -0.2"
-        },
-        {
-          "model": "rsi14",
-          "vote": 0,
-          "value": 41.7,
-          "note": "RSI 41.7"
-        },
-        {
-          "model": "bollinger",
-          "vote": 1,
-          "value": 0.038,
-          "note": "%B 0.04 (0=lower, 1=upper)"
-        },
-        {
-          "model": "stochastic",
-          "vote": 1,
-          "value": 8.8,
-          "note": "Stoch %K 8.8"
-        },
-        {
-          "model": "roc10",
-          "vote": 0,
-          "value": -2.37,
-          "note": "10-day ROC -2.4%"
-        },
-        {
-          "model": "trend_slope",
-          "vote": 0,
-          "value": -0.025,
-          "note": "slope -0.025%/day"
-        },
-        {
-          "model": "volume_surge",
-          "vote": 0,
-          "value": 1.02,
-          "note": "vol ratio 1.02x price \u2191"
-        },
-        {
-          "model": "volume_trend",
-          "vote": -1,
-          "value": -3.714,
-          "note": "vol slope -3.71%/day"
-        },
-        {
-          "model": "atr_regime",
-          "vote": 0,
-          "value": 2.06,
-          "note": "ATR 2.06% (volatile)"
-        },
-        {
-          "model": "range_pos",
-          "vote": 1,
-          "value": 0.047,
-          "note": "range position 5%"
-        },
-        {
-          "model": "candle",
-          "vote": 0,
-          "value": 0.08,
-          "note": "indecisive candle 8%"
-        },
-        {
-          "model": "zscore",
-          "vote": 1,
-          "value": -1.85,
-          "note": "z-score -1.85"
-        }
-      ]
-    },
-    {
-      "name": "Corn",
-      "ticker": "ZC=F",
-      "category": "ag",
-      "score": 57,
-      "direction": "HOLD",
-      "buy_votes": 6,
-      "sell_votes": 4,
-      "hold_votes": 5,
-      "confidence": 0.133,
-      "kelly_size": 0.0577,
-      "price": 497.25,
-      "votes": [
-        {
-          "model": "ma50_cross",
-          "vote": 1,
-          "value": 1.39,
-          "note": "price +1.4% vs 50-MA"
-        },
-        {
-          "model": "macd",
-          "vote": -1,
-          "value": -0.26,
-          "note": "MACD -0.3 hist -2.1"
-        },
-        {
-          "model": "rsi14",
-          "vote": 0,
-          "value": 42.5,
-          "note": "RSI 42.5"
-        },
-        {
-          "model": "bollinger",
-          "vote": 1,
-          "value": 0.055,
-          "note": "%B 0.06 (0=lower, 1=upper)"
-        },
-        {
-          "model": "stochastic",
-          "vote": 1,
-          "value": 4.5,
-          "note": "Stoch %K 4.5"
-        },
-        {
-          "model": "roc10",
-          "vote": -1,
-          "value": -5.73,
-          "note": "10-day ROC -5.7%"
-        },
-        {
-          "model": "trend_slope",
-          "vote": 0,
-          "value": -0.028,
-          "note": "slope -0.028%/day"
-        },
-        {
-          "model": "volume_surge",
-          "vote": 0,
-          "value": 1.09,
-          "note": "vol ratio 1.09x price \u2193"
-        },
-        {
-          "model": "volume_trend",
-          "vote": 1,
-          "value": 5.926,
-          "note": "vol slope +5.93%/day"
-        },
-        {
-          "model": "atr_regime",
-          "vote": 0,
-          "value": 2.45,
-          "note": "ATR 2.45% (volatile)"
-        },
-        {
-          "model": "range_pos",
-          "vote": 1,
-          "value": 0.045,
-          "note": "range position 5%"
-        },
-        {
-          "model": "candle",
-          "vote": -1,
-          "value": 0.59,
-          "note": "bearish body 59%"
-        },
-        {
-          "model": "zscore",
-          "vote": 1,
-          "value": -1.78,
-          "note": "z-score -1.78"
-        },
-        {
-          "model": "cot_extreme",
-          "vote": -1,
-          "value": 0.93,
-          "note": "funds near max-long (93% of 1y range) \u2014 crowded"
-        },
-        {
-          "model": "cot_momentum",
-          "vote": 0,
-          "value": -2.2,
-          "note": "positioning steady (-2.2pp over 4wk)"
-        }
-      ]
-    },
-    {
-      "name": "Feeder Cattle",
-      "ticker": "GF=F",
-      "category": "ag",
-      "score": 57,
-      "direction": "HOLD",
-      "buy_votes": 5,
-      "sell_votes": 3,
-      "hold_votes": 7,
-      "confidence": 0.133,
-      "kelly_size": 0.0,
-      "price": 331.08,
-      "votes": [
-        {
-          "model": "ma50_cross",
-          "vote": -1,
-          "value": -1.91,
-          "note": "price -1.9% vs 50-MA"
-        },
-        {
-          "model": "macd",
-          "vote": 0,
-          "value": 0.9,
-          "note": "MACD +0.9 hist -1.2"
-        },
-        {
-          "model": "rsi14",
-          "vote": 1,
-          "value": 32.9,
-          "note": "RSI 32.9"
-        },
-        {
-          "model": "bollinger",
-          "vote": 0,
-          "value": 0.269,
-          "note": "%B 0.27 (0=lower, 1=upper)"
-        },
-        {
-          "model": "stochastic",
-          "vote": 1,
-          "value": 12.0,
-          "note": "Stoch %K 12.0"
-        },
-        {
-          "model": "roc10",
-          "vote": 0,
-          "value": -0.75,
-          "note": "10-day ROC -0.7%"
-        },
-        {
-          "model": "trend_slope",
-          "vote": 0,
-          "value": 0.055,
-          "note": "slope +0.055%/day"
-        },
-        {
-          "model": "volume_surge",
-          "vote": -1,
-          "value": 3.76,
-          "note": "vol ratio 3.76x price \u2193"
-        },
-        {
-          "model": "volume_trend",
-          "vote": 1,
-          "value": 14.344,
-          "note": "vol slope +14.34%/day"
-        },
-        {
-          "model": "atr_regime",
-          "vote": 1,
-          "value": 1.29,
-          "note": "ATR 1.29% (calm)"
-        },
-        {
-          "model": "range_pos",
-          "vote": 0,
-          "value": 0.456,
-          "note": "range position 46%"
-        },
-        {
-          "model": "candle",
-          "vote": -1,
-          "value": 0.93,
-          "note": "bearish body 93%"
-        },
-        {
-          "model": "zscore",
-          "vote": 0,
-          "value": -0.92,
-          "note": "z-score -0.92"
+          "value": -1.42,
+          "note": "z-score -1.42"
         },
         {
           "model": "cot_extreme",
@@ -692,572 +203,95 @@
       ]
     },
     {
-      "name": "Bitcoin",
-      "ticker": "BTC-USD",
-      "category": "crypto",
-      "score": 54,
+      "name": "Walmart",
+      "ticker": "WMT",
+      "category": "stock",
+      "score": 62,
       "direction": "HOLD",
       "buy_votes": 4,
-      "sell_votes": 3,
-      "hold_votes": 6,
-      "confidence": 0.077,
-      "kelly_size": 0.0,
-      "price": 84527.11,
-      "votes": [
-        {
-          "model": "ma50_cross",
-          "vote": 1,
-          "value": 8.2,
-          "note": "price +8.2% vs 50-MA"
-        },
-        {
-          "model": "macd",
-          "vote": 1,
-          "value": 2522.26,
-          "note": "MACD +2522.3 hist +837.3"
-        },
-        {
-          "model": "rsi14",
-          "vote": -1,
-          "value": 65.6,
-          "note": "RSI 65.6"
-        },
-        {
-          "model": "bollinger",
-          "vote": 0,
-          "value": 0.68,
-          "note": "%B 0.68 (0=lower, 1=upper)"
-        },
-        {
-          "model": "stochastic",
-          "vote": 0,
-          "value": 61.0,
-          "note": "Stoch %K 61.0"
-        },
-        {
-          "model": "roc10",
-          "vote": 0,
-          "value": -1.91,
-          "note": "10-day ROC -1.9%"
-        },
-        {
-          "model": "trend_slope",
-          "vote": 1,
-          "value": 0.563,
-          "note": "slope +0.563%/day"
-        },
-        {
-          "model": "volume_surge",
-          "vote": -1,
-          "value": 1.49,
-          "note": "vol ratio 1.49x price \u2193"
-        },
-        {
-          "model": "volume_trend",
-          "vote": 1,
-          "value": 0.776,
-          "note": "vol slope +0.78%/day"
-        },
-        {
-          "model": "atr_regime",
-          "vote": 0,
-          "value": 2.48,
-          "note": "ATR 2.48% (volatile)"
-        },
-        {
-          "model": "range_pos",
-          "vote": -1,
-          "value": 0.772,
-          "note": "range position 77%"
-        },
-        {
-          "model": "candle",
-          "vote": 0,
-          "value": 0.22,
-          "note": "indecisive candle 22%"
-        },
-        {
-          "model": "zscore",
-          "vote": 0,
-          "value": 0.72,
-          "note": "z-score +0.72"
-        }
-      ]
-    },
-    {
-      "name": "Nasdaq 100",
-      "ticker": "QQQ",
-      "category": "etf",
-      "score": 54,
-      "direction": "HOLD",
-      "buy_votes": 5,
-      "sell_votes": 4,
-      "hold_votes": 4,
-      "confidence": 0.077,
-      "kelly_size": 0.0,
-      "price": 742.03,
-      "votes": [
-        {
-          "model": "ma50_cross",
-          "vote": 1,
-          "value": 3.77,
-          "note": "price +3.8% vs 50-MA"
-        },
-        {
-          "model": "macd",
-          "vote": 1,
-          "value": 6.94,
-          "note": "MACD +6.9 hist +0.2"
-        },
-        {
-          "model": "rsi14",
-          "vote": -1,
-          "value": 68.1,
-          "note": "RSI 68.1"
-        },
-        {
-          "model": "bollinger",
-          "vote": 0,
-          "value": 0.774,
-          "note": "%B 0.77 (0=lower, 1=upper)"
-        },
-        {
-          "model": "stochastic",
-          "vote": -1,
-          "value": 87.1,
-          "note": "Stoch %K 87.1"
-        },
-        {
-          "model": "roc10",
-          "vote": 1,
-          "value": 3.61,
-          "note": "10-day ROC +3.6%"
-        },
-        {
-          "model": "trend_slope",
-          "vote": 1,
-          "value": 0.272,
-          "note": "slope +0.272%/day"
-        },
-        {
-          "model": "volume_surge",
-          "vote": 0,
-          "value": 1.08,
-          "note": "vol ratio 1.08x price \u2191"
-        },
-        {
-          "model": "volume_trend",
-          "vote": -1,
-          "value": -4.543,
-          "note": "vol slope -4.54%/day"
-        },
-        {
-          "model": "atr_regime",
-          "vote": 1,
-          "value": 1.32,
-          "note": "ATR 1.32% (calm)"
-        },
-        {
-          "model": "range_pos",
-          "vote": -1,
-          "value": 0.871,
-          "note": "range position 87%"
-        },
-        {
-          "model": "candle",
-          "vote": 0,
-          "value": 0.06,
-          "note": "indecisive candle 6%"
-        },
-        {
-          "model": "zscore",
-          "vote": 0,
-          "value": 1.1,
-          "note": "z-score +1.10"
-        }
-      ]
-    },
-    {
-      "name": "Exxon",
-      "ticker": "XOM",
-      "category": "stock",
-      "score": 54,
-      "direction": "HOLD",
-      "buy_votes": 2,
       "sell_votes": 1,
-      "hold_votes": 10,
-      "confidence": 0.077,
+      "hold_votes": 8,
+      "confidence": 0.231,
       "kelly_size": 0.0,
-      "price": 163.82,
-      "votes": [
-        {
-          "model": "ma50_cross",
-          "vote": 1,
-          "value": 2.35,
-          "note": "price +2.4% vs 50-MA"
-        },
-        {
-          "model": "macd",
-          "vote": 0,
-          "value": 0.46,
-          "note": "MACD +0.5 hist -0.5"
-        },
-        {
-          "model": "rsi14",
-          "vote": 0,
-          "value": 46.1,
-          "note": "RSI 46.1"
-        },
-        {
-          "model": "bollinger",
-          "vote": 0,
-          "value": 0.611,
-          "note": "%B 0.61 (0=lower, 1=upper)"
-        },
-        {
-          "model": "stochastic",
-          "vote": 0,
-          "value": 57.8,
-          "note": "Stoch %K 57.8"
-        },
-        {
-          "model": "roc10",
-          "vote": 0,
-          "value": 0.34,
-          "note": "10-day ROC +0.3%"
-        },
-        {
-          "model": "trend_slope",
-          "vote": 0,
-          "value": -0.049,
-          "note": "slope -0.049%/day"
-        },
-        {
-          "model": "volume_surge",
-          "vote": 0,
-          "value": 0.82,
-          "note": "vol ratio 0.82x price \u2191"
-        },
-        {
-          "model": "volume_trend",
-          "vote": -1,
-          "value": -11.199,
-          "note": "vol slope -11.20%/day"
-        },
-        {
-          "model": "atr_regime",
-          "vote": 0,
-          "value": 2.29,
-          "note": "ATR 2.29% (volatile)"
-        },
-        {
-          "model": "range_pos",
-          "vote": 0,
-          "value": 0.578,
-          "note": "range position 58%"
-        },
-        {
-          "model": "candle",
-          "vote": 1,
-          "value": 0.71,
-          "note": "bullish body 71%"
-        },
-        {
-          "model": "zscore",
-          "vote": 0,
-          "value": 0.44,
-          "note": "z-score +0.44"
-        }
-      ]
-    },
-    {
-      "name": "AMD",
-      "ticker": "AMD",
-      "category": "stock",
-      "score": 50,
-      "direction": "HOLD",
-      "buy_votes": 4,
-      "sell_votes": 4,
-      "hold_votes": 5,
-      "confidence": 0.0,
-      "kelly_size": 0.0,
-      "price": 615.73,
-      "votes": [
-        {
-          "model": "ma50_cross",
-          "vote": 1,
-          "value": 20.34,
-          "note": "price +20.3% vs 50-MA"
-        },
-        {
-          "model": "macd",
-          "vote": 1,
-          "value": 38.39,
-          "note": "MACD +38.4 hist +0.0"
-        },
-        {
-          "model": "rsi14",
-          "vote": -1,
-          "value": 73.8,
-          "note": "RSI 73.8"
-        },
-        {
-          "model": "bollinger",
-          "vote": 0,
-          "value": 0.75,
-          "note": "%B 0.75 (0=lower, 1=upper)"
-        },
-        {
-          "model": "stochastic",
-          "vote": -1,
-          "value": 85.3,
-          "note": "Stoch %K 85.3"
-        },
-        {
-          "model": "roc10",
-          "vote": 1,
-          "value": 12.96,
-          "note": "10-day ROC +13.0%"
-        },
-        {
-          "model": "trend_slope",
-          "vote": 1,
-          "value": 1.639,
-          "note": "slope +1.639%/day"
-        },
-        {
-          "model": "volume_surge",
-          "vote": 0,
-          "value": 0.77,
-          "note": "vol ratio 0.77x price \u2191"
-        },
-        {
-          "model": "volume_trend",
-          "vote": -1,
-          "value": -9.637,
-          "note": "vol slope -9.64%/day"
-        },
-        {
-          "model": "atr_regime",
-          "vote": 0,
-          "value": 4.17,
-          "note": "ATR 4.17% (volatile)"
-        },
-        {
-          "model": "range_pos",
-          "vote": -1,
-          "value": 0.883,
-          "note": "range position 88%"
-        },
-        {
-          "model": "candle",
-          "vote": 0,
-          "value": 0.17,
-          "note": "indecisive candle 17%"
-        },
-        {
-          "model": "zscore",
-          "vote": 0,
-          "value": 1.0,
-          "note": "z-score +1.00"
-        }
-      ]
-    },
-    {
-      "name": "JPMorgan",
-      "ticker": "JPM",
-      "category": "stock",
-      "score": 50,
-      "direction": "HOLD",
-      "buy_votes": 5,
-      "sell_votes": 5,
-      "hold_votes": 3,
-      "confidence": 0.0,
-      "kelly_size": 0.0,
-      "price": 333.18,
+      "price": 105.07,
       "votes": [
         {
           "model": "ma50_cross",
           "vote": -1,
-          "value": -5.5,
-          "note": "price -5.5% vs 50-MA"
+          "value": -3.31,
+          "note": "price -3.3% vs 50-MA"
         },
         {
           "model": "macd",
-          "vote": -1,
-          "value": -6.54,
-          "note": "MACD -6.5 hist -0.7"
-        },
-        {
-          "model": "rsi14",
-          "vote": 1,
-          "value": 26.8,
-          "note": "RSI 26.8"
-        },
-        {
-          "model": "bollinger",
-          "vote": 1,
-          "value": 0.12,
-          "note": "%B 0.12 (0=lower, 1=upper)"
-        },
-        {
-          "model": "stochastic",
           "vote": 0,
-          "value": 24.6,
-          "note": "Stoch %K 24.6"
-        },
-        {
-          "model": "roc10",
-          "vote": -1,
-          "value": -4.62,
-          "note": "10-day ROC -4.6%"
-        },
-        {
-          "model": "trend_slope",
-          "vote": -1,
-          "value": -0.423,
-          "note": "slope -0.423%/day"
-        },
-        {
-          "model": "volume_surge",
-          "vote": 0,
-          "value": 0.99,
-          "note": "vol ratio 0.99x price \u2191"
-        },
-        {
-          "model": "volume_trend",
-          "vote": -1,
-          "value": -4.943,
-          "note": "vol slope -4.94%/day"
-        },
-        {
-          "model": "atr_regime",
-          "vote": 0,
-          "value": 2.2,
-          "note": "ATR 2.20% (volatile)"
-        },
-        {
-          "model": "range_pos",
-          "vote": 1,
-          "value": 0.073,
-          "note": "range position 7%"
-        },
-        {
-          "model": "candle",
-          "vote": 1,
-          "value": 0.57,
-          "note": "bullish body 57%"
-        },
-        {
-          "model": "zscore",
-          "vote": 1,
-          "value": -1.52,
-          "note": "z-score -1.52"
-        }
-      ]
-    },
-    {
-      "name": "Wheat",
-      "ticker": "ZW=F",
-      "category": "ag",
-      "score": 50,
-      "direction": "HOLD",
-      "buy_votes": 5,
-      "sell_votes": 5,
-      "hold_votes": 5,
-      "confidence": 0.0,
-      "kelly_size": 0.0,
-      "price": 683.0,
-      "votes": [
-        {
-          "model": "ma50_cross",
-          "vote": -1,
-          "value": -1.3,
-          "note": "price -1.3% vs 50-MA"
-        },
-        {
-          "model": "macd",
-          "vote": -1,
-          "value": -14.19,
-          "note": "MACD -14.2 hist -2.8"
+          "value": 0.01,
+          "note": "MACD +0.0 hist -0.2"
         },
         {
           "model": "rsi14",
           "vote": 0,
-          "value": 39.9,
-          "note": "RSI 39.9"
+          "value": 40.1,
+          "note": "RSI 40.1"
         },
         {
           "model": "bollinger",
-          "vote": 1,
-          "value": 0.107,
-          "note": "%B 0.11 (0=lower, 1=upper)"
+          "vote": 0,
+          "value": 0.234,
+          "note": "%B 0.23 (0=lower, 1=upper)"
         },
         {
           "model": "stochastic",
-          "vote": 1,
-          "value": 18.8,
-          "note": "Stoch %K 18.8"
+          "vote": 0,
+          "value": 21.4,
+          "note": "Stoch %K 21.4"
         },
         {
           "model": "roc10",
-          "vote": -1,
-          "value": -4.38,
-          "note": "10-day ROC -4.4%"
+          "vote": 0,
+          "value": -2.21,
+          "note": "10-day ROC -2.2%"
         },
         {
           "model": "trend_slope",
-          "vote": -1,
-          "value": -0.305,
-          "note": "slope -0.305%/day"
+          "vote": 0,
+          "value": -0.075,
+          "note": "slope -0.075%/day"
         },
         {
           "model": "volume_surge",
           "vote": 0,
-          "value": 1.06,
-          "note": "vol ratio 1.06x price \u2191"
+          "value": 0.86,
+          "note": "vol ratio 0.86x price \u2191"
         },
         {
           "model": "volume_trend",
           "vote": 1,
-          "value": 5.11,
-          "note": "vol slope +5.11%/day"
+          "value": 0.594,
+          "note": "vol slope +0.59%/day"
         },
         {
           "model": "atr_regime",
-          "vote": 0,
-          "value": 2.5,
-          "note": "ATR 2.50% (volatile)"
+          "vote": 1,
+          "value": 1.98,
+          "note": "ATR 1.98% (calm)"
         },
         {
           "model": "range_pos",
           "vote": 1,
-          "value": 0.174,
-          "note": "range position 17%"
+          "value": 0.194,
+          "note": "range position 19%"
         },
         {
           "model": "candle",
-          "vote": 0,
-          "value": 0.11,
-          "note": "indecisive candle 11%"
+          "vote": 1,
+          "value": 0.72,
+          "note": "bullish body 72%"
         },
         {
           "model": "zscore",
-          "vote": 1,
-          "value": -1.57,
-          "note": "z-score -1.57"
-        },
-        {
-          "model": "cot_extreme",
           "vote": 0,
-          "value": 0.69,
-          "note": "positioning mid-range (69% of 1y range)"
-        },
-        {
-          "model": "cot_momentum",
-          "vote": -1,
-          "value": -7.7,
-          "note": "funds cut -7.7pp of OI in 4wk \u2014 liquidating"
+          "value": -1.06,
+          "note": "z-score -1.06"
         }
       ]
     },
@@ -1265,92 +299,92 @@
       "name": "Live Cattle",
       "ticker": "LE=F",
       "category": "ag",
-      "score": 47,
+      "score": 60,
       "direction": "HOLD",
-      "buy_votes": 3,
-      "sell_votes": 4,
-      "hold_votes": 8,
-      "confidence": -0.067,
+      "buy_votes": 4,
+      "sell_votes": 1,
+      "hold_votes": 10,
+      "confidence": 0.2,
       "kelly_size": 0.0,
-      "price": 221.4,
+      "price": 219.98,
       "votes": [
         {
           "model": "ma50_cross",
           "vote": 0,
-          "value": -0.44,
-          "note": "price -0.4% vs 50-MA"
+          "value": -1.0,
+          "note": "price -1.0% vs 50-MA"
         },
         {
           "model": "macd",
-          "vote": -1,
-          "value": -0.13,
-          "note": "MACD -0.1 hist -0.4"
+          "vote": 1,
+          "value": 0.01,
+          "note": "MACD +0.0 hist +0.3"
         },
         {
           "model": "rsi14",
           "vote": 0,
-          "value": 48.2,
-          "note": "RSI 48.2"
+          "value": 48.4,
+          "note": "RSI 48.4"
         },
         {
           "model": "bollinger",
-          "vote": -1,
-          "value": 0.831,
-          "note": "%B 0.83 (0=lower, 1=upper)"
+          "vote": 0,
+          "value": 0.685,
+          "note": "%B 0.68 (0=lower, 1=upper)"
         },
         {
           "model": "stochastic",
           "vote": 0,
-          "value": 77.4,
-          "note": "Stoch %K 77.4"
+          "value": 71.9,
+          "note": "Stoch %K 71.9"
         },
         {
           "model": "roc10",
           "vote": 0,
-          "value": 2.54,
-          "note": "10-day ROC +2.5%"
+          "value": -0.44,
+          "note": "10-day ROC -0.4%"
         },
         {
           "model": "trend_slope",
           "vote": 0,
-          "value": 0.067,
-          "note": "slope +0.067%/day"
+          "value": 0.022,
+          "note": "slope +0.022%/day"
         },
         {
           "model": "volume_surge",
           "vote": 0,
-          "value": 1.08,
-          "note": "vol ratio 1.08x price \u2191"
+          "value": 1.35,
+          "note": "vol ratio 1.35x price \u2191"
         },
         {
           "model": "volume_trend",
           "vote": 1,
-          "value": 7.707,
-          "note": "vol slope +7.71%/day"
+          "value": 8.628,
+          "note": "vol slope +8.63%/day"
         },
         {
           "model": "atr_regime",
           "vote": 1,
-          "value": 1.43,
-          "note": "ATR 1.43% (calm)"
+          "value": 1.39,
+          "note": "ATR 1.39% (calm)"
         },
         {
           "model": "range_pos",
           "vote": -1,
-          "value": 0.885,
-          "note": "range position 89%"
+          "value": 0.751,
+          "note": "range position 75%"
         },
         {
           "model": "candle",
-          "vote": -1,
-          "value": 0.77,
-          "note": "bearish body 77%"
+          "vote": 0,
+          "value": 0.43,
+          "note": "indecisive candle 43%"
         },
         {
           "model": "zscore",
           "vote": 0,
-          "value": 1.32,
-          "note": "z-score +1.32"
+          "value": 0.74,
+          "note": "z-score +0.74"
         },
         {
           "model": "cot_extreme",
@@ -1367,101 +401,869 @@
       ]
     },
     {
-      "name": "S&P 500",
-      "ticker": "SPY",
-      "category": "etf",
-      "score": 46,
+      "name": "Bitcoin",
+      "ticker": "BTC-USD",
+      "category": "crypto",
+      "score": 58,
       "direction": "HOLD",
-      "buy_votes": 1,
-      "sell_votes": 2,
-      "hold_votes": 10,
-      "confidence": -0.077,
+      "buy_votes": 3,
+      "sell_votes": 1,
+      "hold_votes": 9,
+      "confidence": 0.154,
       "kelly_size": 0.0,
-      "price": 763.99,
+      "price": 85676.05,
       "votes": [
         {
           "model": "ma50_cross",
-          "vote": 0,
-          "value": 0.32,
-          "note": "price +0.3% vs 50-MA"
+          "vote": 1,
+          "value": 7.79,
+          "note": "price +7.8% vs 50-MA"
         },
         {
           "model": "macd",
-          "vote": -1,
-          "value": -0.78,
-          "note": "MACD -0.8 hist -0.5"
+          "vote": 1,
+          "value": 2288.55,
+          "note": "MACD +2288.5 hist +152.7"
         },
         {
           "model": "rsi14",
           "vote": 0,
-          "value": 51.5,
-          "note": "RSI 51.5"
+          "value": 44.6,
+          "note": "RSI 44.6"
         },
         {
           "model": "bollinger",
           "vote": 0,
-          "value": 0.497,
-          "note": "%B 0.50 (0=lower, 1=upper)"
+          "value": 0.705,
+          "note": "%B 0.70 (0=lower, 1=upper)"
         },
         {
           "model": "stochastic",
           "vote": 0,
-          "value": 59.3,
-          "note": "Stoch %K 59.3"
+          "value": 66.1,
+          "note": "Stoch %K 66.1"
         },
         {
           "model": "roc10",
           "vote": 0,
-          "value": 0.43,
-          "note": "10-day ROC +0.4%"
+          "value": 1.95,
+          "note": "10-day ROC +2.0%"
         },
         {
           "model": "trend_slope",
-          "vote": 0,
-          "value": 0.026,
-          "note": "slope +0.026%/day"
+          "vote": 1,
+          "value": 0.401,
+          "note": "slope +0.401%/day"
         },
         {
           "model": "volume_surge",
           "vote": 0,
-          "value": 1.06,
-          "note": "vol ratio 1.06x price \u2191"
+          "value": 0.89,
+          "note": "vol ratio 0.89x price \u2193"
+        },
+        {
+          "model": "volume_trend",
+          "vote": 0,
+          "value": -0.213,
+          "note": "vol slope -0.21%/day"
+        },
+        {
+          "model": "atr_regime",
+          "vote": 0,
+          "value": 2.23,
+          "note": "ATR 2.23% (volatile)"
+        },
+        {
+          "model": "range_pos",
+          "vote": -1,
+          "value": 0.864,
+          "note": "range position 86%"
+        },
+        {
+          "model": "candle",
+          "vote": 0,
+          "value": 0.2,
+          "note": "indecisive candle 20%"
+        },
+        {
+          "model": "zscore",
+          "vote": 0,
+          "value": 0.82,
+          "note": "z-score +0.82"
+        }
+      ]
+    },
+    {
+      "name": "Ethereum",
+      "ticker": "ETH-USD",
+      "category": "crypto",
+      "score": 58,
+      "direction": "HOLD",
+      "buy_votes": 3,
+      "sell_votes": 1,
+      "hold_votes": 9,
+      "confidence": 0.154,
+      "kelly_size": 0.0,
+      "price": 2708.74,
+      "votes": [
+        {
+          "model": "ma50_cross",
+          "vote": 1,
+          "value": 7.59,
+          "note": "price +7.6% vs 50-MA"
+        },
+        {
+          "model": "macd",
+          "vote": 1,
+          "value": 63.2,
+          "note": "MACD +63.2 hist +1.1"
+        },
+        {
+          "model": "rsi14",
+          "vote": 0,
+          "value": 37.3,
+          "note": "RSI 37.3"
+        },
+        {
+          "model": "bollinger",
+          "vote": 0,
+          "value": 0.633,
+          "note": "%B 0.63 (0=lower, 1=upper)"
+        },
+        {
+          "model": "stochastic",
+          "vote": 0,
+          "value": 50.3,
+          "note": "Stoch %K 50.3"
+        },
+        {
+          "model": "roc10",
+          "vote": 0,
+          "value": 0.68,
+          "note": "10-day ROC +0.7%"
+        },
+        {
+          "model": "trend_slope",
+          "vote": 1,
+          "value": 0.318,
+          "note": "slope +0.318%/day"
+        },
+        {
+          "model": "volume_surge",
+          "vote": 0,
+          "value": 0.85,
+          "note": "vol ratio 0.85x price \u2193"
+        },
+        {
+          "model": "volume_trend",
+          "vote": 0,
+          "value": 0.116,
+          "note": "vol slope +0.12%/day"
+        },
+        {
+          "model": "atr_regime",
+          "vote": 0,
+          "value": 2.55,
+          "note": "ATR 2.55% (volatile)"
+        },
+        {
+          "model": "range_pos",
+          "vote": -1,
+          "value": 0.784,
+          "note": "range position 78%"
+        },
+        {
+          "model": "candle",
+          "vote": 0,
+          "value": 0.11,
+          "note": "indecisive candle 11%"
+        },
+        {
+          "model": "zscore",
+          "vote": 0,
+          "value": 0.53,
+          "note": "z-score +0.53"
+        }
+      ]
+    },
+    {
+      "name": "Exxon",
+      "ticker": "XOM",
+      "category": "stock",
+      "score": 58,
+      "direction": "HOLD",
+      "buy_votes": 3,
+      "sell_votes": 1,
+      "hold_votes": 9,
+      "confidence": 0.154,
+      "kelly_size": 0.0,
+      "price": 164.0,
+      "votes": [
+        {
+          "model": "ma50_cross",
+          "vote": 1,
+          "value": 2.26,
+          "note": "price +2.3% vs 50-MA"
+        },
+        {
+          "model": "macd",
+          "vote": 1,
+          "value": 0.86,
+          "note": "MACD +0.9 hist +0.1"
+        },
+        {
+          "model": "rsi14",
+          "vote": 0,
+          "value": 38.3,
+          "note": "RSI 38.3"
+        },
+        {
+          "model": "bollinger",
+          "vote": 0,
+          "value": 0.601,
+          "note": "%B 0.60 (0=lower, 1=upper)"
+        },
+        {
+          "model": "stochastic",
+          "vote": 0,
+          "value": 70.0,
+          "note": "Stoch %K 70.0"
+        },
+        {
+          "model": "roc10",
+          "vote": 1,
+          "value": 3.6,
+          "note": "10-day ROC +3.6%"
+        },
+        {
+          "model": "trend_slope",
+          "vote": 0,
+          "value": -0.063,
+          "note": "slope -0.063%/day"
+        },
+        {
+          "model": "volume_surge",
+          "vote": 0,
+          "value": 0.88,
+          "note": "vol ratio 0.88x price \u2193"
         },
         {
           "model": "volume_trend",
           "vote": -1,
-          "value": -1.418,
-          "note": "vol slope -1.42%/day"
+          "value": -1.293,
+          "note": "vol slope -1.29%/day"
         },
         {
           "model": "atr_regime",
-          "vote": 1,
-          "value": 0.91,
-          "note": "ATR 0.91% (calm)"
+          "vote": 0,
+          "value": 2.14,
+          "note": "ATR 2.14% (volatile)"
         },
         {
           "model": "range_pos",
           "vote": 0,
-          "value": 0.593,
+          "value": 0.591,
           "note": "range position 59%"
         },
         {
           "model": "candle",
           "vote": 0,
-          "value": 0.05,
-          "note": "indecisive candle 5%"
+          "value": 0.07,
+          "note": "indecisive candle 7%"
         },
         {
           "model": "zscore",
           "vote": 0,
-          "value": -0.01,
-          "note": "z-score -0.01"
+          "value": 0.4,
+          "note": "z-score +0.40"
         }
       ]
     },
     {
-      "name": "Microsoft",
-      "ticker": "MSFT",
+      "name": "Corn",
+      "ticker": "ZC=F",
+      "category": "ag",
+      "score": 57,
+      "direction": "HOLD",
+      "buy_votes": 6,
+      "sell_votes": 4,
+      "hold_votes": 5,
+      "confidence": 0.133,
+      "kelly_size": 0.0577,
+      "price": 496.25,
+      "votes": [
+        {
+          "model": "ma50_cross",
+          "vote": 1,
+          "value": 1.05,
+          "note": "price +1.0% vs 50-MA"
+        },
+        {
+          "model": "macd",
+          "vote": -1,
+          "value": -2.53,
+          "note": "MACD -2.5 hist -2.3"
+        },
+        {
+          "model": "rsi14",
+          "vote": 1,
+          "value": 23.7,
+          "note": "RSI 23.7"
+        },
+        {
+          "model": "bollinger",
+          "vote": 1,
+          "value": 0.079,
+          "note": "%B 0.08 (0=lower, 1=upper)"
+        },
+        {
+          "model": "stochastic",
+          "vote": 1,
+          "value": 2.5,
+          "note": "Stoch %K 2.5"
+        },
+        {
+          "model": "roc10",
+          "vote": -1,
+          "value": -8.61,
+          "note": "10-day ROC -8.6%"
+        },
+        {
+          "model": "trend_slope",
+          "vote": 0,
+          "value": -0.118,
+          "note": "slope -0.118%/day"
+        },
+        {
+          "model": "volume_surge",
+          "vote": 0,
+          "value": 0.05,
+          "note": "vol ratio 0.05x price \u2193"
+        },
+        {
+          "model": "volume_trend",
+          "vote": 0,
+          "value": 0.436,
+          "note": "vol slope +0.44%/day"
+        },
+        {
+          "model": "atr_regime",
+          "vote": 0,
+          "value": 2.16,
+          "note": "ATR 2.16% (volatile)"
+        },
+        {
+          "model": "range_pos",
+          "vote": 1,
+          "value": 0.025,
+          "note": "range position 3%"
+        },
+        {
+          "model": "candle",
+          "vote": -1,
+          "value": 0.71,
+          "note": "bearish body 71%"
+        },
+        {
+          "model": "zscore",
+          "vote": 1,
+          "value": -1.68,
+          "note": "z-score -1.68"
+        },
+        {
+          "model": "cot_extreme",
+          "vote": -1,
+          "value": 0.93,
+          "note": "funds near max-long (93% of 1y range) \u2014 crowded"
+        },
+        {
+          "model": "cot_momentum",
+          "vote": 0,
+          "value": -2.2,
+          "note": "positioning steady (-2.2pp over 4wk)"
+        }
+      ]
+    },
+    {
+      "name": "Soybeans",
+      "ticker": "ZS=F",
+      "category": "ag",
+      "score": 57,
+      "direction": "HOLD",
+      "buy_votes": 6,
+      "sell_votes": 4,
+      "hold_votes": 5,
+      "confidence": 0.133,
+      "kelly_size": 0.0577,
+      "price": 1279.75,
+      "votes": [
+        {
+          "model": "ma50_cross",
+          "vote": 1,
+          "value": 2.54,
+          "note": "price +2.5% vs 50-MA"
+        },
+        {
+          "model": "macd",
+          "vote": -1,
+          "value": -1.15,
+          "note": "MACD -1.2 hist -7.0"
+        },
+        {
+          "model": "rsi14",
+          "vote": 1,
+          "value": 33.3,
+          "note": "RSI 33.3"
+        },
+        {
+          "model": "bollinger",
+          "vote": 1,
+          "value": 0.144,
+          "note": "%B 0.14 (0=lower, 1=upper)"
+        },
+        {
+          "model": "stochastic",
+          "vote": 1,
+          "value": 11.0,
+          "note": "Stoch %K 11.0"
+        },
+        {
+          "model": "roc10",
+          "vote": -1,
+          "value": -3.63,
+          "note": "10-day ROC -3.6%"
+        },
+        {
+          "model": "trend_slope",
+          "vote": 0,
+          "value": -0.067,
+          "note": "slope -0.067%/day"
+        },
+        {
+          "model": "volume_surge",
+          "vote": 0,
+          "value": 0.03,
+          "note": "vol ratio 0.03x price \u2191"
+        },
+        {
+          "model": "volume_trend",
+          "vote": -1,
+          "value": -3.598,
+          "note": "vol slope -3.60%/day"
+        },
+        {
+          "model": "atr_regime",
+          "vote": 1,
+          "value": 1.56,
+          "note": "ATR 1.56% (calm)"
+        },
+        {
+          "model": "range_pos",
+          "vote": 1,
+          "value": 0.11,
+          "note": "range position 11%"
+        },
+        {
+          "model": "candle",
+          "vote": 0,
+          "value": 0.06,
+          "note": "indecisive candle 6%"
+        },
+        {
+          "model": "zscore",
+          "vote": 0,
+          "value": -1.43,
+          "note": "z-score -1.43"
+        },
+        {
+          "model": "cot_extreme",
+          "vote": -1,
+          "value": 0.94,
+          "note": "funds near max-long (94% of 1y range) \u2014 crowded"
+        },
+        {
+          "model": "cot_momentum",
+          "vote": 0,
+          "value": -0.2,
+          "note": "positioning steady (-0.2pp over 4wk)"
+        }
+      ]
+    },
+    {
+      "name": "Nvidia",
+      "ticker": "NVDA",
+      "category": "stock",
+      "score": 54,
+      "direction": "BUY",
+      "buy_votes": 6,
+      "sell_votes": 5,
+      "hold_votes": 2,
+      "confidence": 0.077,
+      "kelly_size": 0.0192,
+      "price": 238.9,
+      "votes": [
+        {
+          "model": "ma50_cross",
+          "vote": 1,
+          "value": 9.2,
+          "note": "price +9.2% vs 50-MA"
+        },
+        {
+          "model": "macd",
+          "vote": 1,
+          "value": 4.37,
+          "note": "MACD +4.4 hist +2.6"
+        },
+        {
+          "model": "rsi14",
+          "vote": -1,
+          "value": 84.6,
+          "note": "RSI 84.6"
+        },
+        {
+          "model": "bollinger",
+          "vote": -1,
+          "value": 1.03,
+          "note": "%B 1.03 (0=lower, 1=upper)"
+        },
+        {
+          "model": "stochastic",
+          "vote": -1,
+          "value": 95.7,
+          "note": "Stoch %K 95.7"
+        },
+        {
+          "model": "roc10",
+          "vote": 1,
+          "value": 5.07,
+          "note": "10-day ROC +5.1%"
+        },
+        {
+          "model": "trend_slope",
+          "vote": 1,
+          "value": 0.402,
+          "note": "slope +0.402%/day"
+        },
+        {
+          "model": "volume_surge",
+          "vote": 0,
+          "value": 1.15,
+          "note": "vol ratio 1.15x price \u2191"
+        },
+        {
+          "model": "volume_trend",
+          "vote": 1,
+          "value": 4.256,
+          "note": "vol slope +4.26%/day"
+        },
+        {
+          "model": "atr_regime",
+          "vote": 0,
+          "value": 2.25,
+          "note": "ATR 2.25% (volatile)"
+        },
+        {
+          "model": "range_pos",
+          "vote": -1,
+          "value": 1.035,
+          "note": "range position 104%"
+        },
+        {
+          "model": "candle",
+          "vote": 1,
+          "value": 0.57,
+          "note": "bullish body 57%"
+        },
+        {
+          "model": "zscore",
+          "vote": -1,
+          "value": 2.12,
+          "note": "z-score +2.12"
+        }
+      ]
+    },
+    {
+      "name": "S&P 500",
+      "ticker": "SPY",
+      "category": "etf",
+      "score": 50,
+      "direction": "HOLD",
+      "buy_votes": 5,
+      "sell_votes": 5,
+      "hold_votes": 3,
+      "confidence": 0.0,
+      "kelly_size": 0.0,
+      "price": 774.83,
+      "votes": [
+        {
+          "model": "ma50_cross",
+          "vote": 1,
+          "value": 1.55,
+          "note": "price +1.6% vs 50-MA"
+        },
+        {
+          "model": "macd",
+          "vote": 1,
+          "value": 1.29,
+          "note": "MACD +1.3 hist +1.1"
+        },
+        {
+          "model": "rsi14",
+          "vote": -1,
+          "value": 67.2,
+          "note": "RSI 67.2"
+        },
+        {
+          "model": "bollinger",
+          "vote": -1,
+          "value": 0.932,
+          "note": "%B 0.93 (0=lower, 1=upper)"
+        },
+        {
+          "model": "stochastic",
+          "vote": -1,
+          "value": 93.8,
+          "note": "Stoch %K 93.8"
+        },
+        {
+          "model": "roc10",
+          "vote": 0,
+          "value": 0.17,
+          "note": "10-day ROC +0.2%"
+        },
+        {
+          "model": "trend_slope",
+          "vote": 0,
+          "value": 0.08,
+          "note": "slope +0.080%/day"
+        },
+        {
+          "model": "volume_surge",
+          "vote": 0,
+          "value": 0.97,
+          "note": "vol ratio 0.97x price \u2191"
+        },
+        {
+          "model": "volume_trend",
+          "vote": 1,
+          "value": 1.598,
+          "note": "vol slope +1.60%/day"
+        },
+        {
+          "model": "atr_regime",
+          "vote": 1,
+          "value": 0.94,
+          "note": "ATR 0.94% (calm)"
+        },
+        {
+          "model": "range_pos",
+          "vote": -1,
+          "value": 0.989,
+          "note": "range position 99%"
+        },
+        {
+          "model": "candle",
+          "vote": 1,
+          "value": 0.74,
+          "note": "bullish body 74%"
+        },
+        {
+          "model": "zscore",
+          "vote": -1,
+          "value": 1.73,
+          "note": "z-score +1.73"
+        }
+      ]
+    },
+    {
+      "name": "Coca-Cola",
+      "ticker": "KO",
+      "category": "stock",
+      "score": 50,
+      "direction": "HOLD",
+      "buy_votes": 2,
+      "sell_votes": 2,
+      "hold_votes": 9,
+      "confidence": 0.0,
+      "kelly_size": 0.0,
+      "price": 86.51,
+      "votes": [
+        {
+          "model": "ma50_cross",
+          "vote": -1,
+          "value": -1.31,
+          "note": "price -1.3% vs 50-MA"
+        },
+        {
+          "model": "macd",
+          "vote": -1,
+          "value": -0.58,
+          "note": "MACD -0.6 hist -0.1"
+        },
+        {
+          "model": "rsi14",
+          "vote": 0,
+          "value": 35.8,
+          "note": "RSI 35.8"
+        },
+        {
+          "model": "bollinger",
+          "vote": 0,
+          "value": 0.225,
+          "note": "%B 0.22 (0=lower, 1=upper)"
+        },
+        {
+          "model": "stochastic",
+          "vote": 0,
+          "value": 32.6,
+          "note": "Stoch %K 32.6"
+        },
+        {
+          "model": "roc10",
+          "vote": 0,
+          "value": -0.7,
+          "note": "10-day ROC -0.7%"
+        },
+        {
+          "model": "trend_slope",
+          "vote": 0,
+          "value": -0.106,
+          "note": "slope -0.106%/day"
+        },
+        {
+          "model": "volume_surge",
+          "vote": 0,
+          "value": 1.34,
+          "note": "vol ratio 1.34x price \u2191"
+        },
+        {
+          "model": "volume_trend",
+          "vote": 1,
+          "value": 4.738,
+          "note": "vol slope +4.74%/day"
+        },
+        {
+          "model": "atr_regime",
+          "vote": 1,
+          "value": 1.32,
+          "note": "ATR 1.32% (calm)"
+        },
+        {
+          "model": "range_pos",
+          "vote": 0,
+          "value": 0.288,
+          "note": "range position 29%"
+        },
+        {
+          "model": "candle",
+          "vote": 0,
+          "value": 0.44,
+          "note": "indecisive candle 44%"
+        },
+        {
+          "model": "zscore",
+          "vote": 0,
+          "value": -1.1,
+          "note": "z-score -1.10"
+        }
+      ]
+    },
+    {
+      "name": "Nasdaq 100",
+      "ticker": "QQQ",
+      "category": "etf",
+      "score": 46,
+      "direction": "SELL",
+      "buy_votes": 5,
+      "sell_votes": 6,
+      "hold_votes": 2,
+      "confidence": -0.077,
+      "kelly_size": 0.0192,
+      "price": 756.2,
+      "votes": [
+        {
+          "model": "ma50_cross",
+          "vote": 1,
+          "value": 5.37,
+          "note": "price +5.4% vs 50-MA"
+        },
+        {
+          "model": "macd",
+          "vote": 1,
+          "value": 10.16,
+          "note": "MACD +10.2 hist +2.1"
+        },
+        {
+          "model": "rsi14",
+          "vote": -1,
+          "value": 82.3,
+          "note": "RSI 82.3"
+        },
+        {
+          "model": "bollinger",
+          "vote": -1,
+          "value": 0.905,
+          "note": "%B 0.91 (0=lower, 1=upper)"
+        },
+        {
+          "model": "stochastic",
+          "vote": -1,
+          "value": 98.8,
+          "note": "Stoch %K 98.8"
+        },
+        {
+          "model": "roc10",
+          "vote": 0,
+          "value": 1.99,
+          "note": "10-day ROC +2.0%"
+        },
+        {
+          "model": "trend_slope",
+          "vote": 1,
+          "value": 0.335,
+          "note": "slope +0.335%/day"
+        },
+        {
+          "model": "volume_surge",
+          "vote": 0,
+          "value": 0.75,
+          "note": "vol ratio 0.75x price \u2191"
+        },
+        {
+          "model": "volume_trend",
+          "vote": -1,
+          "value": -1.94,
+          "note": "vol slope -1.94%/day"
+        },
+        {
+          "model": "atr_regime",
+          "vote": 1,
+          "value": 1.32,
+          "note": "ATR 1.32% (calm)"
+        },
+        {
+          "model": "range_pos",
+          "vote": -1,
+          "value": 1.03,
+          "note": "range position 103%"
+        },
+        {
+          "model": "candle",
+          "vote": 1,
+          "value": 0.87,
+          "note": "bullish body 87%"
+        },
+        {
+          "model": "zscore",
+          "vote": -1,
+          "value": 1.62,
+          "note": "z-score +1.62"
+        }
+      ]
+    },
+    {
+      "name": "AMD",
+      "ticker": "AMD",
       "category": "stock",
       "score": 46,
       "direction": "HOLD",
@@ -1470,91 +1272,91 @@
       "hold_votes": 6,
       "confidence": -0.077,
       "kelly_size": 0.0,
-      "price": 512.8,
+      "price": 631.75,
       "votes": [
         {
           "model": "ma50_cross",
           "vote": 1,
-          "value": 5.81,
-          "note": "price +5.8% vs 50-MA"
+          "value": 22.5,
+          "note": "price +22.5% vs 50-MA"
         },
         {
           "model": "macd",
-          "vote": 0,
-          "value": 2.3,
-          "note": "MACD +2.3 hist -1.1"
+          "vote": 1,
+          "value": 45.89,
+          "note": "MACD +45.9 hist +2.3"
         },
         {
           "model": "rsi14",
-          "vote": 0,
-          "value": 60.4,
-          "note": "RSI 60.4"
+          "vote": -1,
+          "value": 82.5,
+          "note": "RSI 82.5"
         },
         {
           "model": "bollinger",
-          "vote": -1,
-          "value": 0.872,
-          "note": "%B 0.87 (0=lower, 1=upper)"
+          "vote": 0,
+          "value": 0.771,
+          "note": "%B 0.77 (0=lower, 1=upper)"
         },
         {
           "model": "stochastic",
-          "vote": 0,
-          "value": 71.8,
-          "note": "Stoch %K 71.8"
+          "vote": -1,
+          "value": 90.2,
+          "note": "Stoch %K 90.2"
         },
         {
           "model": "roc10",
-          "vote": 1,
-          "value": 3.02,
-          "note": "10-day ROC +3.0%"
+          "vote": 0,
+          "value": 2.64,
+          "note": "10-day ROC +2.6%"
         },
         {
           "model": "trend_slope",
           "vote": 1,
-          "value": 0.152,
-          "note": "slope +0.152%/day"
+          "value": 1.42,
+          "note": "slope +1.420%/day"
         },
         {
           "model": "volume_surge",
           "vote": 0,
-          "value": 0.92,
-          "note": "vol ratio 0.92x price \u2193"
+          "value": 0.6,
+          "note": "vol ratio 0.60x price \u2193"
         },
         {
           "model": "volume_trend",
           "vote": -1,
-          "value": -3.944,
-          "note": "vol slope -3.94%/day"
+          "value": -4.877,
+          "note": "vol slope -4.88%/day"
         },
         {
           "model": "atr_regime",
           "vote": 0,
-          "value": 2.38,
-          "note": "ATR 2.38% (volatile)"
+          "value": 3.92,
+          "note": "ATR 3.92% (volatile)"
         },
         {
           "model": "range_pos",
           "vote": -1,
-          "value": 0.792,
-          "note": "range position 79%"
+          "value": 0.927,
+          "note": "range position 93%"
         },
         {
           "model": "candle",
-          "vote": -1,
-          "value": 0.66,
-          "note": "bearish body 66%"
+          "vote": 0,
+          "value": 0.08,
+          "note": "indecisive candle 8%"
         },
         {
           "model": "zscore",
           "vote": 0,
-          "value": 1.49,
-          "note": "z-score +1.49"
+          "value": 1.08,
+          "note": "z-score +1.08"
         }
       ]
     },
     {
-      "name": "Nvidia",
-      "ticker": "NVDA",
+      "name": "JPMorgan",
+      "ticker": "JPM",
       "category": "stock",
       "score": 46,
       "direction": "HOLD",
@@ -1563,85 +1365,283 @@
       "hold_votes": 4,
       "confidence": -0.077,
       "kelly_size": 0.0,
-      "price": 230.86,
+      "price": 332.38,
       "votes": [
         {
           "model": "ma50_cross",
-          "vote": 1,
-          "value": 6.09,
-          "note": "price +6.1% vs 50-MA"
+          "vote": -1,
+          "value": -5.53,
+          "note": "price -5.5% vs 50-MA"
         },
         {
           "model": "macd",
-          "vote": 1,
-          "value": 3.04,
-          "note": "MACD +3.0 hist +1.1"
+          "vote": -1,
+          "value": -6.68,
+          "note": "MACD -6.7 hist -0.4"
         },
         {
           "model": "rsi14",
-          "vote": -1,
-          "value": 66.1,
-          "note": "RSI 66.1"
+          "vote": 1,
+          "value": 26.1,
+          "note": "RSI 26.1"
         },
         {
           "model": "bollinger",
-          "vote": -1,
-          "value": 0.815,
-          "note": "%B 0.81 (0=lower, 1=upper)"
+          "vote": 1,
+          "value": 0.163,
+          "note": "%B 0.16 (0=lower, 1=upper)"
         },
         {
           "model": "stochastic",
-          "vote": -1,
-          "value": 90.3,
-          "note": "Stoch %K 90.3"
+          "vote": 0,
+          "value": 21.9,
+          "note": "Stoch %K 21.9"
         },
         {
           "model": "roc10",
-          "vote": 1,
-          "value": 5.25,
-          "note": "10-day ROC +5.3%"
+          "vote": -1,
+          "value": -5.58,
+          "note": "10-day ROC -5.6%"
         },
         {
           "model": "trend_slope",
-          "vote": 1,
-          "value": 0.161,
-          "note": "slope +0.161%/day"
+          "vote": -1,
+          "value": -0.409,
+          "note": "slope -0.409%/day"
         },
         {
           "model": "volume_surge",
           "vote": 0,
-          "value": 0.87,
-          "note": "vol ratio 0.87x price \u2191"
+          "value": 0.63,
+          "note": "vol ratio 0.63x price \u2193"
         },
         {
           "model": "volume_trend",
           "vote": -1,
-          "value": -2.942,
-          "note": "vol slope -2.94%/day"
+          "value": -4.504,
+          "note": "vol slope -4.50%/day"
         },
         {
           "model": "atr_regime",
-          "vote": 0,
-          "value": 2.3,
-          "note": "ATR 2.30% (volatile)"
+          "vote": 1,
+          "value": 1.94,
+          "note": "ATR 1.94% (calm)"
         },
         {
           "model": "range_pos",
-          "vote": -1,
-          "value": 0.858,
-          "note": "range position 86%"
+          "vote": 1,
+          "value": 0.176,
+          "note": "range position 18%"
         },
         {
           "model": "candle",
           "vote": 0,
-          "value": 0.21,
-          "note": "indecisive candle 21%"
+          "value": 0.29,
+          "note": "indecisive candle 29%"
         },
         {
           "model": "zscore",
           "vote": 0,
-          "value": 1.26,
-          "note": "z-score +1.26"
+          "value": -1.35,
+          "note": "z-score -1.35"
+        }
+      ]
+    },
+    {
+      "name": "Microsoft",
+      "ticker": "MSFT",
+      "category": "stock",
+      "score": 42,
+      "direction": "HOLD",
+      "buy_votes": 3,
+      "sell_votes": 5,
+      "hold_votes": 5,
+      "confidence": -0.154,
+      "kelly_size": 0.0,
+      "price": 525.18,
+      "votes": [
+        {
+          "model": "ma50_cross",
+          "vote": 1,
+          "value": 7.12,
+          "note": "price +7.1% vs 50-MA"
+        },
+        {
+          "model": "macd",
+          "vote": 0,
+          "value": 2.46,
+          "note": "MACD +2.5 hist -0.5"
+        },
+        {
+          "model": "rsi14",
+          "vote": -1,
+          "value": 68.3,
+          "note": "RSI 68.3"
+        },
+        {
+          "model": "bollinger",
+          "vote": -1,
+          "value": 1.071,
+          "note": "%B 1.07 (0=lower, 1=upper)"
+        },
+        {
+          "model": "stochastic",
+          "vote": -1,
+          "value": 84.1,
+          "note": "Stoch %K 84.1"
+        },
+        {
+          "model": "roc10",
+          "vote": 1,
+          "value": 4.7,
+          "note": "10-day ROC +4.7%"
+        },
+        {
+          "model": "trend_slope",
+          "vote": 1,
+          "value": 0.286,
+          "note": "slope +0.286%/day"
+        },
+        {
+          "model": "volume_surge",
+          "vote": 0,
+          "value": 1.25,
+          "note": "vol ratio 1.25x price \u2191"
+        },
+        {
+          "model": "volume_trend",
+          "vote": 0,
+          "value": 0.455,
+          "note": "vol slope +0.45%/day"
+        },
+        {
+          "model": "atr_regime",
+          "vote": 0,
+          "value": 2.32,
+          "note": "ATR 2.32% (volatile)"
+        },
+        {
+          "model": "range_pos",
+          "vote": -1,
+          "value": 1.063,
+          "note": "range position 106%"
+        },
+        {
+          "model": "candle",
+          "vote": 0,
+          "value": 0.33,
+          "note": "indecisive candle 33%"
+        },
+        {
+          "model": "zscore",
+          "vote": -1,
+          "value": 2.28,
+          "note": "z-score +2.28"
+        }
+      ]
+    },
+    {
+      "name": "Wheat",
+      "ticker": "ZW=F",
+      "category": "ag",
+      "score": 40,
+      "direction": "HOLD",
+      "buy_votes": 2,
+      "sell_votes": 5,
+      "hold_votes": 8,
+      "confidence": -0.2,
+      "kelly_size": 0.0,
+      "price": 690.5,
+      "votes": [
+        {
+          "model": "ma50_cross",
+          "vote": 0,
+          "value": -0.26,
+          "note": "price -0.3% vs 50-MA"
+        },
+        {
+          "model": "macd",
+          "vote": -1,
+          "value": -18.75,
+          "note": "MACD -18.8 hist -4.6"
+        },
+        {
+          "model": "rsi14",
+          "vote": 1,
+          "value": 31.9,
+          "note": "RSI 31.9"
+        },
+        {
+          "model": "bollinger",
+          "vote": 0,
+          "value": 0.245,
+          "note": "%B 0.25 (0=lower, 1=upper)"
+        },
+        {
+          "model": "stochastic",
+          "vote": 0,
+          "value": 30.3,
+          "note": "Stoch %K 30.3"
+        },
+        {
+          "model": "roc10",
+          "vote": -1,
+          "value": -4.99,
+          "note": "10-day ROC -5.0%"
+        },
+        {
+          "model": "trend_slope",
+          "vote": -1,
+          "value": -0.328,
+          "note": "slope -0.328%/day"
+        },
+        {
+          "model": "volume_surge",
+          "vote": 0,
+          "value": 0.03,
+          "note": "vol ratio 0.03x price \u2191"
+        },
+        {
+          "model": "volume_trend",
+          "vote": 1,
+          "value": 3.557,
+          "note": "vol slope +3.56%/day"
+        },
+        {
+          "model": "atr_regime",
+          "vote": 0,
+          "value": 2.35,
+          "note": "ATR 2.35% (volatile)"
+        },
+        {
+          "model": "range_pos",
+          "vote": 0,
+          "value": 0.28,
+          "note": "range position 28%"
+        },
+        {
+          "model": "candle",
+          "vote": -1,
+          "value": 0.55,
+          "note": "bearish body 55%"
+        },
+        {
+          "model": "zscore",
+          "vote": 0,
+          "value": -1.02,
+          "note": "z-score -1.02"
+        },
+        {
+          "model": "cot_extreme",
+          "vote": 0,
+          "value": 0.69,
+          "note": "positioning mid-range (69% of 1y range)"
+        },
+        {
+          "model": "cot_momentum",
+          "vote": -1,
+          "value": -7.7,
+          "note": "funds cut -7.7pp of OI in 4wk \u2014 liquidating"
         }
       ]
     }
