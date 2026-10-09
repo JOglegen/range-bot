@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T23:14:53.084051",
+  "updated_at": "2026-10-09T23:47:39.092538",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
@@ -586,7 +586,7 @@
       "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-10-09T23:14:27.784517",
+  "latest_scan_at": "2026-10-09T23:47:20.916754",
   "rules": {
     "paper_only": true,
     "max_positions": 4,

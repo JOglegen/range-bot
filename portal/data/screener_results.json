@@ -1,8 +1,8 @@
 {
-  "scanned_at": "2026-10-09T23:14:27.784517",
+  "scanned_at": "2026-10-09T23:47:20.916754",
   "mode": "range",
   "total_scanned": 104,
-  "total_qualifying": 79,
+  "total_qualifying": 78,
   "buys": [],
   "watches": [],
   "all_setups": [
@@ -114,20 +114,6 @@
       "vol_ratio": 0.47,
       "stop": 80.06,
       "target": 88.65,
-      "entry_low": null,
-      "entry_high": null,
-      "note": "mid-range, no edge yet"
-    },
-    {
-      "symbol": "UNH",
-      "price": 379.3,
-      "signal": "WAIT",
-      "score": 87,
-      "pos_pct": 62.5,
-      "width_pct": 7.4,
-      "vol_ratio": 1.48,
-      "stop": 355.35,
-      "target": 389.33,
       "entry_low": null,
       "entry_high": null,
       "note": "mid-range, no edge yet"
@@ -702,6 +688,20 @@
       "vol_ratio": 0.9,
       "stop": 224.62,
       "target": 258.45,
+      "entry_low": null,
+      "entry_high": null,
+      "note": "mid-range, no edge yet"
+    },
+    {
+      "symbol": "NKE",
+      "price": 34.71,
+      "signal": "WAIT",
+      "score": 59,
+      "pos_pct": 50.4,
+      "width_pct": 17.0,
+      "vol_ratio": 0.57,
+      "stop": 31.33,
+      "target": 37.41,
       "entry_low": null,
       "entry_high": null,
       "note": "mid-range, no edge yet"
