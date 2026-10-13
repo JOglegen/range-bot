@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-10-13T20:00:06.359842",
+  "scanned_at": "2026-10-13T23:35:01.007942",
   "mode": "range",
   "source": "GitHub issue #5 study list",
   "symbols": [
@@ -14,12 +14,12 @@
   "all_setups": [
     {
       "symbol": "TECL",
-      "price": 232.88,
+      "price": 232.72,
       "signal": "WAIT",
       "score": 10,
-      "pos_pct": 62.8,
+      "pos_pct": 62.6,
       "width_pct": 37.4,
-      "vol_ratio": 0.78,
+      "vol_ratio": 0.81,
       "stop": 184.83,
       "target": 259.13,
       "entry_low": null,
@@ -28,12 +28,12 @@
     },
     {
       "symbol": "EIX",
-      "price": 55.51,
+      "price": 55.48,
       "signal": "EXIT",
       "score": 88,
-      "pos_pct": 90.9,
+      "pos_pct": 90.5,
       "width_pct": 11.4,
-      "vol_ratio": 2.21,
+      "vol_ratio": 2.97,
       "stop": 49.27,
       "target": 56.03,
       "entry_low": null,
@@ -42,12 +42,12 @@
     },
     {
       "symbol": "ERX",
-      "price": 119.26,
+      "price": 119.5,
       "signal": "EXIT",
       "score": 55,
       "pos_pct": 100.0,
       "width_pct": 18.0,
-      "vol_ratio": 1.22,
+      "vol_ratio": 1.24,
       "stop": 96.71,
       "target": 116.45,
       "entry_low": null,
