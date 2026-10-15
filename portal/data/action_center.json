@@ -1,10 +1,10 @@
 {
-  "built_at": "2026-10-15T17:56:25.065727",
-  "range_scanned_at": "2026-10-15T17:56:07.318580",
-  "income_scanned_at": "2026-10-15T17:56:14.705319",
-  "study_scanned_at": "2026-10-15T17:56:25.065727",
+  "built_at": "2026-10-15T20:49:26.371241",
+  "range_scanned_at": "2026-10-15T20:48:59.910124",
+  "income_scanned_at": "2026-10-15T20:49:10.011102",
+  "study_scanned_at": "2026-10-15T20:49:26.371241",
   "summary": {
-    "trade_entries": 3,
+    "trade_entries": 4,
     "range_watches": 0,
     "income_candidates": 10,
     "study_items": 3
@@ -12,22 +12,32 @@
   "actions": [
     {
       "type": "TRADE ENTRY",
-      "symbol": "NVDA",
-      "priority": 93,
+      "symbol": "AVGO",
+      "priority": 96,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
-      "detail": "Entry $217.15-$223.70 | target $243.37 | stop $212.81",
+      "detail": "Entry $342.82-$352.33 | target $380.84 | stop $335.96",
       "risk": "2.4% to stop",
       "source": "20-day range"
     },
     {
       "type": "TRADE ENTRY",
+      "symbol": "NVDA",
+      "priority": 93,
+      "action": "Review buy zone",
+      "status": "Paper bot will recheck before any order",
+      "detail": "Entry $217.15-$223.70 | target $243.37 | stop $212.81",
+      "risk": "2.0% to stop",
+      "source": "20-day range"
+    },
+    {
+      "type": "TRADE ENTRY",
       "symbol": "PLD",
-      "priority": 73,
+      "priority": 72,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $126.62-$129.09 | target $136.49 | stop $124.09",
-      "risk": "3.2% to stop",
+      "risk": "2.2% to stop",
       "source": "20-day range"
     },
     {
@@ -37,7 +47,7 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $129.23-$135.18 | target $153.03 | stop $126.65",
-      "risk": "5.6% to stop",
+      "risk": "5.8% to stop",
       "source": "20-day range"
     },
     {
@@ -46,8 +56,8 @@
       "priority": 100,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.00% | avg/mo $0.054 | paid 12/12 months",
-      "risk": "0.8% 52w drawdown",
+      "detail": "Yield 5.04% | avg/mo $0.054 | paid 12/12 months",
+      "risk": "1.6% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -66,8 +76,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 6.22% | avg/mo $0.080 | paid 12/12 months",
-      "risk": "9.2% 52w drawdown",
+      "detail": "Yield 6.27% | avg/mo $0.080 | paid 12/12 months",
+      "risk": "9.9% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -76,8 +86,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.66% | avg/mo $0.080 | paid 12/12 months",
-      "risk": "0.7% 52w drawdown",
+      "detail": "Yield 5.69% | avg/mo $0.080 | paid 12/12 months",
+      "risk": "1.2% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -86,8 +96,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.22% | avg/mo $0.190 | paid 12/12 months",
-      "risk": "0.0% 52w drawdown",
+      "detail": "Yield 5.26% | avg/mo $0.190 | paid 12/12 months",
+      "risk": "0.4% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -96,8 +106,8 @@
       "priority": 92,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 6.26% | avg/mo $0.377 | paid 12/12 months",
-      "risk": "8.8% 52w drawdown",
+      "detail": "Yield 6.28% | avg/mo $0.377 | paid 12/12 months",
+      "risk": "9.1% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -107,17 +117,17 @@
       "action": "EXIT",
       "status": "Study list alert, manual review",
       "detail": "at/above the ceiling \u2014 take profits, no new longs",
-      "risk": "pos 90.7%",
+      "risk": "pos 91.3%",
       "source": "GitHub issue #5 study list"
     },
     {
       "type": "STUDY ENTRY",
       "symbol": "TECL",
-      "priority": 55,
+      "priority": 54,
       "action": "BUY",
       "status": "Study list alert, manual review",
       "detail": "price at the floor of a clean range",
-      "risk": "pos 5.0%",
+      "risk": "pos 9.9%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -127,7 +137,7 @@
       "action": "EXIT",
       "status": "Study list alert, manual review",
       "detail": "at/above the ceiling \u2014 take profits, no new longs",
-      "risk": "pos 80.9%",
+      "risk": "pos 82.0%",
       "source": "GitHub issue #5 study list"
     }
   ]
