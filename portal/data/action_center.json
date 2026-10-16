@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-10-15T22:52:37.368938",
-  "range_scanned_at": "2026-10-15T22:52:21.160639",
-  "income_scanned_at": "2026-10-15T22:52:28.375986",
-  "study_scanned_at": "2026-10-15T22:52:37.368938",
+  "built_at": "2026-10-16T17:37:23.816376",
+  "range_scanned_at": "2026-10-16T17:37:02.432336",
+  "income_scanned_at": "2026-10-16T17:37:11.896088",
+  "study_scanned_at": "2026-10-16T17:37:23.816376",
   "summary": {
     "trade_entries": 4,
     "range_watches": 0,
@@ -12,42 +12,42 @@
   "actions": [
     {
       "type": "TRADE ENTRY",
-      "symbol": "AVGO",
-      "priority": 96,
+      "symbol": "TSLA",
+      "priority": 95,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
-      "detail": "Entry $342.82-$352.33 | target $380.84 | stop $335.96",
-      "risk": "2.4% to stop",
+      "detail": "Entry $345.88-$356.55 | target $388.56 | stop $338.96",
+      "risk": "4.0% to stop",
+      "source": "20-day range"
+    },
+    {
+      "type": "TRADE ENTRY",
+      "symbol": "GOOGL",
+      "priority": 88,
+      "action": "Review buy zone",
+      "status": "Paper bot will recheck before any order",
+      "detail": "Entry $335.51-$342.68 | target $364.17 | stop $328.80",
+      "risk": "3.9% to stop",
       "source": "20-day range"
     },
     {
       "type": "TRADE ENTRY",
       "symbol": "NVDA",
-      "priority": 93,
+      "priority": 73,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
-      "detail": "Entry $217.15-$223.70 | target $243.37 | stop $212.81",
-      "risk": "2.0% to stop",
+      "detail": "Entry $212.85-$220.48 | target $243.37 | stop $208.59",
+      "risk": "3.2% to stop",
       "source": "20-day range"
     },
     {
       "type": "TRADE ENTRY",
       "symbol": "PLD",
-      "priority": 72,
+      "priority": 71,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
-      "detail": "Entry $126.62-$129.09 | target $136.49 | stop $124.09",
-      "risk": "2.2% to stop",
-      "source": "20-day range"
-    },
-    {
-      "type": "TRADE ENTRY",
-      "symbol": "ORCL",
-      "priority": 55,
-      "action": "Review buy zone",
-      "status": "Paper bot will recheck before any order",
-      "detail": "Entry $129.23-$135.18 | target $153.03 | stop $126.65",
-      "risk": "5.8% to stop",
+      "detail": "Entry $126.15-$128.74 | target $136.49 | stop $123.63",
+      "risk": "2.1% to stop",
       "source": "20-day range"
     },
     {
@@ -56,8 +56,8 @@
       "priority": 100,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.04% | avg/mo $0.054 | paid 12/12 months",
-      "risk": "1.6% 52w drawdown",
+      "detail": "Yield 5.15% | avg/mo $0.054 | paid 12/12 months",
+      "risk": "3.7% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -72,22 +72,12 @@
     },
     {
       "type": "INCOME WATCH",
-      "symbol": "GAIN",
-      "priority": 93,
-      "action": "Review for income list",
-      "status": "Alert only, no auto-buy",
-      "detail": "Yield 6.27% | avg/mo $0.080 | paid 12/12 months",
-      "risk": "9.9% 52w drawdown",
-      "source": "monthly dividend"
-    },
-    {
-      "type": "INCOME WATCH",
       "symbol": "APLE",
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.69% | avg/mo $0.080 | paid 12/12 months",
-      "risk": "1.2% 52w drawdown",
+      "detail": "Yield 5.61% | avg/mo $0.080 | paid 12/12 months",
+      "risk": "0.0% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -96,8 +86,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.26% | avg/mo $0.190 | paid 12/12 months",
-      "risk": "0.4% 52w drawdown",
+      "detail": "Yield 5.23% | avg/mo $0.190 | paid 12/12 months",
+      "risk": "0.0% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -106,38 +96,48 @@
       "priority": 92,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 6.28% | avg/mo $0.377 | paid 12/12 months",
-      "risk": "9.1% 52w drawdown",
+      "detail": "Yield 6.68% | avg/mo $0.375 | paid 13/12 months",
+      "risk": "7.8% 52w drawdown",
+      "source": "monthly dividend"
+    },
+    {
+      "type": "INCOME WATCH",
+      "symbol": "SPHD",
+      "priority": 92,
+      "action": "Review for income list",
+      "status": "Alert only, no auto-buy",
+      "detail": "Yield 4.88% | avg/mo $0.206 | paid 12/12 months",
+      "risk": "5.6% 52w drawdown",
       "source": "monthly dividend"
     },
     {
       "type": "STUDY WATCH",
       "symbol": "EIX",
-      "priority": 77,
+      "priority": 70,
       "action": "EXIT",
       "status": "Study list alert, manual review",
       "detail": "at/above the ceiling \u2014 take profits, no new longs",
-      "risk": "pos 91.3%",
-      "source": "GitHub issue #5 study list"
-    },
-    {
-      "type": "STUDY ENTRY",
-      "symbol": "TECL",
-      "priority": 54,
-      "action": "BUY",
-      "status": "Study list alert, manual review",
-      "detail": "price at the floor of a clean range",
-      "risk": "pos 9.9%",
+      "risk": "pos 98.3%",
       "source": "GitHub issue #5 study list"
     },
     {
       "type": "STUDY WATCH",
       "symbol": "ERX",
-      "priority": 42,
+      "priority": 41,
       "action": "EXIT",
       "status": "Study list alert, manual review",
       "detail": "at/above the ceiling \u2014 take profits, no new longs",
-      "risk": "pos 82.0%",
+      "risk": "pos 100.0%",
+      "source": "GitHub issue #5 study list"
+    },
+    {
+      "type": "STUDY WATCH",
+      "symbol": "TECL",
+      "priority": 22,
+      "action": "WAIT",
+      "status": "Study list alert, manual review",
+      "detail": "mid-range, no edge yet",
+      "risk": "pos 0.0%",
       "source": "GitHub issue #5 study list"
     }
   ]
