@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-10-16T20:06:13.309356",
-  "range_scanned_at": "2026-10-16T20:05:49.682427",
-  "income_scanned_at": "2026-10-16T20:05:59.535085",
-  "study_scanned_at": "2026-10-16T20:06:13.309356",
+  "built_at": "2026-10-16T22:27:55.637344",
+  "range_scanned_at": "2026-10-16T22:27:39.913366",
+  "income_scanned_at": "2026-10-16T22:27:46.374175",
+  "study_scanned_at": "2026-10-16T22:27:55.637344",
   "summary": {
     "trade_entries": 3,
     "range_watches": 0,
@@ -52,16 +52,6 @@
     },
     {
       "type": "INCOME WATCH",
-      "symbol": "SPHD",
-      "priority": 100,
-      "action": "Review for income list",
-      "status": "Alert only, no auto-buy",
-      "detail": "Yield 4.87% | avg/mo $0.206 | paid 12/12 months",
-      "risk": "5.4% 52w drawdown",
-      "source": "monthly dividend"
-    },
-    {
-      "type": "INCOME WATCH",
       "symbol": "PEY",
       "priority": 100,
       "action": "Review for income list",
@@ -96,8 +86,18 @@
       "priority": 92,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 6.74% | avg/mo $0.375 | paid 13/12 months",
-      "risk": "8.6% 52w drawdown",
+      "detail": "Yield 6.73% | avg/mo $0.375 | paid 13/12 months",
+      "risk": "8.4% 52w drawdown",
+      "source": "monthly dividend"
+    },
+    {
+      "type": "INCOME WATCH",
+      "symbol": "SPHD",
+      "priority": 92,
+      "action": "Review for income list",
+      "status": "Alert only, no auto-buy",
+      "detail": "Yield 4.88% | avg/mo $0.206 | paid 12/12 months",
+      "risk": "5.5% 52w drawdown",
       "source": "monthly dividend"
     },
     {
