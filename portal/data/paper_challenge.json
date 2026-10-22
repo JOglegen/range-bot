@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-10-22T18:13:05.438586",
+  "updated_at": "2026-10-22T21:34:48.428445",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
-  "cash": 277.42,
-  "equity": 1107.49,
-  "return_pct": 10.75,
-  "progress_to_double_pct": 10.75,
+  "cash": 0.38,
+  "equity": 1108.15,
+  "return_pct": 10.82,
+  "progress_to_double_pct": 10.82,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 762.85,
+    "last_price": 763.96,
     "shares": 1.343382,
-    "equity": 1024.8,
-    "return_pct": 2.48,
+    "equity": 1026.29,
+    "return_pct": 2.63,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 82.69,
-    "return_delta_pct": 8.27,
+    "equity_delta": 81.86,
+    "return_delta_pct": 8.19,
     "leader": "RangeBot"
   },
   "positions": {
     "AVGO": {
       "qty": 0.853172,
       "entry_price": 335.69,
-      "last_price": 324.75,
+      "last_price": 323.24,
       "stop": 322.01,
       "target": 380.84,
       "entry_time": "2026-10-19T19:34:18.987666",
@@ -36,7 +36,7 @@
     "CSCO": {
       "qty": 2.631603,
       "entry_price": 107.26,
-      "last_price": 104.926,
+      "last_price": 104.89,
       "stop": 102.56,
       "target": 118.65,
       "entry_time": "2026-10-21T21:52:04.869385",
@@ -46,11 +46,21 @@
     "PLD": {
       "qty": 2.202153,
       "entry_price": 125.535,
-      "last_price": 125.73,
+      "last_price": 126.66,
       "stop": 120.96,
       "target": 136.31,
       "entry_time": "2026-10-22T18:06:49.733577",
       "ma20_at_entry": 129.0868,
+      "source": "20-day range BUY"
+    },
+    "ADI": {
+      "qty": 0.718162,
+      "entry_price": 385.76,
+      "last_price": 385.76,
+      "stop": 369.85,
+      "target": 422.67,
+      "entry_time": "2026-10-22T21:34:48.428445",
+      "ma20_at_entry": 403.7295,
       "source": "20-day range BUY"
     }
   },
@@ -704,9 +714,19 @@
       "value": 276.45,
       "pnl": 0,
       "reason": "20-day range BUY"
+    },
+    {
+      "time": "2026-10-22T21:34:48.428445",
+      "symbol": "ADI",
+      "side": "BUY",
+      "qty": 0.718162,
+      "price": 385.76,
+      "value": 277.04,
+      "pnl": 0,
+      "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-10-22T18:12:46.527169",
+  "latest_scan_at": "2026-10-22T21:34:34.740257",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
