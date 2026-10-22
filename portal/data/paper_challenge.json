@@ -1,66 +1,56 @@
 {
-  "updated_at": "2026-10-21T23:00:00.533023",
+  "updated_at": "2026-10-22T18:06:49.733577",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
-  "cash": 0.0,
-  "equity": 1145.57,
-  "return_pct": 14.56,
-  "progress_to_double_pct": 14.56,
+  "cash": 277.42,
+  "equity": 1105.79,
+  "return_pct": 10.58,
+  "progress_to_double_pct": 10.58,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 773.09,
+    "last_price": 762.04,
     "shares": 1.343382,
-    "equity": 1038.56,
-    "return_pct": 3.86,
+    "equity": 1023.71,
+    "return_pct": 2.37,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 107.01,
-    "return_delta_pct": 10.7,
+    "equity_delta": 82.08,
+    "return_delta_pct": 8.21,
     "leader": "RangeBot"
   },
   "positions": {
-    "NVDA": {
-      "qty": 1.330076,
-      "entry_price": 217.92,
-      "last_price": 221.97,
-      "stop": 212.81,
-      "target": 243.37,
-      "entry_time": "2026-10-15T17:50:51.486638",
-      "ma20_at_entry": 228.6185,
-      "source": "20-day range BUY"
-    },
     "AVGO": {
       "qty": 0.853172,
       "entry_price": 335.69,
-      "last_price": 337.8,
+      "last_price": 324.025,
       "stop": 322.01,
       "target": 380.84,
       "entry_time": "2026-10-19T19:34:18.987666",
       "ma20_at_entry": 354.047,
       "source": "20-day range BUY"
     },
-    "GOOGL": {
-      "qty": 0.836018,
-      "entry_price": 340.62,
-      "last_price": 334.76,
-      "stop": 328.8,
-      "target": 364.17,
-      "entry_time": "2026-10-20T18:04:32.756970",
-      "ma20_at_entry": 345.3475,
-      "source": "20-day range BUY"
-    },
     "CSCO": {
       "qty": 2.631603,
       "entry_price": 107.26,
-      "last_price": 107.26,
+      "last_price": 104.68,
       "stop": 102.56,
       "target": 118.65,
       "entry_time": "2026-10-21T21:52:04.869385",
       "ma20_at_entry": 110.8322,
+      "source": "20-day range BUY"
+    },
+    "PLD": {
+      "qty": 2.202153,
+      "entry_price": 125.535,
+      "last_price": 125.535,
+      "stop": 120.96,
+      "target": 136.31,
+      "entry_time": "2026-10-22T18:06:49.733577",
+      "ma20_at_entry": 129.0868,
       "source": "20-day range BUY"
     }
   },
@@ -684,9 +674,39 @@
       "value": 282.27,
       "pnl": 0,
       "reason": "20-day range BUY"
+    },
+    {
+      "time": "2026-10-22T18:06:49.733577",
+      "symbol": "NVDA",
+      "side": "SELL",
+      "qty": 1.330076,
+      "price": 212.2815,
+      "value": 282.35,
+      "pnl": -7.5,
+      "reason": "WAIT"
+    },
+    {
+      "time": "2026-10-22T18:06:49.733577",
+      "symbol": "GOOGL",
+      "side": "SELL",
+      "qty": 0.836018,
+      "price": 324.77,
+      "value": 271.51,
+      "pnl": -13.25,
+      "reason": "WAIT"
+    },
+    {
+      "time": "2026-10-22T18:06:49.733577",
+      "symbol": "PLD",
+      "side": "BUY",
+      "qty": 2.202153,
+      "price": 125.535,
+      "value": 276.45,
+      "pnl": 0,
+      "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-10-21T22:59:31.396494",
+  "latest_scan_at": "2026-10-22T18:06:30.858956",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
