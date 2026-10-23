@@ -1,42 +1,32 @@
 {
-  "updated_at": "2026-10-23T18:02:02.756355",
+  "updated_at": "2026-10-23T21:21:33.407977",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
-  "cash": 0.38,
-  "equity": 1114.56,
-  "return_pct": 11.46,
-  "progress_to_double_pct": 11.46,
+  "cash": 0.0,
+  "equity": 1114.41,
+  "return_pct": 11.44,
+  "progress_to_double_pct": 11.44,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 760.94,
+    "last_price": 759.97,
     "shares": 1.343382,
-    "equity": 1022.23,
-    "return_pct": 2.22,
+    "equity": 1020.93,
+    "return_pct": 2.09,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 92.33,
-    "return_delta_pct": 9.24,
+    "equity_delta": 93.48,
+    "return_delta_pct": 9.35,
     "leader": "RangeBot"
   },
   "positions": {
-    "AVGO": {
-      "qty": 0.853172,
-      "entry_price": 335.69,
-      "last_price": 324.775,
-      "stop": 322.01,
-      "target": 380.84,
-      "entry_time": "2026-10-19T19:34:18.987666",
-      "ma20_at_entry": 354.047,
-      "source": "20-day range BUY"
-    },
     "CSCO": {
       "qty": 2.631603,
       "entry_price": 107.26,
-      "last_price": 106.205,
+      "last_price": 106.5,
       "stop": 102.56,
       "target": 118.65,
       "entry_time": "2026-10-21T21:52:04.869385",
@@ -46,7 +36,7 @@
     "PLD": {
       "qty": 2.202153,
       "entry_price": 125.535,
-      "last_price": 125.8899,
+      "last_price": 126.45,
       "stop": 120.96,
       "target": 136.31,
       "entry_time": "2026-10-22T18:06:49.733577",
@@ -56,11 +46,21 @@
     "ADI": {
       "qty": 0.718162,
       "entry_price": 385.76,
-      "last_price": 390.41,
+      "last_price": 391.07,
       "stop": 369.85,
       "target": 422.67,
       "entry_time": "2026-10-22T21:34:48.428445",
       "ma20_at_entry": 403.7295,
+      "source": "20-day range BUY"
+    },
+    "BKNG": {
+      "qty": 1.763642,
+      "entry_price": 155.83,
+      "last_price": 155.83,
+      "stop": 150.98,
+      "target": 168.49,
+      "entry_time": "2026-10-23T21:21:33.407977",
+      "ma20_at_entry": 160.413,
       "source": "20-day range BUY"
     }
   },
@@ -724,9 +724,29 @@
       "value": 277.04,
       "pnl": 0,
       "reason": "20-day range BUY"
+    },
+    {
+      "time": "2026-10-23T21:21:33.407977",
+      "symbol": "AVGO",
+      "side": "SELL",
+      "qty": 0.853172,
+      "price": 321.68,
+      "value": 274.45,
+      "pnl": -11.95,
+      "reason": "stop/target"
+    },
+    {
+      "time": "2026-10-23T21:21:33.407977",
+      "symbol": "BKNG",
+      "side": "BUY",
+      "qty": 1.763642,
+      "price": 155.83,
+      "value": 274.83,
+      "pnl": 0,
+      "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-10-23T18:01:40.277344",
+  "latest_scan_at": "2026-10-23T21:21:12.126734",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
