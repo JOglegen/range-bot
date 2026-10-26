@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-10-26T19:29:33.421641",
-  "range_scanned_at": "2026-10-26T19:29:10.864100",
-  "income_scanned_at": "2026-10-26T19:29:20.409133",
-  "study_scanned_at": "2026-10-26T19:29:33.421641",
+  "built_at": "2026-10-26T19:40:02.534227",
+  "range_scanned_at": "2026-10-26T19:39:38.299648",
+  "income_scanned_at": "2026-10-26T19:39:47.904268",
+  "study_scanned_at": "2026-10-26T19:40:02.534227",
   "summary": {
     "trade_entries": 3,
     "range_watches": 0,
@@ -13,11 +13,11 @@
     {
       "type": "TRADE ENTRY",
       "symbol": "MRK",
-      "priority": 89,
+      "priority": 88,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $138.80-$142.61 | target $154.02 | stop $136.02",
-      "risk": "3.0% to stop",
+      "risk": "3.3% to stop",
       "source": "20-day range"
     },
     {
@@ -27,7 +27,7 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $244.73-$249.88 | target $265.34 | stop $239.84",
-      "risk": "3.5% to stop",
+      "risk": "3.7% to stop",
       "source": "20-day range"
     },
     {
@@ -42,21 +42,11 @@
     },
     {
       "type": "INCOME WATCH",
-      "symbol": "SBR",
-      "priority": 100,
-      "action": "Review for income list",
-      "status": "Alert only, no auto-buy",
-      "detail": "Yield 6.13% | avg/mo $0.376 | paid 12/12 months",
-      "risk": "7.2% 52w drawdown",
-      "source": "monthly dividend"
-    },
-    {
-      "type": "INCOME WATCH",
       "symbol": "CRT",
       "priority": 100,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 4.54% | avg/mo $0.054 | paid 12/12 months",
+      "detail": "Yield 4.57% | avg/mo $0.054 | paid 12/12 months",
       "risk": "0.0% 52w drawdown",
       "source": "monthly dividend"
     },
@@ -97,7 +87,17 @@
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
       "detail": "Yield 4.84% | avg/mo $0.207 | paid 12/12 months",
-      "risk": "4.0% 52w drawdown",
+      "risk": "4.1% 52w drawdown",
+      "source": "monthly dividend"
+    },
+    {
+      "type": "INCOME WATCH",
+      "symbol": "SBR",
+      "priority": 92,
+      "action": "Review for income list",
+      "status": "Alert only, no auto-buy",
+      "detail": "Yield 6.15% | avg/mo $0.376 | paid 12/12 months",
+      "risk": "7.5% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -107,7 +107,7 @@
       "action": "EXIT",
       "status": "Study list alert, manual review",
       "detail": "at/above the ceiling \u2014 take profits, no new longs",
-      "risk": "pos 97.4%",
+      "risk": "pos 97.6%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -117,7 +117,7 @@
       "action": "EXIT",
       "status": "Study list alert, manual review",
       "detail": "at/above the ceiling \u2014 take profits, no new longs",
-      "risk": "pos 98.9%",
+      "risk": "pos 97.3%",
       "source": "GitHub issue #5 study list"
     },
     {
