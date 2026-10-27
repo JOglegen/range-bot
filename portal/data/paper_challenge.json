@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-10-26T23:32:41.956283",
+  "updated_at": "2026-10-27T18:51:25.441241",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
-  "cash": 0.0,
-  "equity": 1131.31,
-  "return_pct": 13.13,
-  "progress_to_double_pct": 13.13,
+  "cash": 283.5,
+  "equity": 1139.79,
+  "return_pct": 13.98,
+  "progress_to_double_pct": 13.98,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 765.37,
+    "last_price": 769.33,
     "shares": 1.343382,
-    "equity": 1028.18,
-    "return_pct": 2.82,
+    "equity": 1033.5,
+    "return_pct": 3.35,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 103.13,
-    "return_delta_pct": 10.31,
+    "equity_delta": 106.29,
+    "return_delta_pct": 10.63,
     "leader": "RangeBot"
   },
   "positions": {
     "CSCO": {
       "qty": 2.631603,
       "entry_price": 107.26,
-      "last_price": 110.24,
+      "last_price": 111.42,
       "stop": 102.56,
       "target": 118.65,
       "entry_time": "2026-10-21T21:52:04.869385",
@@ -36,31 +36,21 @@
     "PLD": {
       "qty": 2.202153,
       "entry_price": 125.535,
-      "last_price": 126.31,
+      "last_price": 126.3,
       "stop": 120.96,
       "target": 136.31,
       "entry_time": "2026-10-22T18:06:49.733577",
       "ma20_at_entry": 129.0868,
       "source": "20-day range BUY"
     },
-    "ADI": {
-      "qty": 0.718162,
-      "entry_price": 385.76,
-      "last_price": 407.93,
-      "stop": 369.85,
-      "target": 422.67,
-      "entry_time": "2026-10-22T21:34:48.428445",
-      "ma20_at_entry": 403.7295,
-      "source": "20-day range BUY"
-    },
-    "BKNG": {
-      "qty": 1.763642,
-      "entry_price": 155.83,
-      "last_price": 153.14,
-      "stop": 150.98,
-      "target": 168.49,
-      "entry_time": "2026-10-23T21:21:33.407977",
-      "ma20_at_entry": 160.413,
+    "MRK": {
+      "qty": 2.00879,
+      "entry_price": 141.85,
+      "last_price": 141.85,
+      "stop": 136.02,
+      "target": 154.02,
+      "entry_time": "2026-10-27T18:51:25.441241",
+      "ma20_at_entry": 144.4195,
       "source": "20-day range BUY"
     }
   },
@@ -744,9 +734,39 @@
       "value": 274.83,
       "pnl": 0,
       "reason": "20-day range BUY"
+    },
+    {
+      "time": "2026-10-27T18:51:25.441241",
+      "symbol": "ADI",
+      "side": "SELL",
+      "qty": 0.718162,
+      "price": 421.93,
+      "value": 303.01,
+      "pnl": 25.98,
+      "reason": "EXIT"
+    },
+    {
+      "time": "2026-10-27T18:51:25.441241",
+      "symbol": "BKNG",
+      "side": "SELL",
+      "qty": 1.763642,
+      "price": 150.5,
+      "value": 265.43,
+      "pnl": -9.4,
+      "reason": "WAIT"
+    },
+    {
+      "time": "2026-10-27T18:51:25.441241",
+      "symbol": "MRK",
+      "side": "BUY",
+      "qty": 2.00879,
+      "price": 141.85,
+      "value": 284.95,
+      "pnl": 0,
+      "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-10-26T23:32:20.658645",
+  "latest_scan_at": "2026-10-27T18:50:57.873443",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
