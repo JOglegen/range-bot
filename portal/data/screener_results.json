@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-10-29T23:27:02.259078",
+  "scanned_at": "2026-10-29T23:45:56.063833",
   "mode": "range",
   "total_scanned": 104,
   "total_qualifying": 56,
@@ -101,20 +101,6 @@
       "vol_ratio": 1.29,
       "stop": 605.64,
       "target": 692.83,
-      "entry_low": null,
-      "entry_high": null,
-      "note": "mid-range, no edge yet"
-    },
-    {
-      "symbol": "C",
-      "price": 125.76,
-      "signal": "WAIT",
-      "score": 74,
-      "pos_pct": 42.8,
-      "width_pct": 11.3,
-      "vol_ratio": 0.99,
-      "stop": 117.58,
-      "target": 133.5,
       "entry_low": null,
       "entry_high": null,
       "note": "mid-range, no edge yet"
@@ -689,6 +675,20 @@
       "vol_ratio": 0.83,
       "stop": 251.17,
       "target": 291.4,
+      "entry_low": null,
+      "entry_high": null,
+      "note": "at/above the ceiling \u2014 take profits, no new longs"
+    },
+    {
+      "symbol": "HCA",
+      "price": 478.08,
+      "signal": "EXIT",
+      "score": 57,
+      "pos_pct": 84.9,
+      "width_pct": 15.5,
+      "vol_ratio": 1.0,
+      "stop": 414.0,
+      "target": 488.0,
       "entry_low": null,
       "entry_high": null,
       "note": "at/above the ceiling \u2014 take profits, no new longs"
