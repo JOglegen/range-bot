@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-11-04T20:29:56.850893",
+  "updated_at": "2026-11-04T20:37:08.463081",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
-  "cash": 323.38,
-  "equity": 1183.46,
-  "return_pct": 18.35,
-  "progress_to_double_pct": 18.35,
+  "cash": 26.29,
+  "equity": 1188.37,
+  "return_pct": 18.84,
+  "progress_to_double_pct": 18.84,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 767.92,
+    "last_price": 768.2,
     "shares": 1.343382,
-    "equity": 1031.61,
-    "return_pct": 3.16,
+    "equity": 1031.99,
+    "return_pct": 3.2,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 151.85,
-    "return_delta_pct": 15.19,
+    "equity_delta": 156.38,
+    "return_delta_pct": 15.64,
     "leader": "RangeBot"
   },
   "positions": {
     "PLD": {
       "qty": 2.202153,
       "entry_price": 125.535,
-      "last_price": 130.34,
+      "last_price": 130.56,
       "stop": 120.96,
       "target": 136.31,
       "entry_time": "2026-10-22T18:06:49.733577",
@@ -36,7 +36,7 @@
     "MRK": {
       "qty": 2.00879,
       "entry_price": 141.85,
-      "last_price": 149.465,
+      "last_price": 149.96,
       "stop": 136.02,
       "target": 154.02,
       "entry_time": "2026-10-27T18:51:25.441241",
@@ -46,11 +46,21 @@
     "QCOM": {
       "qty": 1.649785,
       "entry_price": 162.08,
-      "last_price": 165.36,
+      "last_price": 167.44,
       "stop": 158.49,
       "target": 185.59,
       "entry_time": "2026-11-02T22:25:39.136330",
       "ma20_at_entry": 175.952,
+      "source": "20-day range BUY"
+    },
+    "EOG": {
+      "qty": 2.022209,
+      "entry_price": 146.915,
+      "last_price": 146.915,
+      "stop": 139.03,
+      "target": 165.93,
+      "entry_time": "2026-11-04T20:37:08.463081",
+      "ma20_at_entry": 156.3486,
       "source": "20-day range BUY"
     }
   },
@@ -804,9 +814,19 @@
       "value": 323.38,
       "pnl": 39.88,
       "reason": "EXIT"
+    },
+    {
+      "time": "2026-11-04T20:37:08.463081",
+      "symbol": "EOG",
+      "side": "BUY",
+      "qty": 2.022209,
+      "price": 146.915,
+      "value": 297.09,
+      "pnl": 0,
+      "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-11-04T20:29:43.150770",
+  "latest_scan_at": "2026-11-04T20:36:40.331875",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
