@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-11-04T00:21:01.509195",
+  "updated_at": "2026-11-04T20:29:56.850893",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
-  "cash": 0.0,
-  "equity": 1139.42,
-  "return_pct": 13.94,
-  "progress_to_double_pct": 13.94,
+  "cash": 323.38,
+  "equity": 1183.46,
+  "return_pct": 18.35,
+  "progress_to_double_pct": 18.35,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 754.35,
+    "last_price": 767.92,
     "shares": 1.343382,
-    "equity": 1013.38,
-    "return_pct": 1.34,
+    "equity": 1031.61,
+    "return_pct": 3.16,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 126.04,
-    "return_delta_pct": 12.6,
+    "equity_delta": 151.85,
+    "return_delta_pct": 15.19,
     "leader": "RangeBot"
   },
   "positions": {
     "PLD": {
       "qty": 2.202153,
       "entry_price": 125.535,
-      "last_price": 129.08,
+      "last_price": 130.34,
       "stop": 120.96,
       "target": 136.31,
       "entry_time": "2026-10-22T18:06:49.733577",
@@ -36,27 +36,17 @@
     "MRK": {
       "qty": 2.00879,
       "entry_price": 141.85,
-      "last_price": 144.67,
+      "last_price": 149.465,
       "stop": 136.02,
       "target": 154.02,
       "entry_time": "2026-10-27T18:51:25.441241",
       "ma20_at_entry": 144.4195,
       "source": "20-day range BUY"
     },
-    "BKNG": {
-      "qty": 1.883971,
-      "entry_price": 150.48,
-      "last_price": 155.67,
-      "stop": 143.35,
-      "target": 168.49,
-      "entry_time": "2026-10-29T19:06:49.339324",
-      "ma20_at_entry": 158.028,
-      "source": "20-day range BUY"
-    },
     "QCOM": {
       "qty": 1.649785,
       "entry_price": 162.08,
-      "last_price": 164.43,
+      "last_price": 165.36,
       "stop": 158.49,
       "target": 185.59,
       "entry_time": "2026-11-02T22:25:39.136330",
@@ -804,9 +794,19 @@
       "value": 267.4,
       "pnl": 0,
       "reason": "20-day range BUY"
+    },
+    {
+      "time": "2026-11-04T20:29:56.850893",
+      "symbol": "BKNG",
+      "side": "SELL",
+      "qty": 1.883971,
+      "price": 171.65,
+      "value": 323.38,
+      "pnl": 39.88,
+      "reason": "EXIT"
     }
   ],
-  "latest_scan_at": "2026-11-04T00:20:47.880025",
+  "latest_scan_at": "2026-11-04T20:29:43.150770",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
