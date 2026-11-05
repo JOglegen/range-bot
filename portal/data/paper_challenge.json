@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-11-05T20:46:15.014115",
+  "updated_at": "2026-11-05T20:53:27.569948",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
   "cash": 36.36,
-  "equity": 1167.86,
-  "return_pct": 16.79,
-  "progress_to_double_pct": 16.79,
+  "equity": 1171.85,
+  "return_pct": 17.19,
+  "progress_to_double_pct": 17.19,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 734.53,
+    "last_price": 735.935,
     "shares": 1.343382,
-    "equity": 986.75,
-    "return_pct": -1.32,
+    "equity": 988.64,
+    "return_pct": -1.14,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 181.11,
-    "return_delta_pct": 18.11,
+    "equity_delta": 183.21,
+    "return_delta_pct": 18.33,
     "leader": "RangeBot"
   },
   "positions": {
     "PLD": {
       "qty": 2.202153,
       "entry_price": 125.535,
-      "last_price": 128.45,
+      "last_price": 128.78,
       "stop": 120.96,
       "target": 136.31,
       "entry_time": "2026-10-22T18:06:49.733577",
@@ -36,7 +36,7 @@
     "QCOM": {
       "qty": 1.649785,
       "entry_price": 162.08,
-      "last_price": 159.14,
+      "last_price": 160.385,
       "stop": 158.49,
       "target": 185.59,
       "entry_time": "2026-11-02T22:25:39.136330",
@@ -46,7 +46,7 @@
     "EOG": {
       "qty": 2.022209,
       "entry_price": 146.915,
-      "last_price": 145.445,
+      "last_price": 145.51,
       "stop": 139.03,
       "target": 165.93,
       "entry_time": "2026-11-04T20:37:08.463081",
@@ -56,7 +56,7 @@
     "GS": {
       "qty": 0.335641,
       "entry_price": 869.875,
-      "last_price": 869.875,
+      "last_price": 873.095,
       "stop": 841.85,
       "target": 939.38,
       "entry_time": "2026-11-05T20:46:15.014115",
@@ -846,7 +846,7 @@
       "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-11-05T20:45:52.226009",
+  "latest_scan_at": "2026-11-05T20:53:12.677086",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
