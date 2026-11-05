@@ -1,52 +1,42 @@
 {
-  "updated_at": "2026-11-04T20:37:08.463081",
+  "updated_at": "2026-11-05T00:42:00.589956",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
-  "cash": 26.29,
-  "equity": 1188.37,
-  "return_pct": 18.84,
-  "progress_to_double_pct": 18.84,
+  "cash": 328.33,
+  "equity": 1200.72,
+  "return_pct": 20.07,
+  "progress_to_double_pct": 20.07,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 768.2,
+    "last_price": 766.81,
     "shares": 1.343382,
-    "equity": 1031.99,
-    "return_pct": 3.2,
+    "equity": 1030.12,
+    "return_pct": 3.01,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 156.38,
-    "return_delta_pct": 15.64,
+    "equity_delta": 170.6,
+    "return_delta_pct": 17.06,
     "leader": "RangeBot"
   },
   "positions": {
     "PLD": {
       "qty": 2.202153,
       "entry_price": 125.535,
-      "last_price": 130.56,
+      "last_price": 131.36,
       "stop": 120.96,
       "target": 136.31,
       "entry_time": "2026-10-22T18:06:49.733577",
       "ma20_at_entry": 129.0868,
       "source": "20-day range BUY"
     },
-    "MRK": {
-      "qty": 2.00879,
-      "entry_price": 141.85,
-      "last_price": 149.96,
-      "stop": 136.02,
-      "target": 154.02,
-      "entry_time": "2026-10-27T18:51:25.441241",
-      "ma20_at_entry": 144.4195,
-      "source": "20-day range BUY"
-    },
     "QCOM": {
       "qty": 1.649785,
       "entry_price": 162.08,
-      "last_price": 167.44,
+      "last_price": 173.19,
       "stop": 158.49,
       "target": 185.59,
       "entry_time": "2026-11-02T22:25:39.136330",
@@ -56,7 +46,7 @@
     "EOG": {
       "qty": 2.022209,
       "entry_price": 146.915,
-      "last_price": 146.915,
+      "last_price": 147.06,
       "stop": 139.03,
       "target": 165.93,
       "entry_time": "2026-11-04T20:37:08.463081",
@@ -824,9 +814,19 @@
       "value": 297.09,
       "pnl": 0,
       "reason": "20-day range BUY"
+    },
+    {
+      "time": "2026-11-05T00:42:00.589956",
+      "symbol": "MRK",
+      "side": "SELL",
+      "qty": 2.00879,
+      "price": 150.36,
+      "value": 302.04,
+      "pnl": 17.09,
+      "reason": "EXIT"
     }
   ],
-  "latest_scan_at": "2026-11-04T20:36:40.331875",
+  "latest_scan_at": "2026-11-05T00:41:39.514268",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
