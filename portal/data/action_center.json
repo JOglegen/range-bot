@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-11-06T20:10:18.287008",
-  "range_scanned_at": "2026-11-06T20:10:02.024507",
-  "income_scanned_at": "2026-11-06T20:10:08.203760",
-  "study_scanned_at": "2026-11-06T20:10:18.287008",
+  "built_at": "2026-11-06T23:56:01.933134",
+  "range_scanned_at": "2026-11-06T23:55:49.858225",
+  "income_scanned_at": "2026-11-06T23:55:54.555555",
+  "study_scanned_at": "2026-11-06T23:56:01.933134",
   "summary": {
     "trade_entries": 5,
     "range_watches": 0,
@@ -17,27 +17,27 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $210.71-$217.15 | target $236.48 | stop $206.50",
-      "risk": "3.2% to stop",
+      "risk": "2.9% to stop",
       "source": "20-day range"
     },
     {
       "type": "TRADE ENTRY",
       "symbol": "EOG",
-      "priority": 93,
+      "priority": 92,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $144.67-$149.98 | target $165.93 | stop $141.78",
-      "risk": "4.3% to stop",
+      "risk": "3.6% to stop",
       "source": "20-day range"
     },
     {
       "type": "TRADE ENTRY",
       "symbol": "GS",
-      "priority": 90,
+      "priority": 91,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $854.45-$875.68 | target $939.38 | stop $837.36",
-      "risk": "4.1% to stop",
+      "risk": "3.3% to stop",
       "source": "20-day range"
     },
     {
@@ -47,17 +47,17 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $232.85-$242.66 | target $272.10 | stop $228.19",
-      "risk": "4.7% to stop",
+      "risk": "4.6% to stop",
       "source": "20-day range"
     },
     {
       "type": "TRADE ENTRY",
-      "symbol": "ADI",
-      "priority": 78,
+      "symbol": "JPM",
+      "priority": 82,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
-      "detail": "Entry $360.13-$378.53 | target $433.72 | stop $352.93",
-      "risk": "3.7% to stop",
+      "detail": "Entry $326.40-$334.75 | target $359.80 | stop $319.87",
+      "risk": "4.4% to stop",
       "source": "20-day range"
     },
     {
@@ -66,8 +66,8 @@
       "priority": 100,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 6.72% | avg/mo $0.071 | paid 12/12 months",
-      "risk": "11.3% 52w drawdown",
+      "detail": "Yield 6.69% | avg/mo $0.071 | paid 12/12 months",
+      "risk": "11.0% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -76,8 +76,8 @@
       "priority": 100,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 4.24% | avg/mo $0.087 | paid 12/12 months",
-      "risk": "2.4% 52w drawdown",
+      "detail": "Yield 4.26% | avg/mo $0.087 | paid 12/12 months",
+      "risk": "2.7% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -86,8 +86,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 7.57% | avg/mo $0.361 | paid 12/12 months",
-      "risk": "11.5% 52w drawdown",
+      "detail": "Yield 7.60% | avg/mo $0.361 | paid 12/12 months",
+      "risk": "11.8% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -102,32 +102,32 @@
     },
     {
       "type": "INCOME WATCH",
-      "symbol": "APLE",
-      "priority": 93,
-      "action": "Review for income list",
-      "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.14% | avg/mo $0.080 | paid 12/12 months",
-      "risk": "0.9% 52w drawdown",
-      "source": "monthly dividend"
-    },
-    {
-      "type": "INCOME WATCH",
       "symbol": "LTC",
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.06% | avg/mo $0.190 | paid 12/12 months",
-      "risk": "2.7% 52w drawdown",
+      "detail": "Yield 5.09% | avg/mo $0.190 | paid 12/12 months",
+      "risk": "3.4% 52w drawdown",
+      "source": "monthly dividend"
+    },
+    {
+      "type": "INCOME WATCH",
+      "symbol": "APLE",
+      "priority": 93,
+      "action": "Review for income list",
+      "status": "Alert only, no auto-buy",
+      "detail": "Yield 5.08% | avg/mo $0.080 | paid 12/12 months",
+      "risk": "0.0% 52w drawdown",
       "source": "monthly dividend"
     },
     {
       "type": "STUDY WATCH",
       "symbol": "EIX",
       "priority": 30,
-      "action": "EXIT",
+      "action": "WAIT",
       "status": "Study list alert, manual review",
-      "detail": "at/above the ceiling \u2014 take profits, no new longs",
-      "risk": "pos 76.3%",
+      "detail": "mid-range, no edge yet",
+      "risk": "pos 72.0%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -137,7 +137,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 2.8%",
+      "risk": "pos 0.0%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -147,7 +147,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 6.5%",
+      "risk": "pos 4.9%",
       "source": "GitHub issue #5 study list"
     }
   ]
