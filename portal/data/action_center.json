@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-11-06T23:56:01.933134",
-  "range_scanned_at": "2026-11-06T23:55:49.858225",
-  "income_scanned_at": "2026-11-06T23:55:54.555555",
-  "study_scanned_at": "2026-11-06T23:56:01.933134",
+  "built_at": "2026-11-09T23:05:42.559349",
+  "range_scanned_at": "2026-11-09T23:05:30.194817",
+  "income_scanned_at": "2026-11-09T23:05:35.134614",
+  "study_scanned_at": "2026-11-09T23:05:42.559349",
   "summary": {
     "trade_entries": 5,
     "range_watches": 0,
@@ -13,50 +13,50 @@
     {
       "type": "TRADE ENTRY",
       "symbol": "CVX",
-      "priority": 98,
+      "priority": 89,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
-      "detail": "Entry $210.71-$217.15 | target $236.48 | stop $206.50",
-      "risk": "2.9% to stop",
+      "detail": "Entry $210.43-$216.94 | target $236.48 | stop $206.22",
+      "risk": "2.2% to stop",
       "source": "20-day range"
     },
     {
       "type": "TRADE ENTRY",
-      "symbol": "EOG",
-      "priority": 92,
+      "symbol": "BAC",
+      "priority": 82,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
-      "detail": "Entry $144.67-$149.98 | target $165.93 | stop $141.78",
-      "risk": "3.6% to stop",
-      "source": "20-day range"
-    },
-    {
-      "type": "TRADE ENTRY",
-      "symbol": "GS",
-      "priority": 91,
-      "action": "Review buy zone",
-      "status": "Paper bot will recheck before any order",
-      "detail": "Entry $854.45-$875.68 | target $939.38 | stop $837.36",
-      "risk": "3.3% to stop",
+      "detail": "Entry $49.17-$50.61 | target $54.93 | stop $48.19",
+      "risk": "4.7% to stop",
       "source": "20-day range"
     },
     {
       "type": "TRADE ENTRY",
       "symbol": "ADBE",
-      "priority": 83,
+      "priority": 80,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $232.85-$242.66 | target $272.10 | stop $228.19",
-      "risk": "4.6% to stop",
+      "risk": "3.8% to stop",
       "source": "20-day range"
     },
     {
       "type": "TRADE ENTRY",
-      "symbol": "JPM",
-      "priority": 82,
+      "symbol": "EOG",
+      "priority": 80,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
-      "detail": "Entry $326.40-$334.75 | target $359.80 | stop $319.87",
+      "detail": "Entry $144.14-$149.59 | target $165.93 | stop $141.26",
+      "risk": "4.8% to stop",
+      "source": "20-day range"
+    },
+    {
+      "type": "TRADE ENTRY",
+      "symbol": "TJX",
+      "priority": 73,
+      "action": "Review buy zone",
+      "status": "Paper bot will recheck before any order",
+      "detail": "Entry $134.69-$138.16 | target $148.57 | stop $132.00",
       "risk": "4.4% to stop",
       "source": "20-day range"
     },
@@ -66,8 +66,8 @@
       "priority": 100,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 6.69% | avg/mo $0.071 | paid 12/12 months",
-      "risk": "11.0% 52w drawdown",
+      "detail": "Yield 6.76% | avg/mo $0.071 | paid 12/12 months",
+      "risk": "11.9% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -76,8 +76,8 @@
       "priority": 100,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 4.26% | avg/mo $0.087 | paid 12/12 months",
-      "risk": "2.7% 52w drawdown",
+      "detail": "Yield 4.20% | avg/mo $0.087 | paid 12/12 months",
+      "risk": "1.5% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -86,8 +86,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 7.60% | avg/mo $0.361 | paid 12/12 months",
-      "risk": "11.8% 52w drawdown",
+      "detail": "Yield 8.04% | avg/mo $0.353 | paid 13/12 months",
+      "risk": "11.6% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -96,8 +96,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 6.15% | avg/mo $0.305 | paid 12/12 months",
-      "risk": "7.5% 52w drawdown",
+      "detail": "Yield 5.98% | avg/mo $0.305 | paid 12/12 months",
+      "risk": "4.9% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -106,8 +106,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.09% | avg/mo $0.190 | paid 12/12 months",
-      "risk": "3.4% 52w drawdown",
+      "detail": "Yield 5.07% | avg/mo $0.190 | paid 12/12 months",
+      "risk": "2.9% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -116,7 +116,7 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.08% | avg/mo $0.080 | paid 12/12 months",
+      "detail": "Yield 4.88% | avg/mo $0.080 | paid 12/12 months",
       "risk": "0.0% 52w drawdown",
       "source": "monthly dividend"
     },
@@ -124,10 +124,10 @@
       "type": "STUDY WATCH",
       "symbol": "EIX",
       "priority": 30,
-      "action": "WAIT",
+      "action": "EXIT",
       "status": "Study list alert, manual review",
-      "detail": "mid-range, no edge yet",
-      "risk": "pos 72.0%",
+      "detail": "at/above the ceiling \u2014 take profits, no new longs",
+      "risk": "pos 79.1%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -137,7 +137,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 0.0%",
+      "risk": "pos 7.3%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -147,7 +147,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 4.9%",
+      "risk": "pos 17.5%",
       "source": "GitHub issue #5 study list"
     }
   ]
