@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-11-10T20:32:50.514226",
-  "range_scanned_at": "2026-11-10T20:32:26.402062",
-  "income_scanned_at": "2026-11-10T20:32:35.143441",
-  "study_scanned_at": "2026-11-10T20:32:50.514226",
+  "built_at": "2026-11-10T20:39:48.230524",
+  "range_scanned_at": "2026-11-10T20:39:24.333460",
+  "income_scanned_at": "2026-11-10T20:39:33.810852",
+  "study_scanned_at": "2026-11-10T20:39:48.230524",
   "summary": {
     "trade_entries": 2,
     "range_watches": 0,
@@ -17,7 +17,7 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $208.74-$215.68 | target $236.48 | stop $204.57",
-      "risk": "3.3% to stop",
+      "risk": "3.2% to stop",
       "source": "20-day range"
     },
     {
@@ -77,7 +77,7 @@
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
       "detail": "Yield 5.12% | avg/mo $0.190 | paid 12/12 months",
-      "risk": "3.9% 52w drawdown",
+      "risk": "4.0% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -86,7 +86,7 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 4.78% | avg/mo $0.080 | paid 12/12 months",
+      "detail": "Yield 4.77% | avg/mo $0.080 | paid 12/12 months",
       "risk": "0.0% 52w drawdown",
       "source": "monthly dividend"
     },
@@ -97,7 +97,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 13.6%",
+      "risk": "pos 12.7%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -107,7 +107,7 @@
       "action": "EXIT",
       "status": "Study list alert, manual review",
       "detail": "at/above the ceiling \u2014 take profits, no new longs",
-      "risk": "pos 79.2%",
+      "risk": "pos 79.5%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -117,7 +117,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 13.4%",
+      "risk": "pos 13.2%",
       "source": "GitHub issue #5 study list"
     }
   ]
