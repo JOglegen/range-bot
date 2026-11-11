@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-11-10T20:39:48.230524",
-  "range_scanned_at": "2026-11-10T20:39:24.333460",
-  "income_scanned_at": "2026-11-10T20:39:33.810852",
-  "study_scanned_at": "2026-11-10T20:39:48.230524",
+  "built_at": "2026-11-11T00:24:04.283107",
+  "range_scanned_at": "2026-11-11T00:23:47.782926",
+  "income_scanned_at": "2026-11-11T00:23:54.103722",
+  "study_scanned_at": "2026-11-11T00:24:04.283107",
   "summary": {
     "trade_entries": 2,
     "range_watches": 0,
@@ -17,17 +17,17 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $208.74-$215.68 | target $236.48 | stop $204.57",
-      "risk": "3.2% to stop",
+      "risk": "3.1% to stop",
       "source": "20-day range"
     },
     {
       "type": "TRADE ENTRY",
       "symbol": "ADBE",
-      "priority": 73,
+      "priority": 74,
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $235.19-$244.42 | target $272.10 | stop $230.49",
-      "risk": "2.0% to stop",
+      "risk": "2.6% to stop",
       "source": "20-day range"
     },
     {
@@ -36,8 +36,8 @@
       "priority": 100,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 6.67% | avg/mo $0.071 | paid 12/12 months",
-      "risk": "10.8% 52w drawdown",
+      "detail": "Yield 6.75% | avg/mo $0.071 | paid 12/12 months",
+      "risk": "11.8% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -47,7 +47,7 @@
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
       "detail": "Yield 4.20% | avg/mo $0.087 | paid 12/12 months",
-      "risk": "1.5% 52w drawdown",
+      "risk": "1.4% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -56,8 +56,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 8.06% | avg/mo $0.353 | paid 13/12 months",
-      "risk": "11.8% 52w drawdown",
+      "detail": "Yield 8.03% | avg/mo $0.353 | paid 13/12 months",
+      "risk": "11.4% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -66,8 +66,8 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.97% | avg/mo $0.305 | paid 12/12 months",
-      "risk": "4.7% 52w drawdown",
+      "detail": "Yield 5.98% | avg/mo $0.305 | paid 12/12 months",
+      "risk": "4.9% 52w drawdown",
       "source": "monthly dividend"
     },
     {
@@ -76,7 +76,7 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 5.12% | avg/mo $0.190 | paid 12/12 months",
+      "detail": "Yield 5.13% | avg/mo $0.190 | paid 12/12 months",
       "risk": "4.0% 52w drawdown",
       "source": "monthly dividend"
     },
@@ -86,7 +86,7 @@
       "priority": 93,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 4.77% | avg/mo $0.080 | paid 12/12 months",
+      "detail": "Yield 4.76% | avg/mo $0.080 | paid 12/12 months",
       "risk": "0.0% 52w drawdown",
       "source": "monthly dividend"
     },
@@ -97,7 +97,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 12.7%",
+      "risk": "pos 12.6%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -107,7 +107,7 @@
       "action": "EXIT",
       "status": "Study list alert, manual review",
       "detail": "at/above the ceiling \u2014 take profits, no new longs",
-      "risk": "pos 79.5%",
+      "risk": "pos 79.6%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -117,7 +117,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 13.2%",
+      "risk": "pos 14.0%",
       "source": "GitHub issue #5 study list"
     }
   ]
