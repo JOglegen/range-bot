@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-11-12T21:00:23.676162",
-  "range_scanned_at": "2026-11-12T21:00:04.079945",
-  "income_scanned_at": "2026-11-12T21:00:11.842020",
-  "study_scanned_at": "2026-11-12T21:00:23.676162",
+  "built_at": "2026-11-12T21:15:22.881941",
+  "range_scanned_at": "2026-11-12T21:15:03.969236",
+  "income_scanned_at": "2026-11-12T21:15:11.719375",
+  "study_scanned_at": "2026-11-12T21:15:22.881941",
   "summary": {
     "trade_entries": 1,
     "range_watches": 0,
@@ -17,7 +17,7 @@
       "action": "Review buy zone",
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $291.57-$298.19 | target $318.05 | stop $285.74",
-      "risk": "3.5% to stop",
+      "risk": "3.6% to stop",
       "source": "20-day range"
     },
     {
@@ -97,7 +97,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 36.5%",
+      "risk": "pos 36.9%",
       "source": "GitHub issue #5 study list"
     },
     {
@@ -107,7 +107,7 @@
       "action": "WAIT",
       "status": "Study list alert, manual review",
       "detail": "mid-range, no edge yet",
-      "risk": "pos 30.4%",
+      "risk": "pos 30.5%",
       "source": "GitHub issue #5 study list"
     }
   ]
