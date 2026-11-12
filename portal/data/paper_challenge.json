@@ -1,32 +1,32 @@
 {
-  "updated_at": "2026-11-11T21:00:01.207524",
+  "updated_at": "2026-11-12T01:47:01.720747",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
-  "cash": 315.92,
-  "equity": 1204.5,
-  "return_pct": 20.45,
-  "progress_to_double_pct": 20.45,
+  "cash": 16.63,
+  "equity": 1197.15,
+  "return_pct": 19.71,
+  "progress_to_double_pct": 19.71,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
-    "last_price": 759.505,
+    "last_price": 749.92,
     "shares": 1.343382,
-    "equity": 1020.31,
-    "return_pct": 2.03,
+    "equity": 1007.43,
+    "return_pct": 0.74,
     "method": "Buy-and-hold SPY from paper challenge start"
   },
   "vs_benchmark": {
-    "equity_delta": 184.19,
-    "return_delta_pct": 18.42,
+    "equity_delta": 189.72,
+    "return_delta_pct": 18.97,
     "leader": "RangeBot"
   },
   "positions": {
     "PLD": {
       "qty": 2.202153,
       "entry_price": 125.535,
-      "last_price": 130.005,
+      "last_price": 130.1,
       "stop": 120.96,
       "target": 136.31,
       "entry_time": "2026-10-22T18:06:49.733577",
@@ -36,7 +36,7 @@
     "EOG": {
       "qty": 2.022209,
       "entry_price": 146.915,
-      "last_price": 153.83,
+      "last_price": 151.51,
       "stop": 139.03,
       "target": 165.93,
       "entry_time": "2026-11-04T20:37:08.463081",
@@ -46,11 +46,21 @@
     "CVX": {
       "qty": 1.365124,
       "entry_price": 212.93,
-      "last_price": 213.32,
+      "last_price": 211.22,
       "stop": 204.78,
       "target": 236.48,
       "entry_time": "2026-11-06T00:43:25.151094",
       "ma20_at_entry": 224.358,
+      "source": "20-day range BUY"
+    },
+    "ADBE": {
+      "qty": 1.264413,
+      "entry_price": 236.7,
+      "last_price": 236.7,
+      "stop": 230.49,
+      "target": 272.1,
+      "entry_time": "2026-11-12T01:47:01.720747",
+      "ma20_at_entry": 249.587,
       "source": "20-day range BUY"
     }
   },
@@ -864,9 +874,19 @@
       "value": 311.63,
       "pnl": 19.66,
       "reason": "EXIT"
+    },
+    {
+      "time": "2026-11-12T01:47:01.720747",
+      "symbol": "ADBE",
+      "side": "BUY",
+      "qty": 1.264413,
+      "price": 236.7,
+      "value": 299.29,
+      "pnl": 0,
+      "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-11-11T20:59:39.448843",
+  "latest_scan_at": "2026-11-12T01:46:43.603755",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
