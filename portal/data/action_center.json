@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-11-16T23:07:27.280182",
-  "range_scanned_at": "2026-11-16T23:07:10.592725",
-  "income_scanned_at": "2026-11-16T23:07:17.452223",
-  "study_scanned_at": "2026-11-16T23:07:27.280182",
+  "built_at": "2026-11-17T02:45:05.603985",
+  "range_scanned_at": "2026-11-17T02:44:49.130179",
+  "income_scanned_at": "2026-11-17T02:44:55.525190",
+  "study_scanned_at": "2026-11-17T02:45:05.603985",
   "summary": {
     "trade_entries": 3,
     "range_watches": 0,
@@ -56,7 +56,7 @@
       "priority": 100,
       "action": "Review for income list",
       "status": "Alert only, no auto-buy",
-      "detail": "Yield 4.23% | avg/mo $0.087 | paid 12/12 months",
+      "detail": "Yield 4.24% | avg/mo $0.087 | paid 12/12 months",
       "risk": "2.3% 52w drawdown",
       "source": "monthly dividend"
     },
