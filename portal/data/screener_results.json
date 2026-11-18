@@ -1,8 +1,8 @@
 {
-  "scanned_at": "2026-11-18T21:30:34.781717",
+  "scanned_at": "2026-11-18T21:39:52.181655",
   "mode": "range",
   "total_scanned": 104,
-  "total_qualifying": 69,
+  "total_qualifying": 70,
   "buys": [
     {
       "symbol": "AXP",
@@ -610,6 +610,20 @@
       "note": "mid-range, no edge yet"
     },
     {
+      "symbol": "MDLZ",
+      "price": 66.57,
+      "signal": "WAIT",
+      "score": 71,
+      "pos_pct": 68.2,
+      "width_pct": 12.0,
+      "vol_ratio": 1.15,
+      "stop": 60.28,
+      "target": 68.92,
+      "entry_low": null,
+      "entry_high": null,
+      "note": "mid-range, no edge yet"
+    },
+    {
       "symbol": "SPGI",
       "price": 446.38,
       "signal": "WAIT",
@@ -759,20 +773,6 @@
       "vol_ratio": 2.81,
       "stop": 126.8,
       "target": 147.17,
-      "entry_low": null,
-      "entry_high": null,
-      "note": "mid-range, no edge yet"
-    },
-    {
-      "symbol": "UNH",
-      "price": 349.91,
-      "signal": "WAIT",
-      "score": 65,
-      "pos_pct": 0.0,
-      "width_pct": 10.2,
-      "vol_ratio": 3.46,
-      "stop": 379.4,
-      "target": 426.55,
       "entry_low": null,
       "entry_high": null,
       "note": "mid-range, no edge yet"

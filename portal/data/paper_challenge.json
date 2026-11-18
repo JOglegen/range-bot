@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-11-18T21:30:54.441941",
+  "updated_at": "2026-11-18T21:40:17.494218",
   "mode": "paper_challenge",
   "status": "OPEN",
   "starting_cash": 1000.0,
   "target_equity": 2000.0,
   "cash": 12.1,
   "equity": 1162.15,
-  "return_pct": 16.22,
-  "progress_to_double_pct": 16.22,
+  "return_pct": 16.21,
+  "progress_to_double_pct": 16.21,
   "benchmark": {
     "symbol": "SPY",
     "start_price": 744.39,
@@ -19,7 +19,7 @@
   },
   "vs_benchmark": {
     "equity_delta": 181.21,
-    "return_delta_pct": 18.13,
+    "return_delta_pct": 18.12,
     "leader": "RangeBot"
   },
   "positions": {
@@ -906,7 +906,7 @@
       "reason": "20-day range BUY"
     }
   ],
-  "latest_scan_at": "2026-11-18T21:30:34.781717",
+  "latest_scan_at": "2026-11-18T21:39:52.181655",
   "rules": {
     "paper_only": true,
     "max_positions": 4,
