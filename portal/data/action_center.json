@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-11-20T21:25:48.057561",
-  "range_scanned_at": "2026-11-20T21:25:31.743088",
-  "income_scanned_at": "2026-11-20T21:25:38.154609",
-  "study_scanned_at": "2026-11-20T21:25:48.057561",
+  "built_at": "2026-11-20T21:38:11.938038",
+  "range_scanned_at": "2026-11-20T21:37:54.780722",
+  "income_scanned_at": "2026-11-20T21:38:01.068244",
+  "study_scanned_at": "2026-11-20T21:38:11.938038",
   "summary": {
     "trade_entries": 5,
     "range_watches": 0,
@@ -32,6 +32,16 @@
     },
     {
       "type": "TRADE ENTRY",
+      "symbol": "PH",
+      "priority": 93,
+      "action": "Review buy zone",
+      "status": "Paper bot will recheck before any order",
+      "detail": "Entry $866.68-$894.52 | target $978.05 | stop $849.34",
+      "risk": "2.6% to stop",
+      "source": "20-day range"
+    },
+    {
+      "type": "TRADE ENTRY",
       "symbol": "ABT",
       "priority": 92,
       "action": "Review buy zone",
@@ -48,16 +58,6 @@
       "status": "Paper bot will recheck before any order",
       "detail": "Entry $435.25-$447.43 | target $483.99 | stop $426.55",
       "risk": "2.1% to stop",
-      "source": "20-day range"
-    },
-    {
-      "type": "TRADE ENTRY",
-      "symbol": "PH",
-      "priority": 92,
-      "action": "Review buy zone",
-      "status": "Paper bot will recheck before any order",
-      "detail": "Entry $866.68-$894.52 | target $978.05 | stop $849.34",
-      "risk": "2.6% to stop",
       "source": "20-day range"
     },
     {
