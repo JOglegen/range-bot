@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-11-26T02:37:02.928634",
+  "scanned_at": "2026-11-26T22:30:08.636901",
   "mode": "range",
   "source": "GitHub issue #5 study list",
   "symbols": [
@@ -33,7 +33,7 @@
       "score": 10,
       "pos_pct": 10.4,
       "width_pct": 134.4,
-      "vol_ratio": 1.24,
+      "vol_ratio": 1.25,
       "stop": 88.74,
       "target": 212.26,
       "entry_low": null,
